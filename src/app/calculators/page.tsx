@@ -23,6 +23,7 @@ import type { LucideIcon } from "lucide-react";
 interface CalculatorItem {
   name: string;
   slug: string;
+  isImplemented?: boolean;
 }
 
 interface CalculatorCategory {
@@ -36,7 +37,7 @@ const calculatorCategories: CalculatorCategory[] = [
     name: "Basic Math Calculators",
     icon: Sigma,
     calculators: [
-      { name: "Basic Calculator", slug: "basic" },
+      { name: "Basic Calculator", slug: "basic", isImplemented: true },
       { name: "Scientific Calculator", slug: "scientific" },
       { name: "Percentage Calculator", slug: "percentage" },
       { name: "Average Calculator", slug: "average" },
@@ -153,14 +154,16 @@ export default function CalculatorsPage() {
                   {category.calculators.map((calc) => (
                     <li key={calc.slug}>
                       <Link
-                        href={`#`} // Placeholder link
-                        className="flex items-center justify-between p-2 rounded-md hover:bg-accent/50 transition-colors group"
+                        href={calc.isImplemented ? `/calculators/${calc.slug}` : `#`}
+                        className={`flex items-center justify-between p-2 rounded-md hover:bg-accent/50 transition-colors group ${!calc.isImplemented ? 'cursor-not-allowed opacity-70' : ''}`}
                       >
                         <span className="text-foreground/90 group-hover:text-primary">{calc.name}</span>
                         <div className="flex items-center space-x-2">
-                          <Badge variant="outline" className="text-xs border-accent text-accent group-hover:bg-accent group-hover:text-accent-foreground">
-                            Soon
-                          </Badge>
+                          {!calc.isImplemented && (
+                            <Badge variant="outline" className="text-xs border-accent text-accent group-hover:bg-accent group-hover:text-accent-foreground">
+                              Soon
+                            </Badge>
+                          )}
                           <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                         </div>
                       </Link>
