@@ -23,6 +23,7 @@ import {
   Ratio, // Icon for Ratio Calculator
   DivideSquare, // Icon for Fraction Calculator
   Layers, // Icon for LCM & HCF Calculator
+  Baseline, // Icon for Exponent Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -51,7 +52,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Ratio Calculator", slug: "ratio", isImplemented: true, icon: Ratio },
       { name: "Fraction Calculator", slug: "fraction", isImplemented: true, icon: DivideSquare },
       { name: "LCM & HCF Calculator", slug: "lcm-hcf", isImplemented: true, icon: Layers },
-      { name: "Exponent Calculator", slug: "exponent" },
+      { name: "Exponent Calculator", slug: "exponent", isImplemented: true, icon: Baseline },
       { name: "Logarithm Calculator", slug: "logarithm" },
       { name: "Modulo Calculator", slug: "modulo" },
     ],
