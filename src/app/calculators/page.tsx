@@ -41,7 +41,8 @@ import {
   CalendarDays, // Icon for Pregnancy Due Date
   Droplet, // Icon for Water Intake Calculator
   Footprints, // Icon for Steps to Calorie Calculator
-  Dumbbell,
+  Dumbbell, // Icon for Muscle Mass Calculator
+  Spline, // Icon for Graphing Calculator
   Users, // Added for Muscle Mass Calculator inputs if needed elsewhere
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -50,6 +51,7 @@ interface CalculatorItem {
   name: string;
   slug: string;
   isImplemented?: boolean;
+  isAdvanced?: boolean; // To indicate it's a complex feature, even if a basic version is there
   icon?: LucideIcon;
 }
 
@@ -111,7 +113,7 @@ const calculatorCategories: CalculatorCategory[] = [
     icon: FlaskConical,
     calculators: [
       { name: "Scientific Notation Calculator", slug: "scientific-notation", isImplemented: true, icon: Atom },
-      { name: "Graphing Calculator", slug: "graphing" },
+      { name: "Graphing Calculator", slug: "graphing", isImplemented: true, isAdvanced: true, icon: Spline },
       { name: "Matrix Calculator", slug: "matrix" },
       { name: "Chemistry Molar Mass Calculator", slug: "molar-mass" },
       { name: "Electricity Calculator", slug: "electricity" },
@@ -148,11 +150,6 @@ const calculatorCategories: CalculatorCategory[] = [
     ],
   },
 ];
-
-// Helper to import Lucide icons that might not be used above, if they are only in the array.
-// This is just to satisfy type-checking and avoid unused import errors if we add icons directly to the array.
-// const _unusedIcons = { CalendarDays, Droplet, Footprints, Dumbbell }; // CalendarDays is now used.
-
 
 export default function CalculatorsPage() {
   return (
@@ -198,9 +195,9 @@ export default function CalculatorsPage() {
                           <span className="text-foreground/90 group-hover:text-primary">{calc.name}</span>
                         </div>
                         <div className="flex items-center space-x-2">
-                          {!calc.isImplemented && (
+                          {(!calc.isImplemented || calc.isAdvanced) && (
                             <Badge variant="outline" className="text-xs border-accent text-accent group-hover:bg-accent group-hover:text-accent-foreground">
-                              Soon
+                              {calc.isAdvanced && calc.isImplemented ? "Basic" : "Soon"}
                             </Badge>
                           )}
                           <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -218,6 +215,4 @@ export default function CalculatorsPage() {
     </div>
   );
 }
-    
-
     
