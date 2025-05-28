@@ -4,76 +4,76 @@
 
 @layer base {
   :root {
-    --background: 180 33% 90.6%; /* #E0EEEE - Light grayish-teal */
-    --foreground: 180 25% 25%; /* #2F4F4F - DarkSlateGray for text */
-    --card: 180 33% 92.5%; /* #E6F0F0 - Slightly lighter than background */
-    --card-foreground: 180 25% 25%; /* #2F4F4F */
-    --popover: 180 33% 92.5%; /* #E6F0F0 */
-    --popover-foreground: 180 25% 25%; /* #2F4F4F */
-    --primary: 180 100% 25%; /* #008080 - Teal */
-    --primary-foreground: 0 0% 100%; /* #FFFFFF - White */
-    --secondary: 180 33% 85%; /* Lighter teal for secondary elements */
-    --secondary-foreground: 180 100% 25%; /* Teal for text on secondary */
-    --muted: 180 33% 84%; /* #C8E4E4 */
-    --muted-foreground: 180 15% 43.5%; /* #5F7F7F */
-    --accent: 120 25% 65%; /* #8FBC8F - Harmonious green */
-    --accent-foreground: 180 25% 25%; /* #2F4F4F */
+    --background: 250 50% 96%; /* Very Light Lavender Blue */
+    --foreground: 250 30% 15%; /* Dark Indigo Text */
+    --card: 0 0% 100%; /* White cards for strong contrast */
+    --card-foreground: 250 30% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 250 30% 15%;
+    --primary: 220 80% 55%; /* Slightly softer Electric Blue for light mode */
+    --primary-foreground: 0 0% 100%; /* White */
+    --secondary: 250 40% 90%; /* Light Lavender */
+    --secondary-foreground: 220 80% 50%; /* Slightly darker blue for text on secondary */
+    --muted: 250 40% 92%; /* Very Light Lavender */
+    --muted-foreground: 250 20% 45%; /* Medium Indigo Gray */
+    --accent: 300 70% 60%; /* Magenta/Pink */
+    --accent-foreground: 0 0% 100%; /* White */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 180 33% 76.5%; /* #B0D8D8 */
-    --input: 180 33% 84%; /* #C8E4E4 */
-    --ring: 180 100% 25%; /* Teal */
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --border: 250 30% 85%; /* Light Lavender Border */
+    --input: 250 30% 90%; /* Very Light Lavender Input */
+    --ring: 220 80% 55%; /* Primary color for ring */
+    --chart-1: 220 70% 50%;   /* Primary Blue */
+    --chart-2: 300 60% 55%;   /* Accent Pinkish */
+    --chart-3: 170 50% 50%;   /* A Teal/Cyan */
+    --chart-4: 45 80% 60%;    /* A Gold/Orange */
+    --chart-5: 270 60% 70%;   /* A Lighter Purple */
     --radius: 0.5rem;
 
-    --sidebar-background: 180 40% 95%;
-    --sidebar-foreground: 180 25% 25%;
-    --sidebar-primary: 180 100% 25%;
+    --sidebar-background: 250 45% 94%;
+    --sidebar-foreground: 250 30% 15%;
+    --sidebar-primary: 220 80% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 120 25% 88%; /* Lighter green accent for sidebar */
-    --sidebar-accent-foreground: 180 25% 25%;
-    --sidebar-border: 180 33% 85%;
-    --sidebar-ring: 180 100% 25%;
+    --sidebar-accent: 300 70% 88%; /* Light Pink for sidebar accent */
+    --sidebar-accent-foreground: 250 30% 15%;
+    --sidebar-border: 250 30% 80%;
+    --sidebar-ring: 220 80% 55%;
   }
 
   .dark {
-    --background: 180 25% 13%; /* #1A2A2A - Very Dark Desaturated Cyan-Blue */
-    --foreground: 180 33% 76.5%; /* #B0D8D8 - Light grayish-teal for text */
-    --card: 180 25% 17%; /* #203838 - Slightly lighter than dark background */
-    --card-foreground: 180 33% 76.5%; /* #B0D8D8 */
-    --popover: 180 25% 17%; /* #203838 */
-    --popover-foreground: 180 33% 76.5%; /* #B0D8D8 */
-    --primary: 160 70% 45%; /* #20C997 - Medium Aquamarine (brighter teal) */
-    --primary-foreground: 160 40% 9%; /* #0D1F1A - Very Dark Green */
-    --secondary: 180 20% 20%; /* Darker teal for secondary */
-    --secondary-foreground: 180 33% 76.5%; /* Light text on secondary */
-    --muted: 180 20% 21%; /* #2A4242 */
-    --muted-foreground: 180 15% 56%; /* #7F9F9F */
-    --accent: 120 30% 76%; /* #A3D0A3 - Pale Green */
-    --accent-foreground: 180 25% 13%; /* #1A2A2A */
+    --background: 250 30% 12%; /* Deep Indigo */
+    --foreground: 250 20% 85%; /* Light Lavender Gray */
+    --card: 250 30% 17%; /* Slightly Lighter Indigo */
+    --card-foreground: 250 20% 85%;
+    --popover: 250 30% 17%;
+    --popover-foreground: 250 20% 85%;
+    --primary: 220 90% 60%; /* Vibrant Electric Blue */
+    --primary-foreground: 250 10% 10%; /* Very Dark Indigo for text on primary */
+    --secondary: 250 25% 25%; /* Darker Muted Indigo */
+    --secondary-foreground: 250 20% 75%; /* Lighter Muted Indigo */
+    --muted: 250 20% 22%; /* Dark Muted Indigo */
+    --muted-foreground: 250 15% 55%; /* Medium Lavender Gray */
+    --accent: 300 80% 65%; /* Bright Magenta/Pink */
+    --accent-foreground: 300 10% 10%; /* Very Dark Purple for text on accent */
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 180 15% 28%; /* #3D5252 */
-    --input: 180 20% 21%; /* #2A4242 */
-    --ring: 120 30% 76%; /* Pale Green */
+    --border: 250 20% 30%; /* Muted Indigo Border */
+    --input: 250 20% 22%; /* Muted Indigo Input */
+    --ring: 220 90% 60%; /* Vibrant Electric Blue for ring */
     --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --chart-2: 300 60% 55%;
+    --chart-3: 170 50% 50%;
+    --chart-4: 45 80% 60%;
+    --chart-5: 270 60% 70%;
 
-    --sidebar-background: 180 25% 10%;
-    --sidebar-foreground: 180 33% 76.5%;
-    --sidebar-primary: 160 70% 45%;
-    --sidebar-primary-foreground: 160 40% 9%;
-    --sidebar-accent: 120 30% 20%;
-    --sidebar-accent-foreground: 180 33% 76.5%;
-    --sidebar-border: 180 15% 20%;
-    --sidebar-ring: 120 30% 76%;
+    --sidebar-background: 250 30% 10%;
+    --sidebar-foreground: 250 20% 80%;
+    --sidebar-primary: 220 90% 60%;
+    --sidebar-primary-foreground: 250 10% 10%;
+    --sidebar-accent: 300 80% 25%; /* Darker Magenta for sidebar accent */
+    --sidebar-accent-foreground: 250 20% 85%;
+    --sidebar-border: 250 20% 25%;
+    --sidebar-ring: 220 90% 60%;
   }
 }
 
