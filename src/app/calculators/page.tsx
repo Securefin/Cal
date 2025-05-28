@@ -51,6 +51,7 @@ import {
   HandCoins, // Icon for Tip Calculator
   Tag, // Icon for Discount Calculator
   Replace, // Icon for Unit Converter
+  Cake, // Icon for Age Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -137,7 +138,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Discount Calculator", slug: "discount", isImplemented: true, icon: Tag },
       { name: "Unit Converter", slug: "unit-converter", isImplemented: true, icon: Replace },
       { name: "Currency Converter", slug: "currency-converter", isImplemented: true, isAdvanced: true, icon: Landmark },
-      { name: "Age Calculator", slug: "age" },
+      { name: "Age Calculator", slug: "age", isImplemented: true, icon: Cake },
       { name: "Date Difference Calculator", slug: "date-difference" },
       { name: "Time Calculator", slug: "time" },
       { name: "Password Generator", slug: "password-generator" },
