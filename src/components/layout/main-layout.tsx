@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { Lightbulb, Home } from 'lucide-react';
+import { Lightbulb, Home, Calculator } from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
@@ -44,6 +44,12 @@ export function MainLayout({ children }: MainLayoutProps) {
               <SidebarMenuButton href="/ai-suggestions" tooltip="AI Suggestions">
                 <Lightbulb />
                 AI Suggestions
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton href="/calculators" tooltip="Calculators">
+                <Calculator />
+                Calculators
               </SidebarMenuButton>
             </SidebarMenuItem>
             {/* Add other calculator categories here as SidebarMenuItem */}
