@@ -32,13 +32,14 @@ import {
   ShieldCheck, // Icon for FD Calculator
   ReceiptText, // Icon for GST Calculator
   FileText, // Icon for Income Tax Calculator
-  ArrowBigUpDash, // Corrected Icon for Inflation Calculator
+  ArrowBigUpDash, 
   CreditCard, // Icon for Credit Card Payment Calculator
   Activity, // Icon for ROI, Blood Pressure Calculator
   LineChart, // Icon for NPV Calculator
   Scale, // Icon for BMI Calculator
   Flame, // Icon for Calorie Calculator
   CalendarDays, // Icon for Pregnancy Due Date
+  CalendarClock, // Icon for Date Difference
   Droplet, // Icon for Water Intake Calculator
   Footprints, // Icon for Steps to Calorie Calculator
   Dumbbell, // Icon for Muscle Mass Calculator
@@ -139,7 +140,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Unit Converter", slug: "unit-converter", isImplemented: true, icon: Replace },
       { name: "Currency Converter", slug: "currency-converter", isImplemented: true, isAdvanced: true, icon: Landmark },
       { name: "Age Calculator", slug: "age", isImplemented: true, icon: Cake },
-      { name: "Date Difference Calculator", slug: "date-difference" },
+      { name: "Date Difference Calculator", slug: "date-difference", isImplemented: true, icon: CalendarClock },
       { name: "Time Calculator", slug: "time" },
       { name: "Password Generator", slug: "password-generator" },
     ],
