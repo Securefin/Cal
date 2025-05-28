@@ -57,6 +57,7 @@ import {
   KeyRound, // Icon for Password Generator
   ScanLine, // Icon for Barcode Generator
   QrCode, // Icon for QR Code Generator
+  Dice5, // Icon for Random Number Generator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -158,7 +159,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Casio-style Calculator", slug: "casio-style", isImplemented: true, icon: CalculatorIcon }, 
       { name: "Barcode Generator", slug: "barcode-generator", isImplemented: true, icon: ScanLine },
       { name: "QR Code Generator", slug: "qr-code-generator", isImplemented: true, icon: QrCode },
-      { name: "Random Number Generator", slug: "random-number-generator" },
+      { name: "Random Number Generator", slug: "random-number-generator", isImplemented: true, icon: Dice5 },
       { name: "Password Strength Checker", slug: "password-strength-checker" },
       { name: "Math Formula Solver", slug: "math-formula-solver" },
     ],
