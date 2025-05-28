@@ -50,6 +50,7 @@ import {
   Users, // Added for Muscle Mass Calculator inputs if needed elsewhere
   HandCoins, // Icon for Tip Calculator
   Tag, // Icon for Discount Calculator
+  Replace, // Icon for Unit Converter
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -134,7 +135,7 @@ const calculatorCategories: CalculatorCategory[] = [
     calculators: [
       { name: "Tip Calculator", slug: "tip", isImplemented: true, icon: HandCoins },
       { name: "Discount Calculator", slug: "discount", isImplemented: true, icon: Tag },
-      { name: "Unit Converter", slug: "unit-converter" },
+      { name: "Unit Converter", slug: "unit-converter", isImplemented: true, icon: Replace },
       { name: "Currency Converter", slug: "currency-converter" },
       { name: "Age Calculator", slug: "age" },
       { name: "Date Difference Calculator", slug: "date-difference" },
