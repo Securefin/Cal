@@ -15,8 +15,9 @@ import {
   FlaskConical,
   Sparkles,
   Wand2,
-  Calculator as CalculatorIcon, // Renamed to avoid conflict if Calculator is used elsewhere
+  Calculator as CalculatorIcon, 
   ChevronRight,
+  Percent,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -24,6 +25,7 @@ interface CalculatorItem {
   name: string;
   slug: string;
   isImplemented?: boolean;
+  icon?: LucideIcon;
 }
 
 interface CalculatorCategory {
@@ -37,9 +39,9 @@ const calculatorCategories: CalculatorCategory[] = [
     name: "Basic Math Calculators",
     icon: Sigma,
     calculators: [
-      { name: "Basic Calculator", slug: "basic", isImplemented: true },
-      { name: "Scientific Calculator", slug: "scientific" },
-      { name: "Percentage Calculator", slug: "percentage" },
+      { name: "Basic Calculator", slug: "basic", isImplemented: true, icon: CalculatorIcon },
+      { name: "Scientific Calculator", slug: "scientific", icon: CalculatorIcon },
+      { name: "Percentage Calculator", slug: "percentage", isImplemented: true, icon: Percent },
       { name: "Average Calculator", slug: "average" },
       { name: "Ratio Calculator", slug: "ratio" },
       { name: "Fraction Calculator", slug: "fraction" },
@@ -151,13 +153,20 @@ export default function CalculatorsPage() {
               </CardHeader>
               <CardContent className="pt-4 flex-grow">
                 <ul className="space-y-2">
-                  {category.calculators.map((calc) => (
+                  {category.calculators.map((calc) => {
+                    const CalcItemIcon = calc.icon;
+                    return (
                     <li key={calc.slug}>
                       <Link
                         href={calc.isImplemented ? `/calculators/${calc.slug}` : `#`}
                         className={`flex items-center justify-between p-2 rounded-md hover:bg-accent/50 transition-colors group ${!calc.isImplemented ? 'cursor-not-allowed opacity-70' : ''}`}
+                        aria-disabled={!calc.isImplemented}
+                        tabIndex={!calc.isImplemented ? -1 : undefined}
                       >
-                        <span className="text-foreground/90 group-hover:text-primary">{calc.name}</span>
+                        <div className="flex items-center">
+                          {CalcItemIcon && <CalcItemIcon className="mr-2 h-4 w-4 text-muted-foreground group-hover:text-primary" />}
+                          <span className="text-foreground/90 group-hover:text-primary">{calc.name}</span>
+                        </div>
                         <div className="flex items-center space-x-2">
                           {!calc.isImplemented && (
                             <Badge variant="outline" className="text-xs border-accent text-accent group-hover:bg-accent group-hover:text-accent-foreground">
@@ -168,7 +177,8 @@ export default function CalculatorsPage() {
                         </div>
                       </Link>
                     </li>
-                  ))}
+                  )}
+                  )}
                 </ul>
               </CardContent>
             </Card>
