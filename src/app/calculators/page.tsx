@@ -32,7 +32,8 @@ import {
   ShieldCheck, // Icon for FD Calculator
   ReceiptText, // Icon for GST Calculator
   FileText, // Icon for Income Tax Calculator
-  ArrowUpCircle, // Icon for Inflation Calculator
+  ArrowUpCircle, // Icon for Inflation Calculator -> Renamed to ArrowBigUpDash later
+  ArrowBigUpDash, // Corrected Icon for Inflation Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -75,8 +76,8 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Public Provident Fund (PPF) Calculator", slug: "ppf", isImplemented: true, icon: PiggyBank },
       { name: "Fixed Deposit (FD) Calculator", slug: "fd", isImplemented: true, icon: ShieldCheck },
       { name: "GST Calculator", slug: "gst", isImplemented: true, icon: ReceiptText },
-      { name: "Income Tax Calculator", slug: "income-tax", isImplemented: false, icon: FileText },
-      { name: "Inflation Calculator", slug: "inflation", isImplemented: true, icon: ArrowUpCircle },
+      { name: "Income Tax Calculator", slug: "income-tax", isImplemented: true, icon: FileText },
+      { name: "Inflation Calculator", slug: "inflation", isImplemented: true, icon: ArrowBigUpDash }, // Changed from ArrowUpCircle
       { name: "Credit Card Payment Calculator", slug: "credit-card-payment" },
       { name: "ROI (Return on Investment) Calculator", slug: "roi" },
       { name: "NPV (Net Present Value) Calculator", slug: "npv" },
@@ -203,5 +204,4 @@ export default function CalculatorsPage() {
     </div>
   );
 }
-
     
