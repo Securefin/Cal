@@ -43,8 +43,9 @@ import {
   Footprints, // Icon for Steps to Calorie Calculator
   Dumbbell, // Icon for Muscle Mass Calculator
   Spline, // Icon for Graphing Calculator
-  Grid3x3, // Icon for Matrix Calculator page title
+  Grid3x3, // Icon for Matrix page title
   LayoutGrid, // Icon for Matrix Calculator in the list
+  Zap, // Icon for Electricity Calculator
   Users, // Added for Muscle Mass Calculator inputs if needed elsewhere
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -118,7 +119,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Graphing Calculator", slug: "graphing", isImplemented: true, isAdvanced: true, icon: Spline },
       { name: "Matrix Calculator", slug: "matrix", isImplemented: true, icon: LayoutGrid },
       { name: "Chemistry Molar Mass Calculator", slug: "chemistry-molar-mass", isImplemented: true, icon: FlaskConical },
-      { name: "Electricity Calculator", slug: "electricity" },
+      { name: "Electricity Calculator", slug: "electricity", isImplemented: true, icon: Zap },
       { name: "Ohm's Law Calculator", slug: "ohms-law" },
       { name: "Wavelength Calculator", slug: "wavelength" },
       { name: "Binary/Hexadecimal Calculator", slug: "binary-hexadecimal" },
