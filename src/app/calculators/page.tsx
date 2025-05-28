@@ -29,6 +29,7 @@ import {
   Banknote, // Icon for Loan EMI Calculator
   TrendingUp, // Icon for SIP Calculator
   PiggyBank, // Icon for PPF Calculator
+  ShieldCheck, // Icon for FD Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -69,7 +70,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Loan EMI Calculator", slug: "loan-emi", isImplemented: true, icon: Banknote },
       { name: "SIP (Mutual Fund) Calculator", slug: "sip", isImplemented: true, icon: TrendingUp },
       { name: "Public Provident Fund (PPF) Calculator", slug: "ppf", isImplemented: true, icon: PiggyBank },
-      { name: "Fixed Deposit (FD) Calculator", slug: "fd" },
+      { name: "Fixed Deposit (FD) Calculator", slug: "fd", isImplemented: true, icon: ShieldCheck },
       { name: "GST Calculator", slug: "gst" },
       { name: "Income Tax Calculator", slug: "income-tax" },
       { name: "Inflation Calculator", slug: "inflation" },
