@@ -48,6 +48,7 @@ import {
   Zap, // Icon for Electricity Calculator, Ohm's Law
   Signal, // Icon for Wavelength Calculator
   Users, // Added for Muscle Mass Calculator inputs if needed elsewhere
+  HandCoins, // Icon for Tip Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -130,7 +131,7 @@ const calculatorCategories: CalculatorCategory[] = [
     name: "Everyday Life Calculators",
     icon: Sparkles,
     calculators: [
-      { name: "Tip Calculator", slug: "tip" },
+      { name: "Tip Calculator", slug: "tip", isImplemented: true, icon: HandCoins },
       { name: "Discount Calculator", slug: "discount" },
       { name: "Unit Converter", slug: "unit-converter" },
       { name: "Currency Converter", slug: "currency-converter" },
