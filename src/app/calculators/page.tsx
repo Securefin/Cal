@@ -151,7 +151,7 @@ const calculatorCategories: CalculatorCategory[] = [
     name: "Advanced & Special Tools",
     icon: Wand2,
     calculators: [
-      { name: "Function Graph Plotter", slug: "function-graph-plotter" },
+      { name: "Function Graph Plotter", slug: "graphing", isImplemented: true, isAdvanced: true, icon: Spline },
       { name: "Casio-style Calculator", slug: "casio-style" },
       { name: "Barcode Generator", slug: "barcode-generator" },
       { name: "QR Code Generator", slug: "qr-code-generator" },
