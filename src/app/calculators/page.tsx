@@ -37,6 +37,9 @@ import {
   Activity, // Icon for ROI Calculator
   LineChart, // Icon for NPV Calculator
   Scale, // Icon for BMI Calculator
+  User, // Placeholder for Age/BMR related
+  Ruler, // Placeholder for height
+  Weight, // Placeholder for weight
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -91,7 +94,7 @@ const calculatorCategories: CalculatorCategory[] = [
     icon: HeartPulse,
     calculators: [
       { name: "BMI (Body Mass Index) Calculator", slug: "bmi", isImplemented: true, icon: Scale },
-      { name: "BMR (Basal Metabolic Rate) Calculator", slug: "bmr", icon: HeartPulse },
+      { name: "BMR (Basal Metabolic Rate) Calculator", slug: "bmr", isImplemented: true, icon: HeartPulse },
       { name: "Calorie Calculator", slug: "calorie", icon: CalculatorIcon }, // Placeholder icon
       { name: "Pregnancy Due Date Calculator", slug: "pregnancy-due-date", icon: CalendarDays }, // Placeholder icon
       { name: "Blood Pressure Calculator", slug: "blood-pressure", icon: Activity }, // Placeholder icon
