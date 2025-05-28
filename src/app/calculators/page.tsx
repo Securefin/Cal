@@ -40,7 +40,7 @@ import {
   Flame, // Icon for Calorie Calculator
   CalendarDays, // Icon for Pregnancy Due Date
   Droplet, // Icon for Water Intake Calculator
-  Footprints,
+  Footprints, // Icon for Steps to Calorie Calculator
   Dumbbell,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -101,7 +101,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Pregnancy Due Date Calculator", slug: "pregnancy-due-date", isImplemented: true, icon: CalendarDays },
       { name: "Blood Pressure Calculator", slug: "blood-pressure", isImplemented: true, icon: Activity },
       { name: "Water Intake Calculator", slug: "water-intake", isImplemented: true, icon: Droplet },
-      { name: "Steps to Calorie Calculator", slug: "steps-to-calorie", icon: Footprints },
+      { name: "Steps to Calorie Calculator", slug: "steps-to-calorie", isImplemented: true, icon: Footprints },
       { name: "Muscle Mass Calculator", slug: "muscle-mass", icon: Dumbbell },
     ],
   },
