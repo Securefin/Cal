@@ -110,7 +110,7 @@ const calculatorCategories: CalculatorCategory[] = [
     name: "Engineering & Science Calculators",
     icon: FlaskConical,
     calculators: [
-      { name: "Scientific Notation Calculator", slug: "scientific-notation" },
+      { name: "Scientific Notation Calculator", slug: "scientific-notation", isImplemented: true, icon: Atom },
       { name: "Graphing Calculator", slug: "graphing" },
       { name: "Matrix Calculator", slug: "matrix" },
       { name: "Chemistry Molar Mass Calculator", slug: "molar-mass" },
