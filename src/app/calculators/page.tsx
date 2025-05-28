@@ -29,7 +29,7 @@ import {
   Banknote, // Icon for Loan EMI Calculator
   TrendingUp, // Icon for SIP Calculator
   PiggyBank, // Icon for PPF Calculator
-  ShieldCheck, // Icon for FD Calculator
+  ShieldCheck, // Icon for FD Calculator, Password Strength Page Title
   ReceiptText, // Icon for GST Calculator
   FileText, // Icon for Income Tax Calculator
   ArrowBigUpDash, 
@@ -58,6 +58,7 @@ import {
   ScanLine, // Icon for Barcode Generator
   QrCode, // Icon for QR Code Generator
   Dice5, // Icon for Random Number Generator
+  LockKeyhole, // Icon for Password Strength Checker in list
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -160,7 +161,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Barcode Generator", slug: "barcode-generator", isImplemented: true, icon: ScanLine },
       { name: "QR Code Generator", slug: "qr-code-generator", isImplemented: true, icon: QrCode },
       { name: "Random Number Generator", slug: "random-number-generator", isImplemented: true, icon: Dice5 },
-      { name: "Password Strength Checker", slug: "password-strength-checker" },
+      { name: "Password Strength Checker", slug: "password-strength-checker", isImplemented: true, icon: LockKeyhole },
       { name: "Math Formula Solver", slug: "math-formula-solver" },
     ],
   },
