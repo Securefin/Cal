@@ -2,6 +2,12 @@
 import { OhmsLawCalculator } from "./components/ohms-law-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Zap } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Ohm's Law Calculator (V=IR) - CalcPro",
+  description: "Calculate Voltage (V), Current (I), or Resistance (R) using Ohm's Law. Enter any two values to find the third automatically.",
+};
 
 export default function OhmsLawCalculatorPage() {
   return (

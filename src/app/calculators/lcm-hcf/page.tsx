@@ -2,6 +2,12 @@
 import { LcmHcfCalculator } from "./components/lcm-hcf-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Layers } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'LCM & HCF Calculator - CalcPro',
+  description: 'Calculate the Least Common Multiple (LCM) and Highest Common Factor (HCF/GCD) of two numbers easily with our online tool.',
+};
 
 export default function LcmHcfCalculatorPage() {
   return (

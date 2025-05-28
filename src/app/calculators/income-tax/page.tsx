@@ -1,7 +1,13 @@
 
 import { IncomeTaxCalculatorIndia } from "./components/income-tax-calculator-india";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, IndianRupee } from "lucide-react";
+import { FileText } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Income Tax Calculator (India, New Regime AY 2025-26) - CalcPro',
+  description: 'Estimate your income tax liability in India under the New Tax Regime for Assessment Year 2025-26 (Financial Year 2024-25).',
+};
 
 export default function IncomeTaxCalculatorPage() {
   return (

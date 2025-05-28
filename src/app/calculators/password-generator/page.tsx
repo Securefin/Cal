@@ -2,6 +2,12 @@
 import { PasswordGenerator } from "./components/password-generator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { KeyRound } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Password Generator - CalcPro',
+  description: 'Create strong, secure, and random passwords based on customizable options like length, and inclusion of uppercase, lowercase, numbers, and symbols.',
+};
 
 export default function PasswordGeneratorPage() {
   return (

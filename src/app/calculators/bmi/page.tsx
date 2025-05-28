@@ -2,6 +2,12 @@
 import { BmiCalculator } from "./components/bmi-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Scale } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'BMI Calculator (Metric) - CalcPro',
+  description: 'Calculate your Body Mass Index (BMI) using your weight in kilograms and height in centimeters. Understand your BMI category.',
+};
 
 export default function BmiCalculatorPage() {
   return (

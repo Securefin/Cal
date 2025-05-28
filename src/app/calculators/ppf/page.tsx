@@ -2,6 +2,12 @@
 import { PpfCalculator } from "./components/ppf-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PiggyBank } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'PPF Calculator - CalcPro',
+  description: 'Estimate the maturity value and interest earned on your Public Provident Fund (PPF) investments with our PPF calculator.',
+};
 
 export default function PpfCalculatorPage() {
   return (

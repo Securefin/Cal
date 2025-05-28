@@ -2,6 +2,12 @@
 import { LogarithmCalculator } from "./components/logarithm-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target } from "lucide-react"; // Using Target icon
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Logarithm Calculator - CalcPro',
+  description: 'Calculate natural log (ln), common log (log base 10), or logarithm to a custom base with this versatile logarithm tool.',
+};
 
 export default function LogarithmCalculatorPage() {
   return (

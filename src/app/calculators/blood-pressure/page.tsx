@@ -2,6 +2,12 @@
 import { BloodPressureCalculator } from "./components/blood-pressure-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Activity } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blood Pressure Calculator - CalcPro',
+  description: 'Enter your systolic and diastolic blood pressure readings to understand your category based on general guidelines. Informational purposes only.',
+};
 
 export default function BloodPressureCalculatorPage() {
   return (

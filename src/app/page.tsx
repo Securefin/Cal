@@ -1,7 +1,14 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Lightbulb, Calculator } from "lucide-react";
 import Link from "next/link";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'CalcPro - Your Ultimate Suite of Advanced Calculators',
+  description: 'Welcome to CalcPro! Explore a wide range of calculators for math, finance, health, science, and everyday needs. Simplify your calculations today.',
+};
 
 export default function HomePage() {
   return (

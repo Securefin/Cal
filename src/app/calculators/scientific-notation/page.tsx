@@ -2,6 +2,12 @@
 import { ScientificNotationCalculator } from "./components/scientific-notation-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Atom } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Scientific Notation Calculator - CalcPro',
+  description: 'Convert numbers to and from scientific notation (e.g., 1.23e+4 or 1.23 x 10^4) and standard decimal format easily.',
+};
 
 export default function ScientificNotationCalculatorPage() {
   return (

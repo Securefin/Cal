@@ -2,6 +2,12 @@
 import { FdCalculator } from "./components/fd-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShieldCheck } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Fixed Deposit (FD) Calculator - CalcPro',
+  description: 'Calculate the maturity value and total interest earned on your Fixed Deposit (FD) based on principal, rate, tenure, and compounding frequency.',
+};
 
 export default function FdCalculatorPage() {
   return (

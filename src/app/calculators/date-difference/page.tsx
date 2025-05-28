@@ -2,6 +2,12 @@
 import { DateDifferenceCalculator } from "./components/date-difference-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarClock } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Date Difference Calculator - CalcPro',
+  description: 'Calculate the duration between two dates. See the difference in years, months, days, and the total number of days.',
+};
 
 export default function DateDifferenceCalculatorPage() {
   return (

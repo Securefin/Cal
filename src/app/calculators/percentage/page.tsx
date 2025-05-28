@@ -2,6 +2,12 @@
 import { PercentageCalculator } from "./components/percentage-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Percent } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Percentage Calculator - CalcPro',
+  description: 'Easily calculate percentages: find X% of Y, determine what percentage X is of Y, or calculate percentage increase/decrease.',
+};
 
 export default function PercentageCalculatorPage() {
   return (

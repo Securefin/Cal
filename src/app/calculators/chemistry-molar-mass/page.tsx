@@ -2,6 +2,12 @@
 import { ChemistryMolarMassCalculator } from "./components/chemistry-molar-mass-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FlaskConical } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Molar Mass Calculator - CalcPro',
+  description: 'Calculate the molar mass of a chemical compound (e.g., H2O, C6H12O6) by entering its formula. Uses standard atomic weights.',
+};
 
 export default function ChemistryMolarMassCalculatorPage() {
   return (

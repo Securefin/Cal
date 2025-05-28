@@ -2,6 +2,12 @@
 import { RatioCalculator } from "./components/ratio-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Ratio } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Ratio Calculator - CalcPro',
+  description: 'Solve for an unknown value in a proportion (A : B = C : D). Enter any three values to calculate the fourth.',
+};
 
 export default function RatioCalculatorPage() {
   return (

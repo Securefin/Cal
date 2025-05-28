@@ -2,6 +2,12 @@
 import { RoiCalculator } from "./components/roi-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Activity } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'ROI Calculator - CalcPro',
+  description: 'Calculate your Return on Investment (ROI) to evaluate the profitability and efficiency of an investment. See net profit and ROI percentage.',
+};
 
 export default function RoiCalculatorPage() {
   return (

@@ -2,6 +2,12 @@
 import { CreditCardPaymentCalculator } from "./components/credit-card-payment-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CreditCard } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Credit Card Payment Calculator - CalcPro',
+  description: 'Estimate how long it will take to pay off your credit card balance and the total interest paid based on your monthly payments.',
+};
 
 export default function CreditCardPaymentCalculatorPage() {
   return (

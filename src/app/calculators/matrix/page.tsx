@@ -2,6 +2,12 @@
 import { MatrixCalculator } from "./components/matrix-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Grid3x3 } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Matrix Calculator - CalcPro',
+  description: 'Perform basic matrix operations: Addition, Subtraction, and Multiplication. Define matrix dimensions and enter elements to calculate results.',
+};
 
 export default function MatrixCalculatorPage() {
   return (

@@ -2,6 +2,12 @@
 import { LoanEmiCalculator } from "./components/loan-emi-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Banknote } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Loan EMI Calculator - CalcPro',
+  description: 'Calculate your Equated Monthly Installment (EMI) for loans. See total interest and total payment for home, car, or personal loans.',
+};
 
 export default function LoanEmiCalculatorPage() {
   return (

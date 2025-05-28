@@ -2,6 +2,12 @@
 import { ScientificCalculator } from "./components/scientific-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Atom } from "lucide-react"; // Using Atom icon for Scientific Calculator
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Scientific Calculator - CalcPro',
+  description: 'Perform advanced mathematical and scientific calculations including trigonometric functions, logarithms, powers, roots, and factorials.',
+};
 
 export default function ScientificCalculatorPage() {
   return (

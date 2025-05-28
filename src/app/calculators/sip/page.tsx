@@ -2,6 +2,12 @@
 import { SipCalculator } from "./components/sip-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'SIP Calculator - CalcPro',
+  description: 'Estimate the future value of your Systematic Investment Plan (SIP) in mutual funds. Calculate total investment, returns, and maturity amount.',
+};
 
 export default function SipCalculatorPage() {
   return (

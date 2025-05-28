@@ -2,6 +2,12 @@
 import { QrCodeGenerator } from "./components/qr-code-generator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { QrCode } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'QR Code Generator - CalcPro',
+  description: 'Create custom QR codes online for URLs, text, contact information, and more. Download your QR code as a PNG image.',
+};
 
 export default function QrCodeGeneratorPage() {
   return (

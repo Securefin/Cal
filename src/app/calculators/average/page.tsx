@@ -2,6 +2,12 @@
 import { AverageCalculator } from "./components/average-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Hash } from "lucide-react"; // Using Hash as a generic math icon
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Average Calculator - CalcPro',
+  description: 'Calculate the average (mean) of a list of numbers. Add numbers one by one and get the result instantly.',
+};
 
 export default function AverageCalculatorPage() {
   return (

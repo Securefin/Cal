@@ -2,6 +2,12 @@
 import { GraphingCalculator } from "./components/graphing-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Spline } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Graphing Calculator (Basic) - CalcPro',
+  description: 'Plot mathematical functions of x. Visualize equations like Math.sin(x) or x*x on a 2D graph. Basic version.',
+};
 
 export default function GraphingCalculatorPage() {
   return (

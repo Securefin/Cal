@@ -2,6 +2,12 @@
 import { MuscleMassCalculator } from "./components/muscle-mass-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dumbbell } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Muscle Mass & Body Fat Calculator - CalcPro',
+  description: 'Estimate your Body Fat Percentage (BFP) and Lean Body Mass (LBM) using circumference measurements (U.S. Navy method).',
+};
 
 export default function MuscleMassCalculatorPage() {
   return (

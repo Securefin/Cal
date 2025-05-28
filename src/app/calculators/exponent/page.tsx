@@ -2,6 +2,12 @@
 import { ExponentCalculator } from "./components/exponent-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Baseline } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Exponent Calculator - CalcPro',
+  description: 'Calculate the result of a base number raised to an exponent (power). Handles positive, negative, and decimal values.',
+};
 
 export default function ExponentCalculatorPage() {
   return (

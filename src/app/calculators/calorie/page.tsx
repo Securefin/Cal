@@ -2,6 +2,12 @@
 import { CalorieCalculator } from "./components/calorie-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Flame } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Daily Calorie Calculator (TDEE) - CalcPro',
+  description: 'Estimate your Total Daily Energy Expenditure (TDEE) based on BMR and activity level. Find maintenance calories and goals for weight management.',
+};
 
 export default function CalorieCalculatorPage() {
   return (
@@ -32,5 +38,3 @@ export default function CalorieCalculatorPage() {
     </div>
   );
 }
-
-    

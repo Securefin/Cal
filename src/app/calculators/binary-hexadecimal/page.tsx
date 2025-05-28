@@ -2,6 +2,12 @@
 import { BinaryHexadecimalCalculator } from "./components/binary-hexadecimal-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Binary } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Binary/Decimal/Hexadecimal Converter - CalcPro',
+  description: 'Convert numbers between binary, decimal, and hexadecimal systems. Enter a value in one base to see its equivalents in others.',
+};
 
 export default function BinaryHexadecimalCalculatorPage() {
   return (

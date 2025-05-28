@@ -2,6 +2,12 @@
 import { ModuloCalculator } from "./components/modulo-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Percent } from "lucide-react"; // Using Percent icon as it's the modulo operator symbol
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Modulo Calculator - CalcPro',
+  description: 'Find the remainder of a division operation (dividend % divisor) with our simple modulo calculator.',
+};
 
 export default function ModuloCalculatorPage() {
   return (

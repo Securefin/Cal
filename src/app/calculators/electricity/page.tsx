@@ -2,6 +2,12 @@
 import { ElectricityCostCalculator } from "./components/electricity-cost-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Zap } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Appliance Electricity Cost Calculator - CalcPro',
+  description: 'Estimate the monthly cost of running an electrical appliance based on its power (Watts), usage hours, and electricity price per kWh.',
+};
 
 export default function ElectricityCalculatorPage() {
   return (

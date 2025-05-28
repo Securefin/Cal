@@ -2,6 +2,12 @@
 import { WavelengthCalculator } from "./components/wavelength-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Signal } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Wavelength & Frequency Calculator (Light) - CalcPro',
+  description: "Calculate wavelength (meters) or frequency (Hertz) of electromagnetic waves using the speed of light (c = λf). Input one value to find the other.",
+};
 
 export default function WavelengthCalculatorPage() {
   return (

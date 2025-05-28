@@ -2,6 +2,12 @@
 import { WaterIntakeCalculator } from "./components/water-intake-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Droplet } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Water Intake Calculator - CalcPro',
+  description: 'Estimate your daily water intake needs in liters based on your weight and activity level. Stay hydrated!',
+};
 
 export default function WaterIntakeCalculatorPage() {
   return (

@@ -2,6 +2,12 @@
 import { CurrencyConverter } from "./components/currency-converter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Landmark } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Currency Converter (Demo) - CalcPro',
+  description: 'Convert between major currencies (USD, EUR, GBP, JPY, INR) using sample exchange rates. For demonstration purposes only.',
+};
 
 export default function CurrencyConverterPage() {
   return (

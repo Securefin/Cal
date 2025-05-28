@@ -2,6 +2,12 @@
 import { TipCalculator } from "./components/tip-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { HandCoins } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Tip Calculator - CalcPro',
+  description: 'Easily calculate the tip amount, total bill, and amount per person when dining out or for any service. Supports custom tip percentages.',
+};
 
 export default function TipCalculatorPage() {
   return (

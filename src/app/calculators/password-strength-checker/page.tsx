@@ -2,6 +2,12 @@
 import { PasswordStrengthChecker } from "./components/password-strength-checker";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShieldCheck } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Password Strength Checker - CalcPro',
+  description: 'Analyze the strength of your password in real-time. Get feedback on length, character types (uppercase, lowercase, numbers, symbols) and tips.',
+};
 
 export default function PasswordStrengthCheckerPage() {
   return (

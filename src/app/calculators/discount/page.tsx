@@ -2,6 +2,12 @@
 import { DiscountCalculator } from "./components/discount-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tag } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Discount Calculator - CalcPro',
+  description: 'Calculate the final price after a discount and see how much you save. Enter original price and discount percentage.',
+};
 
 export default function DiscountCalculatorPage() {
   return (

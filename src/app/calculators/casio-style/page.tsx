@@ -2,6 +2,12 @@
 import { ScientificCalculator } from "@/app/calculators/scientific/components/scientific-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator as CalculatorIcon } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Casio-style Scientific Calculator - CalcPro',
+  description: 'A comprehensive scientific calculator featuring functions commonly found on Casio models, including trig, logs, powers, and more.',
+};
 
 export default function CasioStyleCalculatorPage() {
   return (

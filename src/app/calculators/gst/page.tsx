@@ -2,6 +2,12 @@
 import { GstCalculator } from "./components/gst-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ReceiptText } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'GST Calculator - CalcPro',
+  description: 'Calculate Goods and Services Tax (GST) by either adding GST to a net amount or removing GST from a gross amount for various GST rates.',
+};
 
 export default function GstCalculatorPage() {
   return (

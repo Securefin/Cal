@@ -1,6 +1,13 @@
+
 import { SuggestionForm } from "./components/suggestion-form";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Lightbulb } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Function Suggester - CalcPro',
+  description: "Describe your calculation problem or what you're trying to achieve, and our AI will suggest a relevant function or formula.",
+};
 
 export default function AISuggestionsPage() {
   return (

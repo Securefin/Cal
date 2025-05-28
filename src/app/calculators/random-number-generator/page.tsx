@@ -2,6 +2,12 @@
 import { RandomNumberGenerator } from "./components/random-number-generator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dice5 } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Random Number Generator - CalcPro',
+  description: 'Generate random integers within a specified range (min/max). Choose how many random numbers you need.',
+};
 
 export default function RandomNumberGeneratorPage() {
   return (

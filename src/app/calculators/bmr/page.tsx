@@ -2,6 +2,12 @@
 import { BmrCalculator } from "./components/bmr-calculator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeartPulse } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'BMR Calculator (Mifflin-St Jeor) - CalcPro',
+  description: 'Estimate your Basal Metabolic Rate (BMR) - the number of calories your body burns at rest, using the Mifflin-St Jeor Equation.',
+};
 
 export default function BmrCalculatorPage() {
   return (

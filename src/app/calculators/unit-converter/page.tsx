@@ -2,6 +2,12 @@
 import { UnitConverter } from "./components/unit-converter";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Replace } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Unit Converter (Length) - CalcPro',
+  description: 'Convert between various length units: meters, kilometers, miles, feet, inches, centimeters, millimeters, and yards. More units coming soon.',
+};
 
 export default function UnitConverterPage() {
   return (

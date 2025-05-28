@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import type { Metadata } from 'next';
 import {
   Card,
   CardContent,
@@ -61,6 +62,11 @@ import {
   LockKeyhole, // Icon for Password Strength Checker in list
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: 'Explore Calculators - CalcPro',
+  description: 'Browse our comprehensive suite of calculators, organized by category: Basic Math, Financial, Health & Fitness, Engineering & Science, and more.',
+};
 
 interface CalculatorItem {
   name: string;
