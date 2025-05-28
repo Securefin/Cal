@@ -36,6 +36,7 @@ import {
   CreditCard, // Icon for Credit Card Payment Calculator
   Activity, // Icon for ROI Calculator
   LineChart, // Icon for NPV Calculator
+  Scale, // Icon for BMI Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -89,14 +90,14 @@ const calculatorCategories: CalculatorCategory[] = [
     name: "Health & Fitness Calculators",
     icon: HeartPulse,
     calculators: [
-      { name: "BMI (Body Mass Index) Calculator", slug: "bmi" },
-      { name: "BMR (Basal Metabolic Rate) Calculator", slug: "bmr" },
-      { name: "Calorie Calculator", slug: "calorie" },
-      { name: "Pregnancy Due Date Calculator", slug: "pregnancy-due-date" },
-      { name: "Blood Pressure Calculator", slug: "blood-pressure" },
-      { name: "Water Intake Calculator", slug: "water-intake" },
-      { name: "Steps to Calorie Calculator", slug: "steps-to-calorie" },
-      { name: "Muscle Mass Calculator", slug: "muscle-mass" },
+      { name: "BMI (Body Mass Index) Calculator", slug: "bmi", isImplemented: true, icon: Scale },
+      { name: "BMR (Basal Metabolic Rate) Calculator", slug: "bmr", icon: HeartPulse },
+      { name: "Calorie Calculator", slug: "calorie", icon: CalculatorIcon }, // Placeholder icon
+      { name: "Pregnancy Due Date Calculator", slug: "pregnancy-due-date", icon: CalendarDays }, // Placeholder icon
+      { name: "Blood Pressure Calculator", slug: "blood-pressure", icon: Activity }, // Placeholder icon
+      { name: "Water Intake Calculator", slug: "water-intake", icon: Droplet }, // Placeholder icon
+      { name: "Steps to Calorie Calculator", slug: "steps-to-calorie", icon: Footprints }, // Placeholder icon
+      { name: "Muscle Mass Calculator", slug: "muscle-mass", icon: Dumbbell }, // Placeholder icon
     ],
   },
   {
@@ -141,6 +142,12 @@ const calculatorCategories: CalculatorCategory[] = [
     ],
   },
 ];
+
+// Helper to import Lucide icons that might not be used above, if they are only in the array.
+// This is just to satisfy type-checking and avoid unused import errors if we add icons directly to the array.
+import { CalendarDays, Droplet, Footprints, Dumbbell } from 'lucide-react';
+const _unusedIcons = { CalendarDays, Droplet, Footprints, Dumbbell };
+
 
 export default function CalculatorsPage() {
   return (
