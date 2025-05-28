@@ -1,8 +1,13 @@
 
-import { GraphingCalculator } from "./components/graphing-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Spline } from "lucide-react";
 import type { Metadata } from 'next';
+
+const GraphingCalculator = dynamic(() => import('./components/graphing-calculator').then(mod => mod.GraphingCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Graphing Calculator (Basic) - CalcPro',

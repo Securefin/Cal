@@ -1,8 +1,13 @@
 
-import { QrCodeGenerator } from "./components/qr-code-generator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { QrCode } from "lucide-react";
 import type { Metadata } from 'next';
+
+const QrCodeGenerator = dynamic(() => import('./components/qr-code-generator').then(mod => mod.QrCodeGenerator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'QR Code Generator - CalcPro',

@@ -1,8 +1,13 @@
 
-import { OhmsLawCalculator } from "./components/ohms-law-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Zap } from "lucide-react";
 import type { Metadata } from 'next';
+
+const OhmsLawCalculator = dynamic(() => import('./components/ohms-law-calculator').then(mod => mod.OhmsLawCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: "Ohm's Law Calculator (V=IR) - CalcPro",

@@ -1,8 +1,13 @@
 
-import { IncomeTaxCalculatorIndia } from "./components/income-tax-calculator-india";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText } from "lucide-react";
 import type { Metadata } from 'next';
+
+const IncomeTaxCalculatorIndia = dynamic(() => import('./components/income-tax-calculator-india').then(mod => mod.IncomeTaxCalculatorIndia), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Income Tax Calculator (India, New Regime AY 2025-26) - CalcPro',

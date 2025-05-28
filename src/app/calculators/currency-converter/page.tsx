@@ -1,8 +1,13 @@
 
-import { CurrencyConverter } from "./components/currency-converter";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Landmark } from "lucide-react";
 import type { Metadata } from 'next';
+
+const CurrencyConverter = dynamic(() => import('./components/currency-converter').then(mod => mod.CurrencyConverter), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Currency Converter (Demo) - CalcPro',

@@ -1,8 +1,13 @@
 
-import { PpfCalculator } from "./components/ppf-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PiggyBank } from "lucide-react";
 import type { Metadata } from 'next';
+
+const PpfCalculator = dynamic(() => import('./components/ppf-calculator').then(mod => mod.PpfCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'PPF Calculator - CalcPro',

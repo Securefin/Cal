@@ -1,8 +1,13 @@
 
-import { ScientificNotationCalculator } from "./components/scientific-notation-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Atom } from "lucide-react";
 import type { Metadata } from 'next';
+
+const ScientificNotationCalculator = dynamic(() => import('./components/scientific-notation-calculator').then(mod => mod.ScientificNotationCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Scientific Notation Calculator - CalcPro',

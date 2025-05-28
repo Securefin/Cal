@@ -1,8 +1,13 @@
 
-import { ScientificCalculator } from "@/app/calculators/scientific/components/scientific-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator as CalculatorIcon } from "lucide-react";
 import type { Metadata } from 'next';
+
+const ScientificCalculator = dynamic(() => import('@/app/calculators/scientific/components/scientific-calculator').then(mod => mod.ScientificCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Casio-style Scientific Calculator - CalcPro',

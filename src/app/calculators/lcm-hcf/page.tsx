@@ -1,8 +1,13 @@
 
-import { LcmHcfCalculator } from "./components/lcm-hcf-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Layers } from "lucide-react";
 import type { Metadata } from 'next';
+
+const LcmHcfCalculator = dynamic(() => import('./components/lcm-hcf-calculator').then(mod => mod.LcmHcfCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'LCM & HCF Calculator - CalcPro',

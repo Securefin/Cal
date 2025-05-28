@@ -1,8 +1,13 @@
 
-import { TipCalculator } from "./components/tip-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { HandCoins } from "lucide-react";
 import type { Metadata } from 'next';
+
+const TipCalculator = dynamic(() => import('./components/tip-calculator').then(mod => mod.TipCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Tip Calculator - CalcPro',

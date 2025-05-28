@@ -1,8 +1,13 @@
 
-import { LogarithmCalculator } from "./components/logarithm-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target } from "lucide-react"; // Using Target icon
 import type { Metadata } from 'next';
+
+const LogarithmCalculator = dynamic(() => import('./components/logarithm-calculator').then(mod => mod.LogarithmCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Logarithm Calculator - CalcPro',

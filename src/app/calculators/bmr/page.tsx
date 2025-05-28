@@ -1,8 +1,13 @@
 
-import { BmrCalculator } from "./components/bmr-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeartPulse } from "lucide-react";
 import type { Metadata } from 'next';
+
+const BmrCalculator = dynamic(() => import('./components/bmr-calculator').then(mod => mod.BmrCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'BMR Calculator (Mifflin-St Jeor) - CalcPro',

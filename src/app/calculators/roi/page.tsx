@@ -1,8 +1,13 @@
 
-import { RoiCalculator } from "./components/roi-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Activity } from "lucide-react";
 import type { Metadata } from 'next';
+
+const RoiCalculator = dynamic(() => import('./components/roi-calculator').then(mod => mod.RoiCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'ROI Calculator - CalcPro',

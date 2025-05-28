@@ -1,8 +1,13 @@
 
-import { ElectricityCostCalculator } from "./components/electricity-cost-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Zap } from "lucide-react";
 import type { Metadata } from 'next';
+
+const ElectricityCostCalculator = dynamic(() => import('./components/electricity-cost-calculator').then(mod => mod.ElectricityCostCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Appliance Electricity Cost Calculator - CalcPro',

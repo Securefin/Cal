@@ -1,8 +1,13 @@
 
-import { AgeCalculator } from "./components/age-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cake } from "lucide-react";
 import type { Metadata } from 'next';
+
+const AgeCalculator = dynamic(() => import('./components/age-calculator').then(mod => mod.AgeCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Age Calculator - CalcPro',

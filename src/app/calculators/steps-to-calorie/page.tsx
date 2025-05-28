@@ -1,8 +1,13 @@
 
-import { StepsToCalorieCalculator } from "./components/steps-to-calorie-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Footprints } from "lucide-react";
 import type { Metadata } from 'next';
+
+const StepsToCalorieCalculator = dynamic(() => import('./components/steps-to-calorie-calculator').then(mod => mod.StepsToCalorieCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Steps to Calories Calculator - CalcPro',

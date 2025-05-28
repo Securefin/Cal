@@ -1,8 +1,13 @@
 
-import { CreditCardPaymentCalculator } from "./components/credit-card-payment-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CreditCard } from "lucide-react";
 import type { Metadata } from 'next';
+
+const CreditCardPaymentCalculator = dynamic(() => import('./components/credit-card-payment-calculator').then(mod => mod.CreditCardPaymentCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Credit Card Payment Calculator - CalcPro',

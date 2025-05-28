@@ -1,8 +1,13 @@
 
-import { UnitConverter } from "./components/unit-converter";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Replace } from "lucide-react";
 import type { Metadata } from 'next';
+
+const UnitConverter = dynamic(() => import('./components/unit-converter').then(mod => mod.UnitConverter), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Unit Converter (Length) - CalcPro',

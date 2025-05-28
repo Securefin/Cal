@@ -1,8 +1,13 @@
 
-import { LoanEmiCalculator } from "./components/loan-emi-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Banknote } from "lucide-react";
 import type { Metadata } from 'next';
+
+const LoanEmiCalculator = dynamic(() => import('./components/loan-emi-calculator').then(mod => mod.LoanEmiCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Loan EMI Calculator - CalcPro',

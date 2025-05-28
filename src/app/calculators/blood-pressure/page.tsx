@@ -1,8 +1,13 @@
 
-import { BloodPressureCalculator } from "./components/blood-pressure-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Activity } from "lucide-react";
 import type { Metadata } from 'next';
+
+const BloodPressureCalculator = dynamic(() => import('./components/blood-pressure-calculator').then(mod => mod.BloodPressureCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Blood Pressure Calculator - CalcPro',

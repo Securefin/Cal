@@ -1,8 +1,13 @@
 
-import { CalorieCalculator } from "./components/calorie-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Flame } from "lucide-react";
 import type { Metadata } from 'next';
+
+const CalorieCalculator = dynamic(() => import('./components/calorie-calculator').then(mod => mod.CalorieCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Daily Calorie Calculator (TDEE) - CalcPro',

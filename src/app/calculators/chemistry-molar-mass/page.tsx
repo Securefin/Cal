@@ -1,8 +1,13 @@
 
-import { ChemistryMolarMassCalculator } from "./components/chemistry-molar-mass-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FlaskConical } from "lucide-react";
 import type { Metadata } from 'next';
+
+const ChemistryMolarMassCalculator = dynamic(() => import('./components/chemistry-molar-mass-calculator').then(mod => mod.ChemistryMolarMassCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Molar Mass Calculator - CalcPro',

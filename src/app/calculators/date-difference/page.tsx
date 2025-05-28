@@ -1,8 +1,13 @@
 
-import { DateDifferenceCalculator } from "./components/date-difference-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarClock } from "lucide-react";
 import type { Metadata } from 'next';
+
+const DateDifferenceCalculator = dynamic(() => import('./components/date-difference-calculator').then(mod => mod.DateDifferenceCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Date Difference Calculator - CalcPro',

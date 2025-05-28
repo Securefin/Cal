@@ -1,8 +1,13 @@
 
-import { InflationCalculator } from "./components/inflation-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowBigUpDash } from "lucide-react";
 import type { Metadata } from 'next';
+
+const InflationCalculator = dynamic(() => import('./components/inflation-calculator').then(mod => mod.InflationCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Inflation Calculator - CalcPro',

@@ -1,8 +1,13 @@
 
-import { NpvCalculator } from "./components/npv-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { LineChart } from "lucide-react";
 import type { Metadata } from 'next';
+
+const NpvCalculator = dynamic(() => import('./components/npv-calculator').then(mod => mod.NpvCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'NPV (Net Present Value) Calculator - CalcPro',

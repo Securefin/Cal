@@ -1,8 +1,13 @@
 
-import { PasswordStrengthChecker } from "./components/password-strength-checker";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShieldCheck } from "lucide-react";
 import type { Metadata } from 'next';
+
+const PasswordStrengthChecker = dynamic(() => import('./components/password-strength-checker').then(mod => mod.PasswordStrengthChecker), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Password Strength Checker - CalcPro',

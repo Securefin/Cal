@@ -1,8 +1,13 @@
 
-import { BasicCalculator } from "./components/basic-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator } from "lucide-react";
 import type { Metadata } from 'next';
+
+const BasicCalculator = dynamic(() => import('./components/basic-calculator').then(mod => mod.BasicCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Basic Calculator - CalcPro',

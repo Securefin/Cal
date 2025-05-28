@@ -1,8 +1,13 @@
 
-import { MathFormulaSolver } from "./components/math-formula-solver";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Wand2 } from "lucide-react";
 import type { Metadata } from 'next';
+
+const MathFormulaSolver = dynamic(() => import('./components/math-formula-solver').then(mod => mod.MathFormulaSolver), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'AI Math Formula Solver - CalcPro',

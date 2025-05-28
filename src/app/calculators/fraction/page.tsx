@@ -1,8 +1,13 @@
 
-import { FractionCalculator } from "./components/fraction-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { DivideSquare } from "lucide-react";
 import type { Metadata } from 'next';
+
+const FractionCalculator = dynamic(() => import('./components/fraction-calculator').then(mod => mod.FractionCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Fraction Calculator - CalcPro',

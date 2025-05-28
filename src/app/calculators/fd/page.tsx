@@ -1,8 +1,13 @@
 
-import { FdCalculator } from "./components/fd-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShieldCheck } from "lucide-react";
 import type { Metadata } from 'next';
+
+const FdCalculator = dynamic(() => import('./components/fd-calculator').then(mod => mod.FdCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Fixed Deposit (FD) Calculator - CalcPro',

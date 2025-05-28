@@ -1,8 +1,13 @@
 
-import { WavelengthCalculator } from "./components/wavelength-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Signal } from "lucide-react";
 import type { Metadata } from 'next';
+
+const WavelengthCalculator = dynamic(() => import('./components/wavelength-calculator').then(mod => mod.WavelengthCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Wavelength & Frequency Calculator (Light) - CalcPro',

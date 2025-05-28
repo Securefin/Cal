@@ -1,8 +1,13 @@
 
-import { MuscleMassCalculator } from "./components/muscle-mass-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dumbbell } from "lucide-react";
 import type { Metadata } from 'next';
+
+const MuscleMassCalculator = dynamic(() => import('./components/muscle-mass-calculator').then(mod => mod.MuscleMassCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Muscle Mass & Body Fat Calculator - CalcPro',

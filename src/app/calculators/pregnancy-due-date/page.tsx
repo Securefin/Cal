@@ -1,8 +1,13 @@
 
-import { PregnancyDueDateCalculator } from "./components/pregnancy-due-date-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarDays } from "lucide-react";
 import type { Metadata } from 'next';
+
+const PregnancyDueDateCalculator = dynamic(() => import('./components/pregnancy-due-date-calculator').then(mod => mod.PregnancyDueDateCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Pregnancy Due Date Calculator - CalcPro',

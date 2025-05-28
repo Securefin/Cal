@@ -1,8 +1,13 @@
 
-import { PasswordGenerator } from "./components/password-generator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { KeyRound } from "lucide-react";
 import type { Metadata } from 'next';
+
+const PasswordGenerator = dynamic(() => import('./components/password-generator').then(mod => mod.PasswordGenerator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Password Generator - CalcPro',

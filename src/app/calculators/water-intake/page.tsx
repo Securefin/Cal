@@ -1,8 +1,13 @@
 
-import { WaterIntakeCalculator } from "./components/water-intake-calculator";
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Droplet } from "lucide-react";
 import type { Metadata } from 'next';
+
+const WaterIntakeCalculator = dynamic(() => import('./components/water-intake-calculator').then(mod => mod.WaterIntakeCalculator), {
+  ssr: false,
+  loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
+});
 
 export const metadata: Metadata = {
   title: 'Water Intake Calculator - CalcPro',
