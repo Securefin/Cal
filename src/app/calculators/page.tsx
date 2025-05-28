@@ -136,7 +136,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Tip Calculator", slug: "tip", isImplemented: true, icon: HandCoins },
       { name: "Discount Calculator", slug: "discount", isImplemented: true, icon: Tag },
       { name: "Unit Converter", slug: "unit-converter", isImplemented: true, icon: Replace },
-      { name: "Currency Converter", slug: "currency-converter" },
+      { name: "Currency Converter", slug: "currency-converter", isImplemented: true, isAdvanced: true, icon: Landmark },
       { name: "Age Calculator", slug: "age" },
       { name: "Date Difference Calculator", slug: "date-difference" },
       { name: "Time Calculator", slug: "time" },
@@ -204,7 +204,7 @@ export default function CalculatorsPage() {
                         <div className="flex items-center space-x-2">
                           {(!calc.isImplemented || calc.isAdvanced) && (
                             <Badge variant="outline" className="text-xs border-accent text-accent group-hover:bg-accent group-hover:text-accent-foreground">
-                              {calc.isAdvanced && calc.isImplemented ? "Basic" : "Soon"}
+                              {calc.isAdvanced && calc.isImplemented ? "Demo" : "Soon"}
                             </Badge>
                           )}
                           <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
