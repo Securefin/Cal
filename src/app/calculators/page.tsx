@@ -34,12 +34,9 @@ import {
   FileText, // Icon for Income Tax Calculator
   ArrowBigUpDash, // Corrected Icon for Inflation Calculator
   CreditCard, // Icon for Credit Card Payment Calculator
-  Activity, // Icon for ROI Calculator
+  Activity, // Icon for ROI, Blood Pressure Calculator
   LineChart, // Icon for NPV Calculator
   Scale, // Icon for BMI Calculator
-  // User, // Placeholder for Age/BMR related
-  // Ruler, // Placeholder for height
-  // Weight, // Placeholder for weight
   Flame, // Icon for Calorie Calculator
   CalendarDays, // Icon for Pregnancy Due Date
   Droplet,
@@ -102,7 +99,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "BMR (Basal Metabolic Rate) Calculator", slug: "bmr", isImplemented: true, icon: HeartPulse },
       { name: "Calorie Calculator", slug: "calorie", isImplemented: true, icon: Flame },
       { name: "Pregnancy Due Date Calculator", slug: "pregnancy-due-date", isImplemented: true, icon: CalendarDays },
-      { name: "Blood Pressure Calculator", slug: "blood-pressure", icon: Activity },
+      { name: "Blood Pressure Calculator", slug: "blood-pressure", isImplemented: true, icon: Activity },
       { name: "Water Intake Calculator", slug: "water-intake", icon: Droplet },
       { name: "Steps to Calorie Calculator", slug: "steps-to-calorie", icon: Footprints },
       { name: "Muscle Mass Calculator", slug: "muscle-mass", icon: Dumbbell },
