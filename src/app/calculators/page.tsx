@@ -31,6 +31,7 @@ import {
   PiggyBank, // Icon for PPF Calculator
   ShieldCheck, // Icon for FD Calculator
   ReceiptText, // Icon for GST Calculator
+  FileText, // Icon for Income Tax Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -73,7 +74,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Public Provident Fund (PPF) Calculator", slug: "ppf", isImplemented: true, icon: PiggyBank },
       { name: "Fixed Deposit (FD) Calculator", slug: "fd", isImplemented: true, icon: ShieldCheck },
       { name: "GST Calculator", slug: "gst", isImplemented: true, icon: ReceiptText },
-      { name: "Income Tax Calculator", slug: "income-tax" },
+      { name: "Income Tax Calculator", slug: "income-tax", isImplemented: false, icon: FileText },
       { name: "Inflation Calculator", slug: "inflation" },
       { name: "Credit Card Payment Calculator", slug: "credit-card-payment" },
       { name: "ROI (Return on Investment) Calculator", slug: "roi" },
@@ -201,3 +202,5 @@ export default function CalculatorsPage() {
     </div>
   );
 }
+
+    
