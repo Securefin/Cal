@@ -37,10 +37,14 @@ import {
   Activity, // Icon for ROI Calculator
   LineChart, // Icon for NPV Calculator
   Scale, // Icon for BMI Calculator
-  User, // Placeholder for Age/BMR related
-  Ruler, // Placeholder for height
-  Weight, // Placeholder for weight
+  // User, // Placeholder for Age/BMR related
+  // Ruler, // Placeholder for height
+  // Weight, // Placeholder for weight
   Flame, // Icon for Calorie Calculator
+  CalendarDays, // Icon for Pregnancy Due Date
+  Droplet,
+  Footprints,
+  Dumbbell,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -97,7 +101,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "BMI (Body Mass Index) Calculator", slug: "bmi", isImplemented: true, icon: Scale },
       { name: "BMR (Basal Metabolic Rate) Calculator", slug: "bmr", isImplemented: true, icon: HeartPulse },
       { name: "Calorie Calculator", slug: "calorie", isImplemented: true, icon: Flame },
-      { name: "Pregnancy Due Date Calculator", slug: "pregnancy-due-date", icon: CalendarDays },
+      { name: "Pregnancy Due Date Calculator", slug: "pregnancy-due-date", isImplemented: true, icon: CalendarDays },
       { name: "Blood Pressure Calculator", slug: "blood-pressure", icon: Activity },
       { name: "Water Intake Calculator", slug: "water-intake", icon: Droplet },
       { name: "Steps to Calorie Calculator", slug: "steps-to-calorie", icon: Footprints },
@@ -149,8 +153,7 @@ const calculatorCategories: CalculatorCategory[] = [
 
 // Helper to import Lucide icons that might not be used above, if they are only in the array.
 // This is just to satisfy type-checking and avoid unused import errors if we add icons directly to the array.
-import { CalendarDays, Droplet, Footprints, Dumbbell } from 'lucide-react';
-const _unusedIcons = { CalendarDays, Droplet, Footprints, Dumbbell };
+// const _unusedIcons = { CalendarDays, Droplet, Footprints, Dumbbell }; // CalendarDays is now used.
 
 
 export default function CalculatorsPage() {
