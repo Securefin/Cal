@@ -43,6 +43,8 @@ import {
   Footprints, // Icon for Steps to Calorie Calculator
   Dumbbell, // Icon for Muscle Mass Calculator
   Spline, // Icon for Graphing Calculator
+  Grid3x3, // Icon for Matrix Calculator page title
+  LayoutGrid, // Icon for Matrix Calculator in the list
   Users, // Added for Muscle Mass Calculator inputs if needed elsewhere
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -114,7 +116,7 @@ const calculatorCategories: CalculatorCategory[] = [
     calculators: [
       { name: "Scientific Notation Calculator", slug: "scientific-notation", isImplemented: true, icon: Atom },
       { name: "Graphing Calculator", slug: "graphing", isImplemented: true, isAdvanced: true, icon: Spline },
-      { name: "Matrix Calculator", slug: "matrix" },
+      { name: "Matrix Calculator", slug: "matrix", isImplemented: true, icon: LayoutGrid },
       { name: "Chemistry Molar Mass Calculator", slug: "molar-mass" },
       { name: "Electricity Calculator", slug: "electricity" },
       { name: "Ohm's Law Calculator", slug: "ohms-law" },
