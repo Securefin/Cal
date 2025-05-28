@@ -40,6 +40,7 @@ import {
   User, // Placeholder for Age/BMR related
   Ruler, // Placeholder for height
   Weight, // Placeholder for weight
+  Flame, // Icon for Calorie Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -95,12 +96,12 @@ const calculatorCategories: CalculatorCategory[] = [
     calculators: [
       { name: "BMI (Body Mass Index) Calculator", slug: "bmi", isImplemented: true, icon: Scale },
       { name: "BMR (Basal Metabolic Rate) Calculator", slug: "bmr", isImplemented: true, icon: HeartPulse },
-      { name: "Calorie Calculator", slug: "calorie", icon: CalculatorIcon }, // Placeholder icon
-      { name: "Pregnancy Due Date Calculator", slug: "pregnancy-due-date", icon: CalendarDays }, // Placeholder icon
-      { name: "Blood Pressure Calculator", slug: "blood-pressure", icon: Activity }, // Placeholder icon
-      { name: "Water Intake Calculator", slug: "water-intake", icon: Droplet }, // Placeholder icon
-      { name: "Steps to Calorie Calculator", slug: "steps-to-calorie", icon: Footprints }, // Placeholder icon
-      { name: "Muscle Mass Calculator", slug: "muscle-mass", icon: Dumbbell }, // Placeholder icon
+      { name: "Calorie Calculator", slug: "calorie", isImplemented: true, icon: Flame },
+      { name: "Pregnancy Due Date Calculator", slug: "pregnancy-due-date", icon: CalendarDays },
+      { name: "Blood Pressure Calculator", slug: "blood-pressure", icon: Activity },
+      { name: "Water Intake Calculator", slug: "water-intake", icon: Droplet },
+      { name: "Steps to Calorie Calculator", slug: "steps-to-calorie", icon: Footprints },
+      { name: "Muscle Mass Calculator", slug: "muscle-mass", icon: Dumbbell },
     ],
   },
   {
@@ -216,4 +217,6 @@ export default function CalculatorsPage() {
     </div>
   );
 }
+    
+
     
