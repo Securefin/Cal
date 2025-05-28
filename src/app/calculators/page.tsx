@@ -18,6 +18,7 @@ import {
   Calculator as CalculatorIcon, 
   ChevronRight,
   Percent,
+  Atom, // Icon for Scientific Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -40,7 +41,7 @@ const calculatorCategories: CalculatorCategory[] = [
     icon: Sigma,
     calculators: [
       { name: "Basic Calculator", slug: "basic", isImplemented: true, icon: CalculatorIcon },
-      { name: "Scientific Calculator", slug: "scientific", icon: CalculatorIcon },
+      { name: "Scientific Calculator", slug: "scientific", isImplemented: true, icon: Atom },
       { name: "Percentage Calculator", slug: "percentage", isImplemented: true, icon: Percent },
       { name: "Average Calculator", slug: "average" },
       { name: "Ratio Calculator", slug: "ratio" },
