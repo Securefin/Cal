@@ -30,6 +30,7 @@ import {
   TrendingUp, // Icon for SIP Calculator
   PiggyBank, // Icon for PPF Calculator
   ShieldCheck, // Icon for FD Calculator
+  ReceiptText, // Icon for GST Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -71,7 +72,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "SIP (Mutual Fund) Calculator", slug: "sip", isImplemented: true, icon: TrendingUp },
       { name: "Public Provident Fund (PPF) Calculator", slug: "ppf", isImplemented: true, icon: PiggyBank },
       { name: "Fixed Deposit (FD) Calculator", slug: "fd", isImplemented: true, icon: ShieldCheck },
-      { name: "GST Calculator", slug: "gst" },
+      { name: "GST Calculator", slug: "gst", isImplemented: true, icon: ReceiptText },
       { name: "Income Tax Calculator", slug: "income-tax" },
       { name: "Inflation Calculator", slug: "inflation" },
       { name: "Credit Card Payment Calculator", slug: "credit-card-payment" },
