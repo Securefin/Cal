@@ -42,6 +42,7 @@ import {
   Droplet, // Icon for Water Intake Calculator
   Footprints, // Icon for Steps to Calorie Calculator
   Dumbbell,
+  Users, // Added for Muscle Mass Calculator inputs if needed elsewhere
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -102,7 +103,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Blood Pressure Calculator", slug: "blood-pressure", isImplemented: true, icon: Activity },
       { name: "Water Intake Calculator", slug: "water-intake", isImplemented: true, icon: Droplet },
       { name: "Steps to Calorie Calculator", slug: "steps-to-calorie", isImplemented: true, icon: Footprints },
-      { name: "Muscle Mass Calculator", slug: "muscle-mass", icon: Dumbbell },
+      { name: "Muscle Mass Calculator", slug: "muscle-mass", isImplemented: true, icon: Dumbbell },
     ],
   },
   {
