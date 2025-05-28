@@ -33,7 +33,7 @@ import {
   ShieldCheck, // Icon for FD Calculator, Password Strength Page Title
   ReceiptText, // Icon for GST Calculator
   FileText, // Icon for Income Tax Calculator
-  ArrowBigUpDash, 
+  ArrowBigUpDash,
   CreditCard, // Icon for Credit Card Payment Calculator
   Activity, // Icon for ROI, Blood Pressure Calculator
   LineChart, // Icon for NPV Calculator
@@ -109,7 +109,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Public Provident Fund (PPF) Calculator", slug: "ppf", isImplemented: true, icon: PiggyBank },
       { name: "Fixed Deposit (FD) Calculator", slug: "fd", isImplemented: true, icon: ShieldCheck },
       { name: "GST Calculator", slug: "gst", isImplemented: true, icon: ReceiptText },
-      { name: "Income Tax Calculator", slug: "income-tax", isImplemented: true, icon: FileText }, 
+      { name: "Income Tax Calculator", slug: "income-tax", isImplemented: true, icon: FileText },
       { name: "Inflation Calculator", slug: "inflation", isImplemented: true, icon: ArrowBigUpDash },
       { name: "Credit Card Payment Calculator", slug: "credit-card-payment", isImplemented: true, icon: CreditCard },
       { name: "ROI (Return on Investment) Calculator", slug: "roi", isImplemented: true, icon: Activity },
@@ -150,8 +150,8 @@ const calculatorCategories: CalculatorCategory[] = [
     calculators: [
       { name: "Tip Calculator", slug: "tip", isImplemented: true, icon: HandCoins },
       { name: "Discount Calculator", slug: "discount", isImplemented: true, icon: Tag },
-      { name: "Unit Converter", slug: "unit-converter", isImplemented: true, isDemo: true, icon: Replace }, 
-      { name: "Currency Converter", slug: "currency-converter", isImplemented: true, isDemo: true, icon: Landmark }, 
+      { name: "Unit Converter", slug: "unit-converter", isImplemented: true, isDemo: true, icon: Replace },
+      { name: "Currency Converter", slug: "currency-converter", isImplemented: true, isDemo: true, icon: Landmark },
       { name: "Age Calculator", slug: "age", isImplemented: true, icon: Cake },
       { name: "Date Difference Calculator", slug: "date-difference", isImplemented: true, icon: CalendarClock },
       { name: "Time Calculator", slug: "time", isImplemented: true, icon: Clock },
@@ -162,8 +162,8 @@ const calculatorCategories: CalculatorCategory[] = [
     name: "Advanced & Special Tools",
     icon: Wand2,
     calculators: [
-      { name: "Function Graph Plotter", slug: "graphing", isImplemented: true, isDemo: true, icon: Spline }, 
-      { name: "Casio-style Calculator", slug: "casio-style", isImplemented: true, icon: CalculatorIcon }, 
+      { name: "Function Graph Plotter", slug: "graphing", isImplemented: true, isDemo: true, icon: Spline },
+      { name: "Casio-style Calculator", slug: "casio-style", isImplemented: true, icon: CalculatorIcon },
       { name: "Barcode Generator", slug: "barcode-generator", isImplemented: true, icon: ScanLine },
       { name: "QR Code Generator", slug: "qr-code-generator", isImplemented: true, icon: QrCode },
       { name: "Random Number Generator", slug: "random-number-generator", isImplemented: true, icon: Dice5 },

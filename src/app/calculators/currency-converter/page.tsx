@@ -19,7 +19,7 @@ export default function CurrencyConverterPage() {
             <CardTitle className="text-3xl">Currency Converter (Demo)</CardTitle>
           </div>
           <CardDescription>
-            Convert between major currencies. 
+            Convert between major currencies.
             <strong className="text-destructive/80 dark:text-destructive/70"> Note: Uses fixed sample exchange rates, not live data. For demonstration purposes only.</strong>
           </CardDescription>
         </CardHeader>

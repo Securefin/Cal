@@ -35,7 +35,7 @@ export default function HomePage() {
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/calculators"> 
+              <Link href="/calculators">
                 <Calculator className="mr-2 h-5 w-5" />
                 Explore Calculators
               </Link>
