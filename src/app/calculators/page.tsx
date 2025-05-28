@@ -55,6 +55,7 @@ import {
   Cake, // Icon for Age Calculator
   Clock, // Icon for Time Calculator
   KeyRound, // Icon for Password Generator
+  ScanLine, // Icon for Barcode Generator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -63,6 +64,7 @@ interface CalculatorItem {
   slug: string;
   isImplemented?: boolean;
   isAdvanced?: boolean; // To indicate it's a complex feature, even if a basic version is there
+  isDemo?: boolean; // To indicate it's a demo or simplified version
   icon?: LucideIcon;
 }
 
@@ -98,7 +100,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Public Provident Fund (PPF) Calculator", slug: "ppf", isImplemented: true, icon: PiggyBank },
       { name: "Fixed Deposit (FD) Calculator", slug: "fd", isImplemented: true, icon: ShieldCheck },
       { name: "GST Calculator", slug: "gst", isImplemented: true, icon: ReceiptText },
-      { name: "Income Tax Calculator", slug: "income-tax", isImplemented: true, icon: FileText },
+      { name: "Income Tax Calculator", slug: "income-tax", isImplemented: true, icon: FileText }, // Assuming initial version is "implemented"
       { name: "Inflation Calculator", slug: "inflation", isImplemented: true, icon: ArrowBigUpDash },
       { name: "Credit Card Payment Calculator", slug: "credit-card-payment", isImplemented: true, icon: CreditCard },
       { name: "ROI (Return on Investment) Calculator", slug: "roi", isImplemented: true, icon: Activity },
@@ -124,7 +126,7 @@ const calculatorCategories: CalculatorCategory[] = [
     icon: FlaskConical,
     calculators: [
       { name: "Scientific Notation Calculator", slug: "scientific-notation", isImplemented: true, icon: Atom },
-      { name: "Graphing Calculator", slug: "graphing", isImplemented: true, isAdvanced: true, icon: Spline },
+      { name: "Graphing Calculator", slug: "graphing", isImplemented: true, isDemo: true, icon: Spline },
       { name: "Matrix Calculator", slug: "matrix", isImplemented: true, icon: LayoutGrid },
       { name: "Chemistry Molar Mass Calculator", slug: "chemistry-molar-mass", isImplemented: true, icon: FlaskConical },
       { name: "Electricity Calculator", slug: "electricity", isImplemented: true, icon: Zap },
@@ -139,8 +141,8 @@ const calculatorCategories: CalculatorCategory[] = [
     calculators: [
       { name: "Tip Calculator", slug: "tip", isImplemented: true, icon: HandCoins },
       { name: "Discount Calculator", slug: "discount", isImplemented: true, icon: Tag },
-      { name: "Unit Converter", slug: "unit-converter", isImplemented: true, icon: Replace },
-      { name: "Currency Converter", slug: "currency-converter", isImplemented: true, isAdvanced: true, icon: Landmark },
+      { name: "Unit Converter", slug: "unit-converter", isImplemented: true, isDemo: true, icon: Replace }, // Marked as demo for length only
+      { name: "Currency Converter", slug: "currency-converter", isImplemented: true, isDemo: true, icon: Landmark }, // Marked as demo for fixed rates
       { name: "Age Calculator", slug: "age", isImplemented: true, icon: Cake },
       { name: "Date Difference Calculator", slug: "date-difference", isImplemented: true, icon: CalendarClock },
       { name: "Time Calculator", slug: "time", isImplemented: true, icon: Clock },
@@ -151,9 +153,9 @@ const calculatorCategories: CalculatorCategory[] = [
     name: "Advanced & Special Tools",
     icon: Wand2,
     calculators: [
-      { name: "Function Graph Plotter", slug: "graphing", isImplemented: true, isAdvanced: true, icon: Spline },
-      { name: "Casio-style Calculator", slug: "casio-style", isImplemented: true, icon: CalculatorIcon },
-      { name: "Barcode Generator", slug: "barcode-generator" },
+      { name: "Function Graph Plotter", slug: "graphing", isImplemented: true, isDemo: true, icon: Spline }, // Linked to graphing
+      { name: "Casio-style Calculator", slug: "casio-style", isImplemented: true, icon: CalculatorIcon }, // Linked to scientific
+      { name: "Barcode Generator", slug: "barcode-generator", isImplemented: true, icon: ScanLine },
       { name: "QR Code Generator", slug: "qr-code-generator" },
       { name: "Random Number Generator", slug: "random-number-generator" },
       { name: "Password Strength Checker", slug: "password-strength-checker" },
@@ -206,9 +208,14 @@ export default function CalculatorsPage() {
                           <span className="text-foreground/90 group-hover:text-primary">{calc.name}</span>
                         </div>
                         <div className="flex items-center space-x-2">
-                          {(!calc.isImplemented || calc.isAdvanced) && (
+                          {calc.isDemo && calc.isImplemented && (
                             <Badge variant="outline" className="text-xs border-accent text-accent group-hover:bg-accent group-hover:text-accent-foreground">
-                              {calc.isAdvanced && calc.isImplemented ? "Demo" : "Soon"}
+                              Demo
+                            </Badge>
+                          )}
+                          {!calc.isImplemented && (
+                            <Badge variant="outline" className="text-xs border-accent text-accent group-hover:bg-accent group-hover:text-accent-foreground">
+                              Soon
                             </Badge>
                           )}
                           <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -226,4 +233,3 @@ export default function CalculatorsPage() {
     </div>
   );
 }
-    
