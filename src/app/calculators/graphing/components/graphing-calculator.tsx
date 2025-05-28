@@ -11,15 +11,17 @@ import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
+  ChartLegend,
+  ChartLegendContent,
+  type ChartConfig,
+} from "@/components/ui/chart";
+import {
   LineChart,
   CartesianGrid,
   XAxis,
   YAxis,
   Line,
-  ChartLegend,
-  ChartLegendContent,
-} from "@/components/ui/chart";
-import type { ChartConfig } from "@/components/ui/chart";
+} from "recharts";
 
 interface DataPoint {
   x: number;
