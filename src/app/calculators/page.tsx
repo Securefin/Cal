@@ -53,6 +53,7 @@ import {
   Tag, // Icon for Discount Calculator
   Replace, // Icon for Unit Converter
   Cake, // Icon for Age Calculator
+  Clock, // Icon for Time Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -141,7 +142,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Currency Converter", slug: "currency-converter", isImplemented: true, isAdvanced: true, icon: Landmark },
       { name: "Age Calculator", slug: "age", isImplemented: true, icon: Cake },
       { name: "Date Difference Calculator", slug: "date-difference", isImplemented: true, icon: CalendarClock },
-      { name: "Time Calculator", slug: "time" },
+      { name: "Time Calculator", slug: "time", isImplemented: true, icon: Clock },
       { name: "Password Generator", slug: "password-generator" },
     ],
   },
