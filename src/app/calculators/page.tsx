@@ -25,7 +25,7 @@ import {
   Layers, // Icon for LCM & HCF Calculator
   Baseline, // Icon for Exponent Calculator
   Target, // Icon for Logarithm Calculator
-  Binary, // Icon for Modulo Calculator.
+  Binary, // Icon for Modulo Calculator & Binary/Hex Calculator
   Banknote, // Icon for Loan EMI Calculator
   TrendingUp, // Icon for SIP Calculator
   PiggyBank, // Icon for PPF Calculator
@@ -123,7 +123,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Electricity Calculator", slug: "electricity", isImplemented: true, icon: Zap },
       { name: "Ohm's Law Calculator", slug: "ohms-law", isImplemented: true, icon: Zap },
       { name: "Wavelength Calculator", slug: "wavelength", isImplemented: true, icon: Signal },
-      { name: "Binary/Hexadecimal Calculator", slug: "binary-hexadecimal" },
+      { name: "Binary/Hexadecimal Calculator", slug: "binary-hexadecimal", isImplemented: true, icon: Binary },
     ],
   },
   {
