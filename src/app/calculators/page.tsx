@@ -34,6 +34,7 @@ import {
   FileText, // Icon for Income Tax Calculator
   ArrowBigUpDash, // Corrected Icon for Inflation Calculator
   CreditCard, // Icon for Credit Card Payment Calculator
+  Activity, // Icon for ROI Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -79,7 +80,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Income Tax Calculator", slug: "income-tax", isImplemented: true, icon: FileText },
       { name: "Inflation Calculator", slug: "inflation", isImplemented: true, icon: ArrowBigUpDash },
       { name: "Credit Card Payment Calculator", slug: "credit-card-payment", isImplemented: true, icon: CreditCard },
-      { name: "ROI (Return on Investment) Calculator", slug: "roi" },
+      { name: "ROI (Return on Investment) Calculator", slug: "roi", isImplemented: true, icon: Activity },
       { name: "NPV (Net Present Value) Calculator", slug: "npv" },
     ],
   },
