@@ -20,6 +20,7 @@ import {
   Percent,
   Atom,
   Hash, // Icon for Average Calculator
+  Ratio, // Icon for Ratio Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -45,7 +46,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Scientific Calculator", slug: "scientific", isImplemented: true, icon: Atom },
       { name: "Percentage Calculator", slug: "percentage", isImplemented: true, icon: Percent },
       { name: "Average Calculator", slug: "average", isImplemented: true, icon: Hash },
-      { name: "Ratio Calculator", slug: "ratio" },
+      { name: "Ratio Calculator", slug: "ratio", isImplemented: true, icon: Ratio },
       { name: "Fraction Calculator", slug: "fraction" },
       { name: "LCM & HCF Calculator", slug: "lcm-hcf" },
       { name: "Exponent Calculator", slug: "exponent" },
