@@ -162,7 +162,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "QR Code Generator", slug: "qr-code-generator", isImplemented: true, icon: QrCode },
       { name: "Random Number Generator", slug: "random-number-generator", isImplemented: true, icon: Dice5 },
       { name: "Password Strength Checker", slug: "password-strength-checker", isImplemented: true, icon: LockKeyhole },
-      { name: "Math Formula Solver", slug: "math-formula-solver" },
+      { name: "Math Formula Solver", slug: "math-formula-solver", isImplemented: true, icon: Wand2 },
     ],
   },
 ];
