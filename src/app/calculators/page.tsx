@@ -25,8 +25,9 @@ import {
   Layers, // Icon for LCM & HCF Calculator
   Baseline, // Icon for Exponent Calculator
   Target, // Icon for Logarithm Calculator
-  Binary, // Icon for Modulo Calculator. Using Binary as a placeholder.
+  Binary, // Icon for Modulo Calculator.
   Banknote, // Icon for Loan EMI Calculator
+  TrendingUp, // Icon for SIP Calculator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -65,7 +66,7 @@ const calculatorCategories: CalculatorCategory[] = [
     icon: Landmark,
     calculators: [
       { name: "Loan EMI Calculator", slug: "loan-emi", isImplemented: true, icon: Banknote },
-      { name: "SIP (Mutual Fund) Calculator", slug: "sip" },
+      { name: "SIP (Mutual Fund) Calculator", slug: "sip", isImplemented: true, icon: TrendingUp },
       { name: "Fixed Deposit (FD) Calculator", slug: "fd" },
       { name: "Public Provident Fund (PPF) Calculator", slug: "ppf" },
       { name: "GST Calculator", slug: "gst" },
