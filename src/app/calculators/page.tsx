@@ -54,6 +54,7 @@ import {
   Replace, // Icon for Unit Converter
   Cake, // Icon for Age Calculator
   Clock, // Icon for Time Calculator
+  KeyRound, // Icon for Password Generator
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
@@ -143,7 +144,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Age Calculator", slug: "age", isImplemented: true, icon: Cake },
       { name: "Date Difference Calculator", slug: "date-difference", isImplemented: true, icon: CalendarClock },
       { name: "Time Calculator", slug: "time", isImplemented: true, icon: Clock },
-      { name: "Password Generator", slug: "password-generator" },
+      { name: "Password Generator", slug: "password-generator", isImplemented: true, icon: KeyRound },
     ],
   },
   {
