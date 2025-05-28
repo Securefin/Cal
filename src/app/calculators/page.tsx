@@ -46,6 +46,7 @@ import {
   Grid3x3, // Icon for Matrix page title
   LayoutGrid, // Icon for Matrix Calculator in the list
   Zap, // Icon for Electricity Calculator, Ohm's Law
+  Signal, // Icon for Wavelength Calculator
   Users, // Added for Muscle Mass Calculator inputs if needed elsewhere
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
@@ -121,7 +122,7 @@ const calculatorCategories: CalculatorCategory[] = [
       { name: "Chemistry Molar Mass Calculator", slug: "chemistry-molar-mass", isImplemented: true, icon: FlaskConical },
       { name: "Electricity Calculator", slug: "electricity", isImplemented: true, icon: Zap },
       { name: "Ohm's Law Calculator", slug: "ohms-law", isImplemented: true, icon: Zap },
-      { name: "Wavelength Calculator", slug: "wavelength" },
+      { name: "Wavelength Calculator", slug: "wavelength", isImplemented: true, icon: Signal },
       { name: "Binary/Hexadecimal Calculator", slug: "binary-hexadecimal" },
     ],
   },
