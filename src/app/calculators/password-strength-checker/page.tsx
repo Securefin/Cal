@@ -1,18 +1,14 @@
+"use client"; // Ensures this page is a Client Component
 
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShieldCheck } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now handled by layout.tsx
 
-const PasswordStrengthChecker = dynamic(() => import('./components/password-strength-checker').then(mod => mod.PasswordStrengthChecker), {
-  ssr: false,
+const PasswordStrengthCheckerComponent = dynamic(() => import('./components/password-strength-checker').then(mod => mod.PasswordStrengthChecker), {
+  ssr: false, 
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Password Strength Checker - CalcPro',
-  description: 'Analyze the strength of your password in real-time. Get feedback on length, character types (uppercase, lowercase, numbers, symbols) and tips.',
-};
 
 export default function PasswordStrengthCheckerPage() {
   return (
@@ -28,7 +24,7 @@ export default function PasswordStrengthCheckerPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <PasswordStrengthChecker />
+          <PasswordStrengthCheckerComponent />
         </CardContent>
       </Card>
     </div>
