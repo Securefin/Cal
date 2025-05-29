@@ -1,18 +1,12 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator } from "lucide-react";
-import type { Metadata } from 'next';
 
-const BasicCalculator = dynamic(() => import('./components/basic-calculator').then(mod => mod.BasicCalculator), {
+const BasicCalculatorComponent = dynamic(() => import('./components/basic-calculator').then(mod => mod.BasicCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Basic Calculator - CalcPro',
-  description: 'Perform simple arithmetic operations like addition, subtraction, multiplication, and division with our easy-to-use Basic Calculator.',
-};
 
 export default function BasicCalculatorPage() {
   return (
@@ -28,7 +22,7 @@ export default function BasicCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <BasicCalculator />
+          <BasicCalculatorComponent />
         </CardContent>
       </Card>
     </div>

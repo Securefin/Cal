@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Zap } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const ElectricityCostCalculator = dynamic(() => import('./components/electricity-cost-calculator').then(mod => mod.ElectricityCostCalculator), {
+const ElectricityCostCalculatorComponent = dynamic(() => import('./components/electricity-cost-calculator').then(mod => mod.ElectricityCostCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Appliance Electricity Cost Calculator - CalcPro',
-  description: 'Estimate the monthly cost of running an electrical appliance based on its power (Watts), usage hours, and electricity price per kWh.',
-};
 
 export default function ElectricityCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function ElectricityCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <ElectricityCostCalculator />
+          <ElectricityCostCalculatorComponent />
         </CardContent>
       </Card>
     </div>

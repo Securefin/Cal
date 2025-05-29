@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator as CalculatorIcon } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const ScientificCalculator = dynamic(() => import('@/app/calculators/scientific/components/scientific-calculator').then(mod => mod.ScientificCalculator), {
+const ScientificCalculatorComponent = dynamic(() => import('@/app/calculators/scientific/components/scientific-calculator').then(mod => mod.ScientificCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Casio-style Scientific Calculator - CalcPro',
-  description: 'A comprehensive scientific calculator featuring functions commonly found on Casio models, including trig, logs, powers, and more.',
-};
 
 export default function CasioStyleCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function CasioStyleCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <ScientificCalculator />
+          <ScientificCalculatorComponent />
         </CardContent>
       </Card>
        <Card className="mt-6 bg-muted/30 w-full max-w-xl shadow-lg">

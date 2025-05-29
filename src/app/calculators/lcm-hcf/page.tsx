@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Layers } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const LcmHcfCalculator = dynamic(() => import('./components/lcm-hcf-calculator').then(mod => mod.LcmHcfCalculator), {
+const LcmHcfCalculatorComponent = dynamic(() => import('./components/lcm-hcf-calculator').then(mod => mod.LcmHcfCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'LCM & HCF Calculator - CalcPro',
-  description: 'Calculate the Least Common Multiple (LCM) and Highest Common Factor (HCF/GCD) of two numbers easily with our online tool.',
-};
 
 export default function LcmHcfCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function LcmHcfCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <LcmHcfCalculator />
+          <LcmHcfCalculatorComponent />
         </CardContent>
       </Card>
     </div>

@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { QrCode } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const QrCodeGenerator = dynamic(() => import('./components/qr-code-generator').then(mod => mod.QrCodeGenerator), {
+const QrCodeGeneratorComponent = dynamic(() => import('./components/qr-code-generator').then(mod => mod.QrCodeGenerator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'QR Code Generator - CalcPro',
-  description: 'Create custom QR codes online for URLs, text, contact information, and more. Download your QR code as a PNG image.',
-};
 
 export default function QrCodeGeneratorPage() {
   return (
@@ -28,7 +23,7 @@ export default function QrCodeGeneratorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <QrCodeGenerator />
+          <QrCodeGeneratorComponent />
         </CardContent>
       </Card>
        <Card className="w-full max-w-lg shadow-lg mt-6 bg-muted/30">

@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeartPulse } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const BmrCalculator = dynamic(() => import('./components/bmr-calculator').then(mod => mod.BmrCalculator), {
+const BmrCalculatorComponent = dynamic(() => import('./components/bmr-calculator').then(mod => mod.BmrCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'BMR Calculator (Mifflin-St Jeor) - CalcPro',
-  description: 'Estimate your Basal Metabolic Rate (BMR) - the number of calories your body burns at rest, using the Mifflin-St Jeor Equation.',
-};
 
 export default function BmrCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function BmrCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <BmrCalculator />
+          <BmrCalculatorComponent />
             <Card className="mt-6 bg-muted/30">
                 <CardHeader className="py-2 px-3">
                     <CardTitle className="text-sm font-medium text-muted-foreground">What is BMR?</CardTitle>

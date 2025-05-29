@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Grid3x3 } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const MatrixCalculator = dynamic(() => import('./components/matrix-calculator').then(mod => mod.MatrixCalculator), {
+const MatrixCalculatorComponent = dynamic(() => import('./components/matrix-calculator').then(mod => mod.MatrixCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Matrix Calculator - CalcPro',
-  description: 'Perform basic matrix operations: Addition, Subtraction, and Multiplication. Define matrix dimensions and enter elements to calculate results.',
-};
 
 export default function MatrixCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function MatrixCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <MatrixCalculator />
+          <MatrixCalculatorComponent />
         </CardContent>
       </Card>
        <Card className="w-full max-w-2xl shadow-lg mt-6 bg-muted/30">

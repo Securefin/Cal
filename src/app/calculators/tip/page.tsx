@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { HandCoins } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const TipCalculator = dynamic(() => import('./components/tip-calculator').then(mod => mod.TipCalculator), {
+const TipCalculatorComponent = dynamic(() => import('./components/tip-calculator').then(mod => mod.TipCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Tip Calculator - CalcPro',
-  description: 'Easily calculate the tip amount, total bill, and amount per person when dining out or for any service. Supports custom tip percentages.',
-};
 
 export default function TipCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function TipCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <TipCalculator />
+          <TipCalculatorComponent />
         </CardContent>
       </Card>
     </div>

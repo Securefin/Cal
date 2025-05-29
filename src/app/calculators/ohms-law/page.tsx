@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Zap } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const OhmsLawCalculator = dynamic(() => import('./components/ohms-law-calculator').then(mod => mod.OhmsLawCalculator), {
+const OhmsLawCalculatorComponent = dynamic(() => import('./components/ohms-law-calculator').then(mod => mod.OhmsLawCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: "Ohm's Law Calculator (V=IR) - CalcPro",
-  description: "Calculate Voltage (V), Current (I), or Resistance (R) using Ohm's Law. Enter any two values to find the third automatically.",
-};
 
 export default function OhmsLawCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function OhmsLawCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <OhmsLawCalculator />
+          <OhmsLawCalculatorComponent />
         </CardContent>
       </Card>
       <Card className="w-full max-w-lg shadow-lg mt-6 bg-muted/30">

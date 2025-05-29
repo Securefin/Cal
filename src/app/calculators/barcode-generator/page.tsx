@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScanLine } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const BarcodeGenerator = dynamic(() => import('./components/barcode-generator').then(mod => mod.BarcodeGenerator), {
+const BarcodeGeneratorComponent = dynamic(() => import('./components/barcode-generator').then(mod => mod.BarcodeGenerator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Barcode Generator (CODE128) - CalcPro',
-  description: 'Generate CODE128 barcodes online. Enter alphanumeric data to create a scannable barcode image. Suitable for various labeling purposes.',
-};
 
 export default function BarcodeGeneratorPage() {
   return (
@@ -28,7 +23,7 @@ export default function BarcodeGeneratorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <BarcodeGenerator />
+          <BarcodeGeneratorComponent />
         </CardContent>
       </Card>
        <Card className="w-full max-w-lg shadow-lg mt-6 bg-muted/30">

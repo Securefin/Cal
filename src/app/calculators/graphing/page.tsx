@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Spline } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const GraphingCalculator = dynamic(() => import('./components/graphing-calculator').then(mod => mod.GraphingCalculator), {
+const GraphingCalculatorComponent = dynamic(() => import('./components/graphing-calculator').then(mod => mod.GraphingCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Graphing Calculator (Basic) - CalcPro',
-  description: 'Plot mathematical functions of x. Visualize equations like Math.sin(x) or x*x on a 2D graph. Basic version.',
-};
 
 export default function GraphingCalculatorPage() {
   return (
@@ -30,7 +25,7 @@ export default function GraphingCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <GraphingCalculator />
+          <GraphingCalculatorComponent />
            <Card className="mt-6 bg-muted/30">
             <CardHeader className="py-2 px-3">
                 <CardTitle className="text-sm font-medium text-muted-foreground">Important Notes:</CardTitle>

@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Ratio } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const RatioCalculator = dynamic(() => import('./components/ratio-calculator').then(mod => mod.RatioCalculator), {
+const RatioCalculatorComponent = dynamic(() => import('./components/ratio-calculator').then(mod => mod.RatioCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Ratio Calculator - CalcPro',
-  description: 'Solve for an unknown value in a proportion (A : B = C : D). Enter any three values to calculate the fourth.',
-};
 
 export default function RatioCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function RatioCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <RatioCalculator />
+          <RatioCalculatorComponent />
         </CardContent>
       </Card>
     </div>

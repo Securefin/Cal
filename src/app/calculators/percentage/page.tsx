@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Percent } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const PercentageCalculator = dynamic(() => import('./components/percentage-calculator').then(mod => mod.PercentageCalculator), {
+const PercentageCalculatorComponent = dynamic(() => import('./components/percentage-calculator').then(mod => mod.PercentageCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Percentage Calculator - CalcPro',
-  description: 'Easily calculate percentages: find X% of Y, determine what percentage X is of Y, or calculate percentage increase/decrease.',
-};
 
 export default function PercentageCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function PercentageCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <PercentageCalculator />
+          <PercentageCalculatorComponent />
         </CardContent>
       </Card>
     </div>

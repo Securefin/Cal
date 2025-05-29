@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Signal } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const WavelengthCalculator = dynamic(() => import('./components/wavelength-calculator').then(mod => mod.WavelengthCalculator), {
+const WavelengthCalculatorComponent = dynamic(() => import('./components/wavelength-calculator').then(mod => mod.WavelengthCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Wavelength & Frequency Calculator (Light) - CalcPro',
-  description: "Calculate wavelength (meters) or frequency (Hertz) of electromagnetic waves using the speed of light (c = λf). Input one value to find the other.",
-};
 
 export default function WavelengthCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function WavelengthCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <WavelengthCalculator />
+          <WavelengthCalculatorComponent />
         </CardContent>
       </Card>
       <Card className="w-full max-w-lg shadow-lg mt-6 bg-muted/30">

@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Activity } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const BloodPressureCalculator = dynamic(() => import('./components/blood-pressure-calculator').then(mod => mod.BloodPressureCalculator), {
+const BloodPressureCalculatorComponent = dynamic(() => import('./components/blood-pressure-calculator').then(mod => mod.BloodPressureCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Blood Pressure Calculator - CalcPro',
-  description: 'Enter your systolic and diastolic blood pressure readings to understand your category based on general guidelines. Informational purposes only.',
-};
 
 export default function BloodPressureCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function BloodPressureCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <BloodPressureCalculator />
+          <BloodPressureCalculatorComponent />
         </CardContent>
       </Card>
     </div>

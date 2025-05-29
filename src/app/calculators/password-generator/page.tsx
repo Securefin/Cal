@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { KeyRound } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const PasswordGenerator = dynamic(() => import('./components/password-generator').then(mod => mod.PasswordGenerator), {
+const PasswordGeneratorComponent = dynamic(() => import('./components/password-generator').then(mod => mod.PasswordGenerator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Password Generator - CalcPro',
-  description: 'Create strong, secure, and random passwords based on customizable options like length, and inclusion of uppercase, lowercase, numbers, and symbols.',
-};
 
 export default function PasswordGeneratorPage() {
   return (
@@ -28,7 +23,7 @@ export default function PasswordGeneratorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <PasswordGenerator />
+          <PasswordGeneratorComponent />
         </CardContent>
       </Card>
        <Card className="w-full max-w-lg shadow-lg mt-6 bg-muted/30">

@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Droplet } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const WaterIntakeCalculator = dynamic(() => import('./components/water-intake-calculator').then(mod => mod.WaterIntakeCalculator), {
+const WaterIntakeCalculatorComponent = dynamic(() => import('./components/water-intake-calculator').then(mod => mod.WaterIntakeCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Water Intake Calculator - CalcPro',
-  description: 'Estimate your daily water intake needs in liters based on your weight and activity level. Stay hydrated!',
-};
 
 export default function WaterIntakeCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function WaterIntakeCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <WaterIntakeCalculator />
+          <WaterIntakeCalculatorComponent />
           <Card className="mt-6 bg-muted/30">
             <CardHeader className="py-2 px-3">
                 <CardTitle className="text-sm font-medium text-muted-foreground">Disclaimer:</CardTitle>

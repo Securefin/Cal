@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Clock } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const TimeCalculator = dynamic(() => import('./components/time-calculator').then(mod => mod.TimeCalculator), {
+const TimeCalculatorComponent = dynamic(() => import('./components/time-calculator').then(mod => mod.TimeCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Time Calculator - CalcPro',
-  description: 'Add or subtract time durations (hours, minutes, seconds). Easily calculate resulting time for various operations.',
-};
 
 export default function TimeCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function TimeCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <TimeCalculator />
+          <TimeCalculatorComponent />
         </CardContent>
       </Card>
     </div>

@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const IncomeTaxCalculatorIndia = dynamic(() => import('./components/income-tax-calculator-india').then(mod => mod.IncomeTaxCalculatorIndia), {
+const IncomeTaxCalculatorIndiaComponent = dynamic(() => import('./components/income-tax-calculator-india').then(mod => mod.IncomeTaxCalculatorIndia), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Income Tax Calculator (India, New Regime AY 2025-26) - CalcPro',
-  description: 'Estimate your income tax liability in India under the New Tax Regime for Assessment Year 2025-26 (Financial Year 2024-25).',
-};
 
 export default function IncomeTaxCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function IncomeTaxCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <IncomeTaxCalculatorIndia />
+          <IncomeTaxCalculatorIndiaComponent />
           <Card className="mt-6 bg-muted/30">
             <CardHeader className="py-2 px-3">
               <CardTitle className="text-sm font-medium text-muted-foreground">Important Notes:</CardTitle>

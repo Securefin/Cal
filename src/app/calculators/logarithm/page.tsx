@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target } from "lucide-react"; // Using Target icon
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const LogarithmCalculator = dynamic(() => import('./components/logarithm-calculator').then(mod => mod.LogarithmCalculator), {
+const LogarithmCalculatorComponent = dynamic(() => import('./components/logarithm-calculator').then(mod => mod.LogarithmCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Logarithm Calculator - CalcPro',
-  description: 'Calculate natural log (ln), common log (log base 10), or logarithm to a custom base with this versatile logarithm tool.',
-};
 
 export default function LogarithmCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function LogarithmCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <LogarithmCalculator />
+          <LogarithmCalculatorComponent />
         </CardContent>
       </Card>
     </div>

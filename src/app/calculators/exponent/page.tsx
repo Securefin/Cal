@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Baseline } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const ExponentCalculator = dynamic(() => import('./components/exponent-calculator').then(mod => mod.ExponentCalculator), {
+const ExponentCalculatorComponent = dynamic(() => import('./components/exponent-calculator').then(mod => mod.ExponentCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Exponent Calculator - CalcPro',
-  description: 'Calculate the result of a base number raised to an exponent (power). Handles positive, negative, and decimal values.',
-};
 
 export default function ExponentCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function ExponentCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <ExponentCalculator />
+          <ExponentCalculatorComponent />
         </CardContent>
       </Card>
     </div>

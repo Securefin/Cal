@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Wand2 } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const MathFormulaSolver = dynamic(() => import('./components/math-formula-solver').then(mod => mod.MathFormulaSolver), {
+const MathFormulaSolverComponent = dynamic(() => import('./components/math-formula-solver').then(mod => mod.MathFormulaSolver), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'AI Math Formula Solver - CalcPro',
-  description: "Describe your math problem or what formula you need, and our AI will suggest relevant formulas and explain them (e.g., 'area of a circle').",
-};
 
 export default function MathFormulaSolverPage() {
   return (
@@ -29,7 +24,7 @@ export default function MathFormulaSolverPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <MathFormulaSolver />
+          <MathFormulaSolverComponent />
         </CardContent>
       </Card>
     </div>

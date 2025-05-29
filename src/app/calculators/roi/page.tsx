@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Activity } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const RoiCalculator = dynamic(() => import('./components/roi-calculator').then(mod => mod.RoiCalculator), {
+const RoiCalculatorComponent = dynamic(() => import('./components/roi-calculator').then(mod => mod.RoiCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'ROI Calculator - CalcPro',
-  description: 'Calculate your Return on Investment (ROI) to evaluate the profitability and efficiency of an investment. See net profit and ROI percentage.',
-};
 
 export default function RoiCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function RoiCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <RoiCalculator />
+          <RoiCalculatorComponent />
         </CardContent>
       </Card>
     </div>

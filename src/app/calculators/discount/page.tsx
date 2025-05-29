@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tag } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const DiscountCalculator = dynamic(() => import('./components/discount-calculator').then(mod => mod.DiscountCalculator), {
+const DiscountCalculatorComponent = dynamic(() => import('./components/discount-calculator').then(mod => mod.DiscountCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Discount Calculator - CalcPro',
-  description: 'Calculate the final price after a discount and see how much you save. Enter original price and discount percentage.',
-};
 
 export default function DiscountCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function DiscountCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <DiscountCalculator />
+          <DiscountCalculatorComponent />
         </CardContent>
       </Card>
     </div>

@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Scale } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const BmiCalculator = dynamic(() => import('./components/bmi-calculator').then(mod => mod.BmiCalculator), {
+const BmiCalculatorComponent = dynamic(() => import('./components/bmi-calculator').then(mod => mod.BmiCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'BMI Calculator (Metric) - CalcPro',
-  description: 'Calculate your Body Mass Index (BMI) using your weight in kilograms and height in centimeters. Understand your BMI category.',
-};
 
 export default function BmiCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function BmiCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <BmiCalculator />
+          <BmiCalculatorComponent />
         </CardContent>
       </Card>
     </div>

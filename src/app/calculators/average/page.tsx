@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Hash } from "lucide-react"; // Using Hash as a generic math icon
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const AverageCalculator = dynamic(() => import('./components/average-calculator').then(mod => mod.AverageCalculator), {
+const AverageCalculatorComponent = dynamic(() => import('./components/average-calculator').then(mod => mod.AverageCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Average Calculator - CalcPro',
-  description: 'Calculate the average (mean) of a list of numbers. Add numbers one by one and get the result instantly.',
-};
 
 export default function AverageCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function AverageCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <AverageCalculator />
+          <AverageCalculatorComponent />
         </CardContent>
       </Card>
     </div>

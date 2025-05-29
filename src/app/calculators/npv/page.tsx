@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { LineChart } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const NpvCalculator = dynamic(() => import('./components/npv-calculator').then(mod => mod.NpvCalculator), {
+const NpvCalculatorComponent = dynamic(() => import('./components/npv-calculator').then(mod => mod.NpvCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'NPV (Net Present Value) Calculator - CalcPro',
-  description: 'Calculate the Net Present Value (NPV) of an investment by providing discount rate, initial investment, and future cash flows.',
-};
 
 export default function NpvCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function NpvCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <NpvCalculator />
+          <NpvCalculatorComponent />
         </CardContent>
       </Card>
     </div>

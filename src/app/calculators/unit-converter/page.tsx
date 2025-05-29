@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Replace } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const UnitConverter = dynamic(() => import('./components/unit-converter').then(mod => mod.UnitConverter), {
+const UnitConverterComponent = dynamic(() => import('./components/unit-converter').then(mod => mod.UnitConverter), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Unit Converter (Length) - CalcPro',
-  description: 'Convert between various length units: meters, kilometers, miles, feet, inches, centimeters, millimeters, and yards. More units coming soon.',
-};
 
 export default function UnitConverterPage() {
   return (
@@ -28,7 +23,7 @@ export default function UnitConverterPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <UnitConverter />
+          <UnitConverterComponent />
         </CardContent>
       </Card>
        <Card className="w-full max-w-lg shadow-lg mt-6 bg-muted/30">

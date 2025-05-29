@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Banknote } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const LoanEmiCalculator = dynamic(() => import('./components/loan-emi-calculator').then(mod => mod.LoanEmiCalculator), {
+const LoanEmiCalculatorComponent = dynamic(() => import('./components/loan-emi-calculator').then(mod => mod.LoanEmiCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Loan EMI Calculator - CalcPro',
-  description: 'Calculate your Equated Monthly Installment (EMI) for loans. See total interest and total payment for home, car, or personal loans.',
-};
 
 export default function LoanEmiCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function LoanEmiCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <LoanEmiCalculator />
+          <LoanEmiCalculatorComponent />
         </CardContent>
       </Card>
     </div>

@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Flame } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const CalorieCalculator = dynamic(() => import('./components/calorie-calculator').then(mod => mod.CalorieCalculator), {
+const CalorieCalculatorComponent = dynamic(() => import('./components/calorie-calculator').then(mod => mod.CalorieCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Daily Calorie Calculator (TDEE) - CalcPro',
-  description: 'Estimate your Total Daily Energy Expenditure (TDEE) based on BMR and activity level. Find maintenance calories and goals for weight management.',
-};
 
 export default function CalorieCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function CalorieCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <CalorieCalculator />
+          <CalorieCalculatorComponent />
            <Card className="mt-6 bg-muted/30">
             <CardHeader className="py-2 px-3">
                 <CardTitle className="text-sm font-medium text-muted-foreground">What is TDEE?</CardTitle>

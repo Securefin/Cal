@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { PiggyBank } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const PpfCalculator = dynamic(() => import('./components/ppf-calculator').then(mod => mod.PpfCalculator), {
+const PpfCalculatorComponent = dynamic(() => import('./components/ppf-calculator').then(mod => mod.PpfCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'PPF Calculator - CalcPro',
-  description: 'Estimate the maturity value and interest earned on your Public Provident Fund (PPF) investments with our PPF calculator.',
-};
 
 export default function PpfCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function PpfCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <PpfCalculator />
+          <PpfCalculatorComponent />
         </CardContent>
       </Card>
     </div>

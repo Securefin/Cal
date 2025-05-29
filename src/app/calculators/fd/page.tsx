@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ShieldCheck } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const FdCalculator = dynamic(() => import('./components/fd-calculator').then(mod => mod.FdCalculator), {
+const FdCalculatorComponent = dynamic(() => import('./components/fd-calculator').then(mod => mod.FdCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Fixed Deposit (FD) Calculator - CalcPro',
-  description: 'Calculate the maturity value and total interest earned on your Fixed Deposit (FD) based on principal, rate, tenure, and compounding frequency.',
-};
 
 export default function FdCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function FdCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <FdCalculator />
+          <FdCalculatorComponent />
         </CardContent>
       </Card>
     </div>

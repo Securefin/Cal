@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ReceiptText } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const GstCalculator = dynamic(() => import('./components/gst-calculator').then(mod => mod.GstCalculator), {
+const GstCalculatorComponent = dynamic(() => import('./components/gst-calculator').then(mod => mod.GstCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'GST Calculator - CalcPro',
-  description: 'Calculate Goods and Services Tax (GST) by either adding GST to a net amount or removing GST from a gross amount for various GST rates.',
-};
 
 export default function GstCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function GstCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <GstCalculator />
+          <GstCalculatorComponent />
         </CardContent>
       </Card>
     </div>

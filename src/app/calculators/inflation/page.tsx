@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowBigUpDash } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const InflationCalculator = dynamic(() => import('./components/inflation-calculator').then(mod => mod.InflationCalculator), {
+const InflationCalculatorComponent = dynamic(() => import('./components/inflation-calculator').then(mod => mod.InflationCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Inflation Calculator - CalcPro',
-  description: 'Estimate the future value of money and the impact of inflation over time. Enter initial amount, years, and inflation rate.',
-};
 
 export default function InflationCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function InflationCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <InflationCalculator />
+          <InflationCalculatorComponent />
         </CardContent>
       </Card>
     </div>

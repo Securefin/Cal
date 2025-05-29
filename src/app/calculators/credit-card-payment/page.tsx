@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CreditCard } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const CreditCardPaymentCalculator = dynamic(() => import('./components/credit-card-payment-calculator').then(mod => mod.CreditCardPaymentCalculator), {
+const CreditCardPaymentCalculatorComponent = dynamic(() => import('./components/credit-card-payment-calculator').then(mod => mod.CreditCardPaymentCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Credit Card Payment Calculator - CalcPro',
-  description: 'Estimate how long it will take to pay off your credit card balance and the total interest paid based on your monthly payments.',
-};
 
 export default function CreditCardPaymentCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function CreditCardPaymentCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <CreditCardPaymentCalculator />
+          <CreditCardPaymentCalculatorComponent />
         </CardContent>
       </Card>
     </div>

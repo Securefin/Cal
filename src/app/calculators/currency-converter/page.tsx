@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Landmark } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const CurrencyConverter = dynamic(() => import('./components/currency-converter').then(mod => mod.CurrencyConverter), {
+const CurrencyConverterComponent = dynamic(() => import('./components/currency-converter').then(mod => mod.CurrencyConverter), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Currency Converter (Demo) - CalcPro',
-  description: 'Convert between major currencies (USD, EUR, GBP, JPY, INR) using sample exchange rates. For demonstration purposes only.',
-};
 
 export default function CurrencyConverterPage() {
   return (
@@ -29,7 +24,7 @@ export default function CurrencyConverterPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <CurrencyConverter />
+          <CurrencyConverterComponent />
         </CardContent>
       </Card>
        <Card className="w-full max-w-lg shadow-lg mt-6 bg-muted/30">

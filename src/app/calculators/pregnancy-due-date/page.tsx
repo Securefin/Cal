@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CalendarDays } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const PregnancyDueDateCalculator = dynamic(() => import('./components/pregnancy-due-date-calculator').then(mod => mod.PregnancyDueDateCalculator), {
+const PregnancyDueDateCalculatorComponent = dynamic(() => import('./components/pregnancy-due-date-calculator').then(mod => mod.PregnancyDueDateCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Pregnancy Due Date Calculator - CalcPro',
-  description: "Estimate your baby's due date based on the first day of your last menstrual period (LMP) using Naegele's rule.",
-};
 
 export default function PregnancyDueDateCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function PregnancyDueDateCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <PregnancyDueDateCalculator />
+          <PregnancyDueDateCalculatorComponent />
         </CardContent>
       </Card>
     </div>

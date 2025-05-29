@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Footprints } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const StepsToCalorieCalculator = dynamic(() => import('./components/steps-to-calorie-calculator').then(mod => mod.StepsToCalorieCalculator), {
+const StepsToCalorieCalculatorComponent = dynamic(() => import('./components/steps-to-calorie-calculator').then(mod => mod.StepsToCalorieCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Steps to Calories Calculator - CalcPro',
-  description: 'Estimate the number of calories burned from walking based on the number of steps taken and your weight.',
-};
 
 export default function StepsToCalorieCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function StepsToCalorieCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <StepsToCalorieCalculator />
+          <StepsToCalorieCalculatorComponent />
            <Card className="mt-6 bg-muted/30">
             <CardHeader className="py-2 px-3">
                 <CardTitle className="text-sm font-medium text-muted-foreground">Disclaimer:</CardTitle>

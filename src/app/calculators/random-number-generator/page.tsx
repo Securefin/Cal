@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Dice5 } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const RandomNumberGenerator = dynamic(() => import('./components/random-number-generator').then(mod => mod.RandomNumberGenerator), {
+const RandomNumberGeneratorComponent = dynamic(() => import('./components/random-number-generator').then(mod => mod.RandomNumberGenerator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Random Number Generator - CalcPro',
-  description: 'Generate random integers within a specified range (min/max). Choose how many random numbers you need.',
-};
 
 export default function RandomNumberGeneratorPage() {
   return (
@@ -28,7 +23,7 @@ export default function RandomNumberGeneratorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <RandomNumberGenerator />
+          <RandomNumberGeneratorComponent />
         </CardContent>
       </Card>
        <Card className="w-full max-w-lg shadow-lg mt-6 bg-muted/30">

@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Binary } from "lucide-react";
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const BinaryHexadecimalCalculator = dynamic(() => import('./components/binary-hexadecimal-calculator').then(mod => mod.BinaryHexadecimalCalculator), {
+const BinaryHexadecimalCalculatorComponent = dynamic(() => import('./components/binary-hexadecimal-calculator').then(mod => mod.BinaryHexadecimalCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Binary/Decimal/Hexadecimal Converter - CalcPro',
-  description: 'Convert numbers between binary, decimal, and hexadecimal systems. Enter a value in one base to see its equivalents in others.',
-};
 
 export default function BinaryHexadecimalCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function BinaryHexadecimalCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <BinaryHexadecimalCalculator />
+          <BinaryHexadecimalCalculatorComponent />
         </CardContent>
       </Card>
        <Card className="w-full max-w-lg shadow-lg mt-6 bg-muted/30">

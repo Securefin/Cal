@@ -1,18 +1,13 @@
-
+"use client";
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Atom } from "lucide-react"; // Using Atom icon for Scientific Calculator
-import type { Metadata } from 'next';
+// Metadata is now in layout.tsx
 
-const ScientificCalculator = dynamic(() => import('./components/scientific-calculator').then(mod => mod.ScientificCalculator), {
+const ScientificCalculatorComponent = dynamic(() => import('./components/scientific-calculator').then(mod => mod.ScientificCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
-
-export const metadata: Metadata = {
-  title: 'Scientific Calculator - CalcPro',
-  description: 'Perform advanced mathematical and scientific calculations including trigonometric functions, logarithms, powers, roots, and factorials.',
-};
 
 export default function ScientificCalculatorPage() {
   return (
@@ -28,7 +23,7 @@ export default function ScientificCalculatorPage() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <ScientificCalculator />
+          <ScientificCalculatorComponent />
         </CardContent>
       </Card>
     </div>
