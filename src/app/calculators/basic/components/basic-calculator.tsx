@@ -4,12 +4,15 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Copy } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export function BasicCalculator() {
   const [displayValue, setDisplayValue] = useState("0");
   const [firstOperand, setFirstOperand] = useState<number | null>(null);
   const [operator, setOperator] = useState<string | null>(null);
   const [waitingForSecondOperand, setWaitingForSecondOperand] = useState(false);
+  const { toast } = useToast();
 
   const handleDigitClick = (digit: string) => {
     if (waitingForSecondOperand) {
@@ -102,10 +105,23 @@ export function BasicCalculator() {
   
   const handleBackspace = () => {
     if (waitingForSecondOperand) return; // Don't allow backspace on result of previous operation if new one hasn't started
-    if (displayValue.length > 1) {
+    if (displayValue.length > 1 && displayValue !== "Error") {
       setDisplayValue(displayValue.slice(0, -1));
     } else {
       setDisplayValue("0");
+    }
+  };
+
+  const handleCopy = () => {
+    if (displayValue && displayValue !== "Error") {
+      navigator.clipboard.writeText(displayValue).then(() => {
+        toast({ title: "Result Copied!", description: `${displayValue} copied to clipboard.` });
+      }).catch(err => {
+        toast({ title: "Copy Failed", description: "Could not copy result.", variant: "destructive" });
+        console.error("Failed to copy: ", err);
+      });
+    } else {
+      toast({ title: "Nothing to Copy", description: "Display is empty or shows an error.", variant: "destructive"});
     }
   };
 
@@ -135,13 +151,24 @@ export function BasicCalculator() {
 
   return (
     <div className="space-y-4 p-4 bg-card rounded-lg shadow-md">
-      <Input
-        type="text"
-        value={displayValue}
-        readOnly
-        className="w-full h-16 text-4xl text-right font-mono bg-muted/50 border-border focus-visible:ring-primary"
-        aria-label="Calculator display"
-      />
+      <div className="relative">
+        <Input
+          type="text"
+          value={displayValue}
+          readOnly
+          className="w-full h-16 text-4xl text-right font-mono bg-muted/50 border-border focus-visible:ring-primary pr-12" // Added pr-12 for copy button space
+          aria-label="Calculator display"
+        />
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={handleCopy}
+          className="absolute right-1 top-1/2 -translate-y-1/2 h-10 w-10 text-muted-foreground hover:text-primary"
+          aria-label="Copy result"
+        >
+          <Copy className="h-5 w-5" />
+        </Button>
+      </div>
       <div className="grid grid-cols-4 gap-2">
         {buttonLayout.map((btn) => (
           <Button
