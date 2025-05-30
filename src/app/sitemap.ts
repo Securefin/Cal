@@ -1,3 +1,4 @@
+
 import type { MetadataRoute } from 'next';
 import { calculatorCategories } from '@/lib/calculator-data';
 
@@ -25,6 +26,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/about`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/terms`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/privacy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/contact`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.6,
+    },
   ];
 
   const calculatorPages: MetadataRoute.Sitemap = calculatorCategories.flatMap(category =>
@@ -34,4 +59,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         url: `${BASE_URL}/calculators/${calc.slug}`,
         lastModified: currentDate,
         changeFrequency: 'monthly',
-        priority:
+        priority: 0.8,
+      }))
+  );
+
+  return [...staticPages, ...calculatorPages];
+}

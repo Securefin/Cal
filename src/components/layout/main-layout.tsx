@@ -2,7 +2,7 @@
 import type { ReactNode } from 'react';
 import React from 'react';
 import Link from 'next/link';
-import { Lightbulb, Home, Calculator as DefaultCalculatorIcon, type LucideIcon } from 'lucide-react';
+import { Lightbulb, Home, Calculator as DefaultCalculatorIcon, type LucideIcon, FileText, Shield, Info, Mail } from 'lucide-react';
 import * as LucideIcons from 'lucide-react'; // Import all icons
 import {
   Sidebar,
@@ -131,8 +131,35 @@ export function MainLayout({ children }: MainLayoutProps) {
           <CalculatorNavigation />
 
         </SidebarContent>
-        <SidebarFooter className="p-4">
-          <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} CalcPro</p>
+        <SidebarFooter className="p-4 space-y-2">
+          <Separator />
+           <SidebarMenu className="mt-2">
+            <SidebarMenuItem>
+              <SidebarMenuButton href="/about" tooltip="About Us" size="sm" className="font-normal w-full justify-start h-7">
+                <Info className="size-3.5 shrink-0" />
+                <span className="truncate text-xs">About Us</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton href="/terms" tooltip="Terms & Conditions" size="sm" className="font-normal w-full justify-start h-7">
+                <FileText className="size-3.5 shrink-0" />
+                <span className="truncate text-xs">Terms & Conditions</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+            <SidebarMenuItem>
+              <SidebarMenuButton href="/privacy" tooltip="Privacy Policy" size="sm" className="font-normal w-full justify-start h-7">
+                <Shield className="size-3.5 shrink-0" />
+                <span className="truncate text-xs">Privacy Policy</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+             <SidebarMenuItem>
+              <SidebarMenuButton href="/contact" tooltip="Contact Us" size="sm" className="font-normal w-full justify-start h-7">
+                <Mail className="size-3.5 shrink-0" />
+                <span className="truncate text-xs">Contact Us</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+          <p className="text-xs text-muted-foreground pt-2">© {new Date().getFullYear()} CalcPro</p>
         </SidebarFooter>
       </Sidebar>
       <SidebarInset>
