@@ -1,8 +1,9 @@
 
 import type { ReactNode } from 'react';
-import React from 'react'; // Import React for React.memo
+import React from 'react';
 import Link from 'next/link';
-import { Lightbulb, Home, Calculator as CalculatorIcon } from 'lucide-react';
+import { Lightbulb, Home, Calculator as DefaultCalculatorIcon, type LucideIcon } from 'lucide-react';
+import * as LucideIcons from 'lucide-react'; // Import all icons
 import {
   Sidebar,
   SidebarContent,
@@ -30,19 +31,27 @@ interface MainLayoutProps {
   children: ReactNode;
 }
 
-// Memoized component for rendering the calculator navigation accordion
+// Helper function to get an icon component by name
+const getIcon = (iconName?: string, defaultIcon: LucideIcon = DefaultCalculatorIcon): LucideIcon => {
+  if (iconName && LucideIcons[iconName as keyof typeof LucideIcons]) {
+    return LucideIcons[iconName as keyof typeof LucideIcons];
+  }
+  return defaultIcon;
+};
+
+
 const CalculatorNavigation = React.memo(function CalculatorNavigation() {
   return (
     <Accordion type="multiple" className="w-full px-2 group-data-[collapsible=icon]:px-0">
       {calculatorCategories.map((category: CalculatorCategory) => {
-        const CategoryIcon = category.icon;
+        const CategoryIcon = getIcon(category.iconName, LucideIcons.LayoutGrid); // Use LayoutGrid as default for category
         return (
           <AccordionItem value={category.name} key={category.name} className="border-none">
             <AccordionTrigger
               className={cn(
                 "flex w-full items-center justify-between rounded-md px-2 py-1.5 text-left text-sm font-normal hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 focus-visible:ring-sidebar-ring group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:size-8 group-data-[collapsible=icon]:p-0 [&>svg:last-child]:group-data-[collapsible=icon]:hidden"
               )}
-              title={category.name} // Tooltip for icon-only mode
+              title={category.name}
             >
               <div className="flex items-center gap-2 overflow-hidden">
                 <CategoryIcon className="size-4 shrink-0 group-data-[collapsible=icon]:size-5" />
@@ -52,7 +61,7 @@ const CalculatorNavigation = React.memo(function CalculatorNavigation() {
             <AccordionContent className="pt-0 pb-1 pl-4 group-data-[collapsible=icon]:hidden">
               <SidebarMenu className="mt-1">
                 {category.calculators.map((calc: CalculatorItem) => {
-                  const CalcItemIcon = calc.icon || CalculatorIcon; // Fallback icon
+                  const CalcItemIcon = getIcon(calc.iconName, DefaultCalculatorIcon);
                   return (
                     <SidebarMenuItem key={calc.slug}>
                       <SidebarMenuButton
@@ -60,7 +69,7 @@ const CalculatorNavigation = React.memo(function CalculatorNavigation() {
                         tooltip={calc.name}
                         size="sm"
                         className={cn(
-                          "font-normal w-full justify-start h-7", // ensure consistent height for sub-items
+                          "font-normal w-full justify-start h-7", 
                           !calc.isImplemented && "opacity-60 cursor-not-allowed"
                         )}
                         disabled={!calc.isImplemented}
@@ -111,7 +120,7 @@ export function MainLayout({ children }: MainLayoutProps) {
             </SidebarMenuItem>
             <SidebarMenuItem>
                <SidebarMenuButton href="/calculators" tooltip="All Calculators Overview">
-                 <CalculatorIcon />
+                 <DefaultCalculatorIcon /> 
                  All Calculators
                </SidebarMenuButton>
             </SidebarMenuItem>
@@ -119,7 +128,7 @@ export function MainLayout({ children }: MainLayoutProps) {
 
           <Separator className="my-2" />
           
-          <CalculatorNavigation /> {/* Use the memoized component here */}
+          <CalculatorNavigation />
 
         </SidebarContent>
         <SidebarFooter className="p-4">
