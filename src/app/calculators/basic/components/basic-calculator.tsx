@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Copy } from "lucide-react";
@@ -126,7 +126,7 @@ export function BasicCalculator() {
   };
 
 
-  const buttonLayout = [
+  const buttonLayout = useMemo(() => [
     { label: "AC", onClick: handleClearClick, className: "col-span-2 bg-destructive hover:bg-destructive/90" },
     { label: "DEL", onClick: handleBackspace, className: "bg-secondary hover:bg-secondary/80" },
     { label: "/", onClick: () => handleOperatorClick("/"), className: "bg-primary hover:bg-primary/90 text-primary-foreground" },
@@ -146,7 +146,8 @@ export function BasicCalculator() {
     { label: "0", onClick: () => handleDigitClick("0") },
     { label: ".", onClick: handleDecimalClick },
     { label: "=", onClick: handleEqualsClick, className: "col-span-1 bg-primary hover:bg-primary/90 text-primary-foreground" },
-  ];
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  ], []); // Dependencies: handlers are stable due to useState setters
 
 
   return (

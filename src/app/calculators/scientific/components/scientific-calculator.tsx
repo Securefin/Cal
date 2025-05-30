@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
@@ -129,15 +129,15 @@ export function ScientificCalculator() {
 
     switch (func) {
       case "x²":
-        setExpression((prev) => `(${prev})^2`);
+        setExpression((prev) => `(${prev || currentInput})^2`);
         setCurrentInput("0");
         break;
       case "x³":
-        setExpression((prev) => `(${prev})^3`);
+        setExpression((prev) => `(${prev || currentInput})^3`);
         setCurrentInput("0");
         break;
       case "1/x":
-        setExpression((prev) => `1/(${prev})`);
+        setExpression((prev) => `1/(${prev || currentInput})`);
         setCurrentInput("0");
         break;
       case "√":
@@ -246,24 +246,41 @@ export function ScientificCalculator() {
       handleClearClick();
       return;
     }
-    if (currentInput.length > 1 && currentInput !== "0") {
-      const newCurrentInput = currentInput.slice(0, -1);
-      setCurrentInput(newCurrentInput);
-      setExpression(prev => prev.slice(0, - (currentInput.length - newCurrentInput.length) ));
+    
+    let newExpression = expression;
+    let newCurrentInput = currentInput;
 
-    } else if (currentInput.length === 1 && currentInput !== "0") {
-      setCurrentInput("0");
-       setExpression(prev => prev.slice(0, -1));
-    } else if (expression.length > 0) { // If currentInput is "0", backspace expression
-      setExpression((prev) => prev.slice(0, -1));
-      // Potentially try to reconstruct currentInput from expression if needed, or keep it "0"
+    if (currentInput !== "0" && currentInput.length > 0) {
+        newCurrentInput = currentInput.slice(0, -1);
+        if (newCurrentInput === "" || newCurrentInput === "-") {
+            newCurrentInput = "0";
+        }
+        // Adjust expression if currentInput was part of it
+        if (expression.endsWith(currentInput)) {
+             newExpression = expression.substring(0, expression.length - currentInput.length) + newCurrentInput;
+             if (newCurrentInput === "0" && (expression.length - currentInput.length) > 0) {
+                // if currentInput becomes 0, we might just remove it from expression if it was the last number
+                newExpression = expression.substring(0, expression.length - currentInput.length);
+             } else {
+                 newExpression = expression.substring(0, expression.length - currentInput.length) + newCurrentInput;
+             }
+        } else {
+             // Fallback if currentInput wasn't simply appended (e.g. after parenthesis)
+             // This part is tricky. For now, we'll just shorten the expression.
+             newExpression = expression.slice(0, -1);
+        }
+
+    } else if (expression.length > 0) {
+        newExpression = expression.slice(0, -1);
     }
-    // Ensure displayExpression updates correctly too
-     setDisplayExpression(prev => prev.slice(0, -1));
-  };
+    
+    setCurrentInput(newCurrentInput === "" ? "0" : newCurrentInput);
+    setExpression(newExpression);
+    setDisplayExpression(newExpression); // Keep displayExpression in sync
+};
 
 
-  const buttonLayout = [
+  const buttonLayout = useMemo(() => [
     { label: isRadianMode ? "Rad" : "Deg", onClick: () => setIsRadianMode(!isRadianMode), className: "text-xs", isToggle: true },
     { label: "x²", onClick: () => handleFunctionClick("x²") },
     { label: "x³", onClick: () => handleFunctionClick("x³") },
@@ -308,8 +325,9 @@ export function ScientificCalculator() {
     { label: "0", onClick: () => handleDigitClick("0") },
     { label: ".", onClick: handleDecimalClick },
     { label: "=", onClick: handleEqualsClick, icon: Equal, className: "bg-primary hover:bg-primary/90 text-primary-foreground" },
-  ];
-  // Removed +/- for now as its interaction with expression string is complex. Can be re-added.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  ], [isRadianMode, currentInput, expression]); // Add currentInput and expression if handlers directly use them and need to be fresh
+
 
   return (
     <div className="space-y-3 p-2 bg-card rounded-lg shadow-md">
