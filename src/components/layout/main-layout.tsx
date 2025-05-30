@@ -23,7 +23,7 @@ import {
 import { Icons } from '@/components/icons';
 import { Header } from './header';
 import { Separator } from '@/components/ui/separator';
-import { calculatorCategories, type CalculatorCategory, type CalculatorItem } from '@/lib/calculator-data';
+import { calculatorCategories, type CalculatorCategory, type CalculatorItem } from "@/lib/calculator-data";
 import { cn } from '@/lib/utils';
 
 
@@ -118,12 +118,7 @@ export function MainLayout({ children }: MainLayoutProps) {
                 AI Suggestions
               </SidebarMenuButton>
             </SidebarMenuItem>
-            <SidebarMenuItem>
-               <SidebarMenuButton href="/calculators" tooltip="All Calculators Overview">
-                 <DefaultCalculatorIcon /> 
-                 All Calculators
-               </SidebarMenuButton>
-            </SidebarMenuItem>
+            {/* Removed "All Calculators" link */}
           </SidebarMenu>
 
           <Separator className="my-2" />
