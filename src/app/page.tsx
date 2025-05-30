@@ -1,5 +1,6 @@
 
 import type { ReactNode } from 'react';
+import React from 'react'; // Import React for React.memo
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Lightbulb, Calculator, Sigma, Wand2, Sparkles, type LucideIcon } from "lucide-react";
@@ -17,7 +18,8 @@ interface FeatureCardProps {
   description: string;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, description }) => (
+// Memoize FeatureCard
+const FeatureCardComponent: React.FC<FeatureCardProps> = ({ icon: Icon, title, description }) => (
   <Card className="text-center p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out h-full flex flex-col">
     <div className="mb-4 flex justify-center">
       <Icon className="h-12 w-12 text-primary" />
@@ -26,6 +28,9 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, descriptio
     <CardDescription className="text-foreground/80 flex-grow">{description}</CardDescription>
   </Card>
 );
+FeatureCardComponent.displayName = "FeatureCardComponent";
+const FeatureCard = React.memo(FeatureCardComponent);
+
 
 export default function HomePage() {
   return (

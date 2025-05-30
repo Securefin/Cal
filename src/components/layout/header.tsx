@@ -1,11 +1,14 @@
+
 "use client"
+import React from "react"; // Import React for React.memo
 import Link from "next/link"
 import { Icons } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Button } from "@/components/ui/button"
 
-export function Header() {
+// Wrap Header with React.memo
+const HeaderComponent = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 max-w-screen-2xl items-center">
@@ -41,3 +44,6 @@ export function Header() {
     </header>
   )
 }
+
+HeaderComponent.displayName = "HeaderComponent";
+export const Header = React.memo(HeaderComponent);
