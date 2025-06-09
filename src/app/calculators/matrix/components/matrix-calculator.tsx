@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, type ChangeEvent } from "react";
+import React, { useState, type ChangeEvent } from "react"; // Added React
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -25,7 +25,7 @@ const createMatrix = (rows: number, cols: number, defaultValue: string | number 
   return Array(rows).fill(null).map(() => Array(cols).fill(defaultValue));
 };
 
-export function MatrixCalculator() {
+function MatrixCalculatorComponent() {
   const [rowsA, setRowsA] = useState<number>(2);
   const [colsA, setColsA] = useState<number>(2);
   const [matrixA, setMatrixA] = useState<string[][]>(createMatrix(2, 2, "") as string[][]);
@@ -269,3 +269,5 @@ export function MatrixCalculator() {
     </div>
   );
 }
+MatrixCalculatorComponent.displayName = "MatrixCalculatorComponent";
+export const MatrixCalculator = React.memo(MatrixCalculatorComponent);

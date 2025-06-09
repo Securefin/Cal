@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react"; // Added React
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -35,7 +35,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function GraphingCalculator() {
+function GraphingCalculatorComponent() {
   const [functionString, setFunctionString] = useState<string>("Math.sin(x)");
   const [xMin, setXMin] = useState<string>("-10");
   const [xMax, setXMax] = useState<string>("10");
@@ -225,3 +225,5 @@ export function GraphingCalculator() {
     </div>
   );
 }
+GraphingCalculatorComponent.displayName = "GraphingCalculatorComponent";
+export const GraphingCalculator = React.memo(GraphingCalculatorComponent);

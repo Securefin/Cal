@@ -1,13 +1,13 @@
 
 "use client";
 
-import { useState, useMemo } from "react";
+import React, { useState, useMemo } from "react"; // Added React
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Copy } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-export function BasicCalculator() {
+function BasicCalculatorComponent() {
   const [displayValue, setDisplayValue] = useState("0");
   const [firstOperand, setFirstOperand] = useState<number | null>(null);
   const [operator, setOperator] = useState<string | null>(null);
@@ -185,3 +185,5 @@ export function BasicCalculator() {
     </div>
   );
 }
+BasicCalculatorComponent.displayName = "BasicCalculatorComponent";
+export const BasicCalculator = React.memo(BasicCalculatorComponent);

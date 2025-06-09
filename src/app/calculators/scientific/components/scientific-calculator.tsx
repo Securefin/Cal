@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react"; // Added React
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
@@ -60,7 +60,7 @@ const evaluateExpression = (expression: string): number | string => {
 };
 
 
-export function ScientificCalculator() {
+function ScientificCalculatorComponent() {
   const [currentInput, setCurrentInput] = useState("0");
   const [expression, setExpression] = useState("");
   const [isRadianMode, setIsRadianMode] = useState(true);
@@ -380,3 +380,5 @@ export function ScientificCalculator() {
     </div>
   );
 }
+ScientificCalculatorComponent.displayName = "ScientificCalculatorComponent";
+export const ScientificCalculator = React.memo(ScientificCalculatorComponent);
