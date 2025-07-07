@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useMemo } from "react"; // Added React
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Copy } from "lucide-react";
@@ -12,49 +12,62 @@ function BasicCalculatorComponent() {
   const [firstOperand, setFirstOperand] = useState<number | null>(null);
   const [operator, setOperator] = useState<string | null>(null);
   const [waitingForSecondOperand, setWaitingForSecondOperand] = useState(false);
+  const [expression, setExpression] = useState("");
   const { toast } = useToast();
 
   const handleDigitClick = (digit: string) => {
+    if (expression.includes("=")) {
+      setDisplayValue(digit);
+      setExpression(digit);
+      setFirstOperand(null);
+      setOperator(null);
+      setWaitingForSecondOperand(false);
+      return;
+    }
+
     if (waitingForSecondOperand) {
       setDisplayValue(digit);
+      setExpression((prev) => prev + digit);
       setWaitingForSecondOperand(false);
     } else {
-      setDisplayValue(displayValue === "0" ? digit : displayValue + digit);
+      const newDisplayValue = displayValue === "0" ? digit : displayValue + digit;
+      setDisplayValue(newDisplayValue);
+      // If expression was 0, replace it, otherwise append.
+      if (expression === "0" && digit !== ".") {
+          setExpression(digit);
+      } else if (expression === "-0" && digit !== ".") {
+          setExpression("-" + digit);
+      }
+      else {
+          setExpression((prev) => prev + digit);
+      }
     }
   };
 
   const handleDecimalClick = () => {
-    if (waitingForSecondOperand) {
+    if (expression.includes("=")) {
       setDisplayValue("0.");
+      setExpression("0.");
+      setFirstOperand(null);
+      setOperator(null);
       setWaitingForSecondOperand(false);
       return;
     }
-    if (!displayValue.includes(".")) {
-      setDisplayValue(displayValue + ".");
-    }
-  };
 
-  const handleOperatorClick = (nextOperator: string) => {
-    const inputValue = parseFloat(displayValue);
-
-    if (operator && waitingForSecondOperand) {
-      setOperator(nextOperator);
+    if (waitingForSecondOperand) {
+      setDisplayValue("0.");
+      setExpression((prev) => prev + "0.");
+      setWaitingForSecondOperand(false);
       return;
     }
 
-    if (firstOperand === null) {
-      setFirstOperand(inputValue);
-    } else if (operator) {
-      const result = performCalculation();
-      setDisplayValue(String(result));
-      setFirstOperand(result);
+    if (!displayValue.includes(".")) {
+      setDisplayValue(displayValue + ".");
+      setExpression((prev) => (prev === "" ? "0." : prev + "."));
     }
-
-    setWaitingForSecondOperand(true);
-    setOperator(nextOperator);
   };
 
-  const performCalculation = () => {
+  const performCalculation = (): number => {
     const inputValue = parseFloat(displayValue);
     if (firstOperand === null || operator === null) return inputValue;
 
@@ -66,27 +79,64 @@ function BasicCalculatorComponent() {
       case "*":
         return firstOperand * inputValue;
       case "/":
-        if (inputValue === 0) {
-          return NaN; // Handle division by zero
-        }
+        if (inputValue === 0) return NaN;
         return firstOperand / inputValue;
       default:
         return inputValue;
     }
   };
 
-  const handleEqualsClick = () => {
-    if (operator && firstOperand !== null) {
-      const result = performCalculation();
-       if (isNaN(result)) {
-        setDisplayValue("Error");
-      } else {
-        setDisplayValue(String(Number(result.toFixed(10)))); // Limit precision and remove trailing zeros
-      }
-      setFirstOperand(null);
-      setOperator(null);
-      setWaitingForSecondOperand(true); // Ready for new calculation
+  const handleOperatorClick = (nextOperator: string) => {
+    const inputValue = parseFloat(displayValue);
+
+    if (expression.includes("=")) {
+      setExpression(displayValue + ` ${nextOperator} `);
+      setFirstOperand(inputValue);
+      setOperator(nextOperator);
+      setWaitingForSecondOperand(true);
+      return;
     }
+
+    if (operator && waitingForSecondOperand) {
+      setOperator(nextOperator);
+      setExpression((prev) => prev.trim().slice(0, -1).trim() + ` ${nextOperator} `);
+      return;
+    }
+
+    if (firstOperand === null) {
+      setFirstOperand(inputValue);
+    } else if (operator) {
+      const result = performCalculation();
+      if (isNaN(result)) {
+        setDisplayValue("Error");
+        setExpression("Error");
+        return;
+      }
+      const resultString = String(Number(result.toFixed(10)));
+      setDisplayValue(resultString);
+      setFirstOperand(result);
+      setExpression(resultString);
+    }
+
+    setWaitingForSecondOperand(true);
+    setOperator(nextOperator);
+    setExpression((prev) => prev + ` ${nextOperator} `);
+  };
+
+  const handleEqualsClick = () => {
+    if (!operator || firstOperand === null || waitingForSecondOperand) return;
+
+    const result = performCalculation();
+    if (isNaN(result)) {
+      setDisplayValue("Error");
+      setExpression("Error");
+    } else {
+      const resultString = String(Number(result.toFixed(10)));
+      setDisplayValue(resultString);
+      setExpression((prev) => prev + " =");
+    }
+    setFirstOperand(null);
+    setWaitingForSecondOperand(true);
   };
 
   const handleClearClick = () => {
@@ -94,21 +144,36 @@ function BasicCalculatorComponent() {
     setFirstOperand(null);
     setOperator(null);
     setWaitingForSecondOperand(false);
+    setExpression("");
   };
 
   const handleSignChange = () => {
-    const currentValue = parseFloat(displayValue);
-    if (currentValue !== 0) {
-      setDisplayValue(String(currentValue * -1));
+    if (displayValue === "Error" || waitingForSecondOperand) return;
+
+    const newDisplayValue = String(parseFloat(displayValue) * -1);
+    setDisplayValue(newDisplayValue);
+    
+    // Replace the tail of the expression that matches the old display value
+    const currentDisplayNumber = parseFloat(displayValue);
+    if (expression.endsWith(displayValue)) {
+        setExpression(prev => prev.substring(0, prev.length - displayValue.length) + newDisplayValue);
+    } else if (currentDisplayNumber === 0) {
+        setExpression(prev => prev + "-");
     }
   };
-  
+
   const handleBackspace = () => {
-    if (waitingForSecondOperand) return; // Don't allow backspace on result of previous operation if new one hasn't started
-    if (displayValue.length > 1 && displayValue !== "Error") {
-      setDisplayValue(displayValue.slice(0, -1));
-    } else {
-      setDisplayValue("0");
+    if (waitingForSecondOperand || expression.includes("=") || displayValue === "Error") return;
+
+    if (displayValue !== "0") {
+      const newDisplayValue = displayValue.slice(0, -1) || "0";
+      setDisplayValue(newDisplayValue);
+
+      if (expression.endsWith(displayValue)) {
+        setExpression(prev => prev.substring(0, prev.length - displayValue.length) + newDisplayValue);
+      } else {
+        setExpression(prev => prev.slice(0, -1));
+      }
     }
   };
 
@@ -125,8 +190,7 @@ function BasicCalculatorComponent() {
     }
   };
 
-
-  const buttonLayout = useMemo(() => [
+  const buttonLayout = [
     { label: "AC", onClick: handleClearClick, className: "col-span-2 bg-destructive hover:bg-destructive/90" },
     { label: "DEL", onClick: handleBackspace, className: "bg-secondary hover:bg-secondary/80" },
     { label: "/", onClick: () => handleOperatorClick("/"), className: "bg-primary hover:bg-primary/90 text-primary-foreground" },
@@ -146,29 +210,36 @@ function BasicCalculatorComponent() {
     { label: "0", onClick: () => handleDigitClick("0") },
     { label: ".", onClick: handleDecimalClick },
     { label: "=", onClick: handleEqualsClick, className: "col-span-1 bg-primary hover:bg-primary/90 text-primary-foreground" },
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  ], []); // Dependencies: handlers are stable due to useState setters
-
+  ];
 
   return (
     <div className="space-y-4 p-4 bg-card rounded-lg shadow-md">
-      <div className="relative">
+       <div className="space-y-1">
         <Input
           type="text"
-          value={displayValue}
+          value={expression || " "}
           readOnly
-          className="w-full h-16 text-4xl text-right font-mono bg-muted/50 border-border focus-visible:ring-primary pr-12" // Added pr-12 for copy button space
-          aria-label="Calculator display"
+          className="w-full h-8 text-lg text-right font-mono bg-transparent border-none text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0"
+          aria-label="Calculator expression"
         />
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={handleCopy}
-          className="absolute right-1 top-1/2 -translate-y-1/2 h-10 w-10 text-muted-foreground hover:text-primary"
-          aria-label="Copy result"
-        >
-          <Copy className="h-5 w-5" />
-        </Button>
+        <div className="relative">
+          <Input
+            type="text"
+            value={displayValue}
+            readOnly
+            className="w-full h-16 text-4xl text-right font-mono bg-muted/50 border-border focus-visible:ring-primary pr-12"
+            aria-label="Calculator display"
+          />
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={handleCopy}
+            className="absolute right-1 top-1/2 -translate-y-1/2 h-10 w-10 text-muted-foreground hover:text-primary"
+            aria-label="Copy result"
+          >
+            <Copy className="h-5 w-5" />
+          </Button>
+        </div>
       </div>
       <div className="grid grid-cols-4 gap-2">
         {buttonLayout.map((btn) => (
