@@ -3,11 +3,13 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { CheckCircle, Heart } from "lucide-react";
+import { CheckCircle, Heart, ArrowRight } from "lucide-react";
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About MyAIWork - Our Mission and Creator',
-  description: 'Learn about MyAIWork, our mission to simplify AI tool discovery, and the creator behind the platform.',
+  title: 'About CalcPro - Our Mission and Creator',
+  description: 'Learn about CalcPro, our mission to simplify complex calculations, and the creator behind the platform.',
 };
 
 export default function AboutPage() {
@@ -15,13 +17,12 @@ export default function AboutPage() {
     <div className="container mx-auto max-w-5xl py-12 md:py-16 px-4">
       <main className="space-y-16">
 
-        {/* Hero Section */}
-        <section className="text-center md:text-left">
+        <section className="text-center">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary">
-              About MyAIWork
+              About CalcPro
             </h1>
-            <div className="max-w-3xl mx-auto md:mx-0">
+            <div className="max-w-3xl mx-auto">
                 <p className="text-lg text-muted-foreground leading-relaxed">
                 MyAIWork helps users discover, compare, and use trending AI tools all in one place. We bridge the gap between complex AI technology and everyday users.
                 </p>
@@ -32,8 +33,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-          {/* Our Mission Section */}
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <section>
             <h2 className="text-3xl font-bold tracking-tight mb-4">Our Mission</h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -41,7 +41,6 @@ export default function AboutPage() {
             </p>
           </section>
 
-          {/* Why Choose Us Section */}
           <section>
             <h2 className="text-3xl font-bold tracking-tight mb-4">Why Choose Us</h2>
             <ul className="space-y-4">
@@ -65,11 +64,10 @@ export default function AboutPage() {
           </section>
         </div>
 
-        {/* Meet the Creator Section */}
         <section className="text-center pt-8">
           <h2 className="text-3xl font-bold tracking-tight">Meet the Creator</h2>
           <div className="mt-8 flex justify-center">
-            <Card className="max-w-sm p-6 border-border/40 shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <Card className="max-w-sm p-6 border-border/40 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="flex flex-col items-center text-center">
                 <Avatar className="w-28 h-28 mb-4">
                   <AvatarImage src="https://i.pravatar.cc/150?img=3" alt="Akshay Panawlkar" />
@@ -77,12 +75,26 @@ export default function AboutPage() {
                 </Avatar>
                 <h3 className="text-2xl font-semibold">Akshay Panawlkar</h3>
                 <p className="text-primary font-medium">Solo Developer</p>
-                <p className="mt-4 text-sm text-muted-foreground flex items-center gap-1.5">
-                  Built with <Heart className="h-4 w-4 text-destructive fill-destructive" /> using Next.js, Tailwind, and automation tools.
+                <p className="mt-4 text-sm text-muted-foreground flex items-center justify-center gap-1.5">
+                  Built with <Heart className="h-4 w-4 text-destructive fill-destructive" /> using Next.js, Tailwind, and automation.
                 </p>
               </div>
             </Card>
           </div>
+        </section>
+
+        <section className="text-center pt-12">
+            <h2 className="text-2xl font-bold tracking-tight">Ready to Get Started?</h2>
+            <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
+              Dive into our collection of powerful tools and simplify your complex calculations today.
+            </p>
+            <div className="mt-6">
+                 <Button asChild size="lg" className="group">
+                    <Link href="/calculators">
+                    Explore Tools <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
+                </Button>
+            </div>
         </section>
 
       </main>

@@ -19,12 +19,15 @@ const HeaderComponent = () => {
           <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
             <Link href="/" className="transition-colors hover:text-foreground/80 text-foreground/60">Home</Link>
             <Link href="/calculators" className="transition-colors hover:text-foreground/80 text-foreground/60">Tools</Link>
-            <Link href="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">About Us</Link>
+            <Link href="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">About</Link>
             <Link href="/contact" className="transition-colors hover:text-foreground/80 text-foreground/60">Contact</Link>
           </nav>
         </div>
         
         <div className="flex flex-1 items-center justify-end space-x-2">
+           <Button asChild size="sm" className="hidden sm:flex">
+             <Link href="/calculators">Explore Tools</Link>
+           </Button>
           <ThemeToggle />
         </div>
       </div>
