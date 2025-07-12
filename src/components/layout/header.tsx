@@ -30,7 +30,7 @@ const HeaderComponent = () => {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Icons.Logo className="h-6 w-6 text-primary" />
             <span className="font-bold">
-              CalcPro
+              MyAIWork
             </span>
           </Link>
           <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
