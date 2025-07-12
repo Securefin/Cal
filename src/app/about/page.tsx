@@ -16,27 +16,19 @@ export default function AboutPage() {
       <main className="space-y-16">
 
         {/* Hero Section */}
-        <section className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <section className="text-center md:text-left">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary">
               About MyAIWork
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              MyAIWork helps users discover, compare, and use trending AI tools all in one place. We bridge the gap between complex AI technology and everyday users.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Whether you're a developer seeking the latest APIs, a student exploring new learning aids, or a content creator looking to automate your workflow, MyAIWork is your central hub for AI innovation.
-            </p>
-          </div>
-          <div className="flex justify-center">
-            <Image
-              src="https://placehold.co/600x400.png"
-              alt="AI Technology"
-              data-ai-hint="technology ai"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-lg object-cover"
-            />
+            <div className="max-w-3xl mx-auto md:mx-0">
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                MyAIWork helps users discover, compare, and use trending AI tools all in one place. We bridge the gap between complex AI technology and everyday users.
+                </p>
+                <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
+                Whether you're a developer seeking the latest APIs, a student exploring new learning aids, or a content creator looking to automate your workflow, MyAIWork is your central hub for AI innovation.
+                </p>
+            </div>
           </div>
         </section>
 
