@@ -1,61 +1,93 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, MessageSquare } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Mail, Send, Globe, MapPin } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto max-w-3xl py-8 md:py-12">
-      <Card className="shadow-lg">
-        <CardHeader>
-          <div className="flex items-center space-x-2 mb-2">
-            <Mail className="h-8 w-8 text-primary" />
-            <CardTitle as="h1" className="text-3xl">Contact Us</CardTitle>
-          </div>
-          <CardDescription>
-            We'd love to hear from you! Whether you have a question, feedback, or a suggestion, feel free to reach out.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6 text-foreground/80 leading-relaxed">
-          <section>
-            <h2 className="text-xl font-semibold text-primary mb-3">Get in Touch</h2>
-            <p>
-              For any inquiries, support requests, or feedback regarding CalcPro, please email us at:
-            </p>
-            <p className="mt-2">
-              <a
-                href="mailto:contact@calcpro.com" // Replace with your actual contact email
-                className="text-primary hover:underline font-semibold text-lg"
-              >
-                contact@calcpro.com
-              </a>
-            </p>
-            <p className="mt-4">
-              We aim to respond to all inquiries within 24-48 business hours.
-            </p>
-          </section>
+    <div className="container mx-auto max-w-4xl py-12 md:py-16">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Contact Us</h1>
+        <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          We'd love to hear from you! Whether it's feedback, partnership inquiries, or just a hello — get in touch with the MyAIWork team.
+        </p>
+      </div>
 
-          <section>
-            <h2 className="text-xl font-semibold text-primary mb-3">Feedback & Suggestions</h2>
-            <p>
-              Your feedback is invaluable to us as we strive to improve CalcPro. If you have any suggestions for new
-              calculators, features you'd like to see, or ways we can enhance your experience, please don't hesitate
-              to share them.
-            </p>
-          </section>
-          
-          {/* Placeholder for a future contact form
-          <section>
-            <h2 className="text-xl font-semibold text-primary mb-3">Contact Form</h2>
-            <div className="p-6 border rounded-lg bg-muted/30">
-              <p className="text-muted-foreground text-center">
-                <MessageSquare className="inline-block h-6 w-6 mr-2" />
-                Our contact form will be available here soon!
-              </p>
+      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+        {/* Contact Form Section */}
+        <div className="md:col-span-2">
+          <Card className="shadow-lg border-border/40">
+            <CardHeader>
+              <CardTitle className="flex items-center text-2xl">
+                <Send className="mr-3 h-6 w-6 text-primary" />
+                Send us a Message
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <form className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <Label htmlFor="name">Name</Label>
+                    <Input id="name" placeholder="Your Name" />
+                  </div>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="email">Email</Label>
+                    <Input id="email" type="email" placeholder="your@email.com" />
+                  </div>
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="subject">Subject</Label>
+                  <Input id="subject" placeholder="What is this about?" />
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea id="message" placeholder="Your message..." className="min-h-[120px]" />
+                </div>
+                <Button type="submit" size="lg" className="w-full">
+                  Send Message
+                </Button>
+                 <p className="text-xs text-center text-muted-foreground pt-2">
+                    Note: This is a visual representation. The form is not yet connected.
+                  </p>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Contact Info Section */}
+        <div className="space-y-6">
+            <h2 className="text-2xl font-semibold border-b pb-2">Contact Information</h2>
+            <div className="space-y-4 text-md text-foreground/80">
+              <div className="flex items-start gap-3">
+                <Mail className="h-5 w-5 mt-1 text-primary" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Email</h3>
+                  <a href="mailto:support@myaiwork.space" className="hover:text-primary transition-colors">
+                    support@myaiwork.space
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Globe className="h-5 w-5 mt-1 text-primary" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Website</h3>
+                   <a href="https://www.myaiwork.space" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                    www.myaiwork.space
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 mt-1 text-primary" />
+                <div>
+                  <h3 className="font-semibold text-foreground">Location</h3>
+                  <p>Mumbai, India</p>
+                </div>
+              </div>
             </div>
-          </section>
-          */}
-
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 }
