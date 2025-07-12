@@ -9,6 +9,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlertCircle, Calculator, Eraser, CalendarDays, UserCircle } from "lucide-react";
 import { format, isValid } from "date-fns";
+import { cn } from "@/lib/utils";
 
 interface AgeResult {
   years: number;
