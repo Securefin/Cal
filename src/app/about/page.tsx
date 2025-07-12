@@ -1,14 +1,19 @@
-
+import type { Metadata } from 'next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Users, Target, CheckCircle } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: 'About MyAIWork - Our Mission and Team',
+  description: 'Learn about MyAIWork, our mission to simplify AI tool discovery, and the team behind the platform.',
+};
 
 export default function AboutPage() {
   return (
     <div className="container mx-auto max-w-4xl py-8 md:py-12">
       <Card className="shadow-lg border-border/40">
         <CardHeader className="text-center">
-          <CardTitle className="text-4xl font-bold">About MyAIWork</CardTitle>
+          <CardTitle as="h1" className="text-4xl font-bold">About MyAIWork</CardTitle>
           <CardDescription className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
             MyAIWork is your central hub for discovering, comparing, and utilizing the best and most popular AI tools available today. We streamline the process of finding the right AI for your needs, whether you're a developer, a creative professional, or just curious about the future of technology.
           </CardDescription>

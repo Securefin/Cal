@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MessageSquare } from "lucide-react";
 
@@ -9,7 +8,7 @@ export default function ContactPage() {
         <CardHeader>
           <div className="flex items-center space-x-2 mb-2">
             <Mail className="h-8 w-8 text-primary" />
-            <CardTitle className="text-3xl">Contact Us</CardTitle>
+            <CardTitle as="h1" className="text-3xl">Contact Us</CardTitle>
           </div>
           <CardDescription>
             We'd love to hear from you! Whether you have a question, feedback, or a suggestion, feel free to reach out.

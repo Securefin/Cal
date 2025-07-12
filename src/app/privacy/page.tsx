@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield } from "lucide-react";
 
@@ -9,7 +8,7 @@ export default function PrivacyPage() {
         <CardHeader>
           <div className="flex items-center space-x-2 mb-2">
             <Shield className="h-8 w-8 text-primary" />
-            <CardTitle className="text-3xl">Privacy Policy</CardTitle>
+            <CardTitle as="h1" className="text-3xl">Privacy Policy</CardTitle>
           </div>
           <CardDescription>
             Your privacy is important to us. This policy outlines how we handle your information.

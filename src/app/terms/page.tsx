@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText } from "lucide-react";
 
@@ -9,7 +8,7 @@ export default function TermsPage() {
         <CardHeader>
           <div className="flex items-center space-x-2 mb-2">
             <FileText className="h-8 w-8 text-primary" />
-            <CardTitle className="text-3xl">Terms & Conditions</CardTitle>
+            <CardTitle as="h1" className="text-3xl">Terms & Conditions</CardTitle>
           </div>
           <CardDescription>
             Please read these terms and conditions carefully before using Our Service.

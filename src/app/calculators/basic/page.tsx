@@ -20,7 +20,7 @@ export default function BasicCalculatorPage() {
         <CardHeader>
           <div className="flex items-center space-x-2 mb-2">
             <CalculatorIcon className="h-8 w-8 text-primary" />
-            <CardTitle className="text-3xl">Basic Calculator</CardTitle>
+            <CardTitle as="h1" className="text-3xl">Basic Calculator</CardTitle>
           </div>
           <CardDescription>
             Perform simple arithmetic operations.
