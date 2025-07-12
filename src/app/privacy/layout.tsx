@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - CalcPro',
-  description: 'Learn about how CalcPro collects, uses, and protects your personal information. Your privacy is important to us.',
+  title: 'Privacy Policy - MyAIWork',
+  description: 'Learn how MyAIWork collects, uses, and protects your data. We are committed to protecting your privacy.',
 };
 
 export default function PrivacyLayout({
