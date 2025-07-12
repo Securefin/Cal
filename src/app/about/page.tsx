@@ -1,87 +1,94 @@
+
 import type { Metadata } from 'next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Users, Target, CheckCircle } from "lucide-react";
+import { Target, Zap, CheckCircle, Heart } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: 'About MyAIWork - Our Mission and Team',
-  description: 'Learn about MyAIWork, our mission to simplify AI tool discovery, and the team behind the platform.',
+  title: 'About MyAIWork - Our Mission and Creator',
+  description: 'Learn about MyAIWork, our mission to simplify AI tool discovery, and the creator behind the platform.',
 };
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto max-w-4xl py-8 md:py-12">
-      <Card className="shadow-lg border-border/40">
-        <CardHeader className="text-center">
-          <CardTitle as="h1" className="text-4xl font-bold">About MyAIWork</CardTitle>
-          <CardDescription className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
-            MyAIWork is your central hub for discovering, comparing, and utilizing the best and most popular AI tools available today. We streamline the process of finding the right AI for your needs, whether you're a developer, a creative professional, or just curious about the future of technology.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-12 pt-8">
-          
+    <div className="container mx-auto max-w-4xl py-12 md:py-16">
+      <main className="space-y-12 md:space-y-16">
+        
+        {/* Intro Section */}
+        <section className="text-center">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary">About MyAIWork</h1>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed">
+            MyAIWork is a curated directory designed to help you discover, compare, and utilize the best and most popular AI tools available today. We streamline the process of finding the right AI for your specific needs, eliminating hours of research and guesswork.
+          </p>
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground leading-relaxed">
+            Whether you are a developer looking for the latest APIs, a student exploring new learning aids, or a content creator seeking to automate your workflow, MyAIWork is your central hub for AI innovation.
+          </p>
+        </section>
+
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+          {/* Mission Section */}
           <section>
-            <div className="flex items-center justify-center gap-3 mb-4">
-              <Target className="h-8 w-8 text-primary" />
-              <h2 className="text-3xl font-semibold text-center">Our Mission</h2>
-            </div>
-            <p className="text-center text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Our mission is to democratize access to artificial intelligence. We believe that everyone should be able to leverage the power of AI without getting lost in the complexity of the rapidly growing landscape. MyAIWork is designed to be an intuitive and comprehensive resource that empowers users to make informed decisions and seamlessly integrate AI into their workflows.
-            </p>
+            <Card className="h-full border-border/40 shadow-sm">
+              <CardHeader className="flex-row items-center gap-4">
+                <Target className="h-10 w-10 text-primary" />
+                <CardTitle as="h2" className="text-2xl font-semibold">Our Mission</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
+                  Our mission is to democratize access to artificial intelligence. We believe that everyone should be able to leverage the power of AI without getting lost in the complexity of the rapidly growing landscape. MyAIWork is designed to be an intuitive and comprehensive resource that empowers you to make informed decisions.
+                </p>
+              </CardContent>
+            </Card>
           </section>
 
+          {/* Why Choose Us Section */}
           <section>
-            <div className="flex items-center justify-center gap-3 mb-6">
-                <CheckCircle className="h-8 w-8 text-primary" />
-                <h2 className="text-3xl font-semibold text-center">Why Choose Us?</h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-center">
-              <div className="p-6 bg-muted/50 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Curated Selection</h3>
-                <p className="text-muted-foreground">We hand-pick and categorize trending AI tools, so you can easily find high-quality and relevant options.</p>
-              </div>
-              <div className="p-6 bg-muted/50 rounded-lg">
-                <h3 className="text-xl font-semibold mb-2">Easy Comparison</h3>
-                <p className="text-muted-foreground">Our platform allows for straightforward comparison of features, pricing, and use cases, saving you time and effort.</p>
-              </div>
-            </div>
+            <Card className="h-full border-border/40 shadow-sm">
+              <CardHeader className="flex-row items-center gap-4">
+                <Zap className="h-10 w-10 text-primary" />
+                <CardTitle as="h2" className="text-2xl font-semibold">Why Choose Us?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-muted-foreground"><strong>No Login Required:</strong> Jump straight into discovering tools without the hassle of creating an account.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-muted-foreground"><strong>Lightweight & Fast UI:</strong> A clean, minimal interface that loads quickly and is easy to navigate.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                    <span className="text-muted-foreground"><strong>Constantly Updated:</strong> We keep our directory fresh with the latest and most impactful AI tools.</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </section>
+        </div>
 
-          <section>
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Users className="h-8 w-8 text-primary" />
-              <h2 className="text-3xl font-semibold text-center">Meet the Team</h2>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {/* Meet the Creator Section */}
+        <section className="text-center pt-8">
+          <h2 className="text-3xl font-bold tracking-tight">Meet the Creator</h2>
+          <div className="mt-8 flex justify-center">
+            <Card className="max-w-sm p-6 border-border/40 shadow-sm">
               <div className="flex flex-col items-center text-center">
-                <Avatar className="w-24 h-24 mb-4">
-                  <AvatarImage data-ai-hint="person portrait" src="https://placehold.co/128x128.png" alt="Team Member 1" />
-                  <AvatarFallback>JD</AvatarFallback>
+                <Avatar className="w-28 h-28 mb-4">
+                  <AvatarImage data-ai-hint="person portrait" src="https://placehold.co/128x128.png" alt="Akshay Panawlkar" />
+                  <AvatarFallback>AP</AvatarFallback>
                 </Avatar>
-                <h3 className="text-xl font-semibold">Jane Doe</h3>
-                <p className="text-primary">Founder & CEO</p>
+                <h3 className="text-2xl font-semibold">Akshay Panawlkar</h3>
+                <p className="text-primary font-medium">Solo Developer</p>
+                <p className="mt-4 text-sm text-muted-foreground flex items-center gap-1.5">
+                  Built with <Heart className="h-4 w-4 text-destructive fill-destructive" /> using Next.js, Tailwind, and automation tools.
+                </p>
               </div>
-              <div className="flex flex-col items-center text-center">
-                <Avatar className="w-24 h-24 mb-4">
-                  <AvatarImage data-ai-hint="person portrait" src="https://placehold.co/128x128.png" alt="Team Member 2" />
-                  <AvatarFallback>JS</AvatarFallback>
-                </Avatar>
-                <h3 className="text-xl font-semibold">John Smith</h3>
-                <p className="text-primary">Lead Developer</p>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <Avatar className="w-24 h-24 mb-4">
-                  <AvatarImage data-ai-hint="person portrait" src="https://placehold.co/128x128.png" alt="Team Member 3" />
-                  <AvatarFallback>AS</AvatarFallback>
-                </Avatar>
-                <h3 className="text-xl font-semibold">Alex Smith</h3>
-                <p className="text-primary">AI Specialist</p>
-              </div>
-            </div>
-          </section>
+            </Card>
+          </div>
+        </section>
 
-        </CardContent>
-      </Card>
+      </main>
     </div>
   );
 }
