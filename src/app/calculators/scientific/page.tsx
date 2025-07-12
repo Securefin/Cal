@@ -11,8 +11,8 @@ const ScientificCalculatorComponent = dynamic(() => import('./components/scienti
 
 export default function ScientificCalculatorPage() {
   return (
-    <div className="container mx-auto flex flex-col items-center py-10">
-      <Card className="w-full max-w-xl shadow-lg">
+    <div className="container mx-auto flex flex-col items-center py-10 px-4">
+      <Card className="w-full max-w-3xl shadow-lg">
         <CardHeader>
           <div className="flex items-center space-x-2 mb-2">
             <Atom className="h-8 w-8 text-primary" />

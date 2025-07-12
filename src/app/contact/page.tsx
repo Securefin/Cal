@@ -8,7 +8,7 @@ import { Mail, Send, Globe, MapPin } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto max-w-4xl py-12 md:py-16">
+    <div className="container mx-auto max-w-4xl py-12 md:py-16 px-4">
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Contact Us</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -16,9 +16,9 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-12">
         {/* Contact Form Section */}
-        <div className="md:col-span-2">
+        <div className="md:col-span-1">
           <Card className="shadow-lg border-border/40">
             <CardHeader>
               <CardTitle className="flex items-center text-2xl">
@@ -28,15 +28,13 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <form className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div className="space-y-1.5">
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Your Name" />
-                  </div>
-                  <div className="space-y-1.5">
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" type="email" placeholder="your@email.com" />
-                  </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" placeholder="Your Name" />
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" placeholder="your@email.com" />
                 </div>
                 <div className="space-y-1.5">
                   <Label htmlFor="subject">Subject</Label>
@@ -58,7 +56,7 @@ export default function ContactPage() {
         </div>
 
         {/* Contact Info Section */}
-        <div className="space-y-6">
+        <div className="space-y-6 md:col-span-1">
             <h2 className="text-2xl font-semibold border-b pb-2">Contact Information</h2>
             <div className="space-y-4 text-md text-foreground/80">
               <div className="flex items-start gap-3">

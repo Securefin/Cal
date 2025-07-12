@@ -155,7 +155,7 @@ function MatrixCalculatorComponent() {
   ) => (
     <div className="space-y-2">
       <h3 className="text-lg font-semibold text-foreground/90">Matrix {matrixLabel} ({rows}x{cols})</h3>
-      <div className={`grid gap-1`} style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
+      <div className={`grid gap-1 overflow-x-auto`} style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
         {Array(rows).fill(null).map((_, rIndex) =>
           Array(cols).fill(null).map((_, cIndex) => (
             <Input
@@ -176,7 +176,7 @@ function MatrixCalculatorComponent() {
   const renderResultMatrix = (matrix: MatrixData) => (
     <div className="space-y-2">
       <h3 className="text-lg font-semibold text-primary">Result Matrix ({matrix.length}x{matrix[0]?.length || 0})</h3>
-      <div className={`grid gap-1 p-2 bg-muted/50 rounded-md`} style={{ gridTemplateColumns: `repeat(${matrix[0]?.length || 1}, minmax(0, 1fr))` }}>
+      <div className={`grid gap-1 p-2 bg-muted/50 rounded-md overflow-x-auto`} style={{ gridTemplateColumns: `repeat(${matrix[0]?.length || 1}, minmax(0, 1fr))` }}>
         {matrix.map((row, rIndex) =>
           row.map((val, cIndex) => (
             <div

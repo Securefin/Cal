@@ -330,7 +330,7 @@ function ScientificCalculatorComponent() {
 
 
   return (
-    <div className="space-y-3 p-2 bg-card rounded-lg shadow-md">
+    <div className="space-y-3 p-2 bg-card rounded-lg shadow-md w-full">
       <div className="space-y-1">
         <Input
           type="text"
@@ -348,7 +348,7 @@ function ScientificCalculatorComponent() {
         />
       </div>
       
-      <div className="grid grid-cols-4 gap-2">
+      <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
         {buttonLayout.map((btn, index) => {
           const Icon = btn.icon;
           return (

@@ -30,7 +30,7 @@ const getIcon = (iconName?: string, defaultIcon: LucideIcon = LucideIcons.Calcul
 
 export default function CalculatorsPage() {
   return (
-    <div className="container mx-auto py-8 md:py-12 space-y-12">
+    <div className="container mx-auto py-8 md:py-12 px-4 space-y-12">
       <section className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">All Calculators</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">

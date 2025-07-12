@@ -127,8 +127,8 @@ function GraphingCalculatorComponent() {
 
   return (
     <div className="space-y-6">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 items-end">
-        <div className="space-y-1.5 lg:col-span-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 items-end">
+        <div className="space-y-1.5 sm:col-span-2 md:col-span-4 lg:col-span-2">
           <Label htmlFor="functionString">Function f(x)</Label>
           <Input
             id="functionString"
