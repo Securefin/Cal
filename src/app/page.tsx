@@ -62,7 +62,7 @@ const SearchableToolsGrid = () => {
         {filteredCalculators.map((tool) => {
           const ToolIcon = getIcon(tool.iconName);
           return (
-            <Card key={tool.slug} className="group flex flex-col bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1">
+            <Card key={`${tool.slug}-${tool.name}`} className="group flex flex-col bg-card/80 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1">
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
                    <ToolIcon className="h-6 w-6 text-primary" />
