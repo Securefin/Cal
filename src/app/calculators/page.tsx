@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Link from "next/link";
 import type { Metadata } from 'next';
@@ -14,16 +13,17 @@ import {
   ChevronRight,
   Calculator as DefaultCalculatorIcon,
   type LucideIcon,
+  ArrowRight
 } from "lucide-react";
-import * as LucideIcons from 'lucide-react'; // Import all icons
-import { calculatorCategories, type CalculatorCategory, type CalculatorItem } from "@/lib/calculator-data";
+import * as LucideIcons from 'lucide-react';
+import { calculatorCategories } from "@/lib/calculator-data";
+import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
   title: 'Explore Calculators - CalcPro',
   description: 'Browse our comprehensive suite of calculators, organized by category: Basic Math, Financial, Health & Fitness, Engineering & Science, and more.',
 };
 
-// Helper function to get an icon component by name
 const getIcon = (iconName?: string, defaultIcon: LucideIcon = DefaultCalculatorIcon): LucideIcon => {
   if (iconName && LucideIcons[iconName as keyof typeof LucideIcons]) {
     return LucideIcons[iconName as keyof typeof LucideIcons];
@@ -31,88 +31,54 @@ const getIcon = (iconName?: string, defaultIcon: LucideIcon = DefaultCalculatorI
   return defaultIcon;
 };
 
-interface CalculatorCategoryCardProps {
-  category: CalculatorCategory;
-}
-
-const CalculatorCategoryCardComponent: React.FC<CalculatorCategoryCardProps> = ({ category }) => {
-  const CategoryIcon = getIcon(category.iconName, LucideIcons.LayoutGrid); // Default for category card title
-  return (
-    <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
-      <CardHeader className="bg-muted/30">
-        <CardTitle className="flex items-center text-xl text-primary">
-          <CategoryIcon className="mr-3 h-6 w-6" />
-          {category.name}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="pt-4 flex-grow">
-        <ul className="space-y-2">
-          {category.calculators.map((calc) => {
-            const CalcItemIcon = getIcon(calc.iconName, DefaultCalculatorIcon); // Default for calc item
-            return (
-            <li key={calc.slug}>
-              <Link
-                href={calc.isImplemented ? `/calculators/${calc.slug}` : `#`}
-                className={`flex items-center justify-between p-2 rounded-md hover:bg-accent/50 transition-colors group ${!calc.isImplemented ? 'cursor-not-allowed opacity-70' : ''}`}
-                aria-disabled={!calc.isImplemented}
-                tabIndex={!calc.isImplemented ? -1 : undefined}
-              >
-                <div className="flex items-center">
-                  { CalcItemIcon && <CalcItemIcon className="mr-2 h-4 w-4 text-muted-foreground group-hover:text-primary" />}
-                  <span className="text-foreground/90 group-hover:text-primary">{calc.name}</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  {calc.isDemo && calc.isImplemented && (
-                    <Badge variant="outline" className="text-xs border-accent text-accent group-hover:bg-accent group-hover:text-accent-foreground">
-                      Demo
-                    </Badge>
-                  )}
-                   {calc.isAdvanced && calc.isImplemented && (
-                    <Badge variant="outline" className="text-xs border-accent text-accent group-hover:bg-accent group-hover:text-accent-foreground">
-                      Advanced
-                    </Badge>
-                  )}
-                  {!calc.isImplemented && (
-                    <Badge variant="outline" className="text-xs border-accent text-accent group-hover:bg-accent group-hover:text-accent-foreground">
-                      Soon
-                    </Badge>
-                  )}
-                  <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                </div>
-              </Link>
-            </li>
-          )}
-          )}
-        </ul>
-      </CardContent>
-    </Card>
-  );
-};
-CalculatorCategoryCardComponent.displayName = "CalculatorCategoryCardComponent";
-const MemoizedCalculatorCategoryCard = React.memo(CalculatorCategoryCardComponent);
-
-
 export default function CalculatorsPage() {
   return (
-    <div className="container mx-auto space-y-8">
-      <Card className="shadow-lg border-primary/20">
-        <CardHeader>
-          <div className="flex items-center space-x-3 mb-2">
-            <DefaultCalculatorIcon className="h-10 w-10 text-primary" />
-            <CardTitle className="text-4xl font-bold">Explore Calculators</CardTitle>
-          </div>
-          <CardDescription className="text-lg">
-            Browse our comprehensive suite of calculators, organized by category.
-            More tools are being added regularly!
-          </CardDescription>
-        </CardHeader>
-      </Card>
+    <div className="container mx-auto py-8 md:py-12 space-y-12">
+      <section className="text-center">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">All Calculators</h1>
+        <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+          Browse our comprehensive suite of calculators, organized by category. More tools are being added regularly!
+        </p>
+      </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {calculatorCategories.map((category) => (
-          <MemoizedCalculatorCategoryCard key={category.name} category={category} />
-        ))}
-      </div>
+      {calculatorCategories.map((category) => {
+        const CategoryIcon = getIcon(category.iconName, LucideIcons.LayoutGrid);
+        return (
+          <section key={category.name}>
+            <div className="flex items-center gap-4 mb-8">
+               <CategoryIcon className="h-8 w-8 text-primary" />
+               <h2 className="text-3xl font-bold tracking-tight">{category.name}</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {category.calculators.map((calc) => {
+                 if (!calc.isImplemented) return null;
+                 const CalcIcon = getIcon(calc.iconName);
+                 return (
+                  <Card key={calc.slug} className="flex flex-col group hover:shadow-xl transition-shadow duration-300">
+                    <CardHeader className="flex-grow">
+                      <div className="flex items-start gap-4">
+                        <CalcIcon className="h-6 w-6 text-primary mt-1" />
+                        <div className="flex-1">
+                          <CardTitle className="text-xl">{calc.name}</CardTitle>
+                          <CardDescription className="mt-2">{calc.description}</CardDescription>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                       <Button asChild variant="secondary" className="w-full bg-accent hover:bg-accent/80 transition-colors">
+                        <Link href={`/calculators/${calc.slug}`}>
+                          Open Tool
+                          <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1" />
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                 );
+              })}
+            </div>
+          </section>
+        )
+      })}
     </div>
   );
 }

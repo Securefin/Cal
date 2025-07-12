@@ -4,76 +4,48 @@
 
 @layer base {
   :root {
-    --background: 250 50% 96%; /* Very Light Lavender Blue */
-    --foreground: 250 30% 15%; /* Dark Indigo Text */
-    --card: 0 0% 100%; /* White cards for strong contrast */
-    --card-foreground: 250 30% 15%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
-    --popover-foreground: 250 30% 15%;
-    --primary: 220 80% 55%; /* Slightly softer Electric Blue for light mode */
-    --primary-foreground: 0 0% 100%; /* White */
-    --secondary: 250 40% 90%; /* Light Lavender */
-    --secondary-foreground: 220 80% 50%; /* Slightly darker blue for text on secondary */
-    --muted: 250 40% 92%; /* Very Light Lavender */
-    --muted-foreground: 250 20% 45%; /* Medium Indigo Gray */
-    --accent: 300 70% 60%; /* Magenta/Pink */
-    --accent-foreground: 0 0% 100%; /* White */
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 250 30% 85%; /* Light Lavender Border */
-    --input: 250 30% 90%; /* Very Light Lavender Input */
-    --ring: 220 80% 55%; /* Primary color for ring */
-    --chart-1: 220 70% 50%;   /* Primary Blue */
-    --chart-2: 300 60% 55%;   /* Accent Pinkish */
-    --chart-3: 170 50% 50%;   /* A Teal/Cyan */
-    --chart-4: 45 80% 60%;    /* A Gold/Orange */
-    --chart-5: 270 60% 70%;   /* A Lighter Purple */
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5% 64.9%;
     --radius: 0.5rem;
-
-    --sidebar-background: 250 45% 94%;
-    --sidebar-foreground: 250 30% 15%;
-    --sidebar-primary: 220 80% 55%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 300 70% 88%; /* Light Pink for sidebar accent */
-    --sidebar-accent-foreground: 250 30% 15%;
-    --sidebar-border: 250 30% 80%;
-    --sidebar-ring: 220 80% 55%;
   }
 
   .dark {
-    --background: 250 30% 12%; /* Deep Indigo */
-    --foreground: 250 20% 85%; /* Light Lavender Gray */
-    --card: 250 30% 17%; /* Slightly Lighter Indigo */
-    --card-foreground: 250 20% 85%;
-    --popover: 250 30% 17%;
-    --popover-foreground: 250 20% 85%;
-    --primary: 220 90% 60%; /* Vibrant Electric Blue */
-    --primary-foreground: 250 10% 10%; /* Very Dark Indigo for text on primary */
-    --secondary: 250 25% 25%; /* Darker Muted Indigo */
-    --secondary-foreground: 250 20% 75%; /* Lighter Muted Indigo */
-    --muted: 250 20% 22%; /* Dark Muted Indigo */
-    --muted-foreground: 250 15% 55%; /* Medium Lavender Gray */
-    --accent: 300 80% 65%; /* Bright Magenta/Pink */
-    --accent-foreground: 300 10% 10%; /* Very Dark Purple for text on accent */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 250 20% 30%; /* Muted Indigo Border */
-    --input: 250 20% 22%; /* Muted Indigo Input */
-    --ring: 220 90% 60%; /* Vibrant Electric Blue for ring */
-    --chart-1: 220 70% 50%;
-    --chart-2: 300 60% 55%;
-    --chart-3: 170 50% 50%;
-    --chart-4: 45 80% 60%;
-    --chart-5: 270 60% 70%;
-
-    --sidebar-background: 250 30% 10%;
-    --sidebar-foreground: 250 20% 80%;
-    --sidebar-primary: 220 90% 60%;
-    --sidebar-primary-foreground: 250 10% 10%;
-    --sidebar-accent: 300 80% 25%; /* Darker Magenta for sidebar accent */
-    --sidebar-accent-foreground: 250 20% 85%;
-    --sidebar-border: 250 20% 25%;
-    --sidebar-ring: 220 90% 60%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
@@ -83,5 +55,6 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
