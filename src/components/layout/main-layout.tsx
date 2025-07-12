@@ -9,7 +9,7 @@ interface MainLayoutProps {
 }
 
 const Footer = () => (
-  <footer className="border-t">
+  <footer className="border-t border-white/10">
     <div className="container mx-auto py-6 text-center md:flex md:items-center md:justify-between">
       <p className="text-sm text-muted-foreground">
         © {new Date().getFullYear()} CalcPro. All rights reserved.
