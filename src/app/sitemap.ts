@@ -2,7 +2,7 @@
 import type { MetadataRoute } from 'next';
 import { calculatorCategories } from '@/lib/calculator-data';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; // Fallback for local dev
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:9002'; // Fallback for local dev
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString();
@@ -13,12 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 1,
-    },
-    {
-      url: `${BASE_URL}/ai-suggestions`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
     },
     {
       url: `${BASE_URL}/calculators`,
@@ -33,6 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${BASE_URL}/contact`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.6,
+    },
+    {
       url: `${BASE_URL}/terms`,
       lastModified: currentDate,
       changeFrequency: 'yearly',
@@ -43,12 +43,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: currentDate,
       changeFrequency: 'yearly',
       priority: 0.5,
-    },
-    {
-      url: `${BASE_URL}/contact`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.6,
     },
   ];
 

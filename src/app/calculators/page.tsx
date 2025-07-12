@@ -8,10 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
-  ChevronRight,
-  Calculator as DefaultCalculatorIcon,
   type LucideIcon,
   ArrowRight
 } from "lucide-react";
@@ -24,7 +21,7 @@ export const metadata: Metadata = {
   description: 'Browse our comprehensive suite of calculators, organized by category: Basic Math, Financial, Health & Fitness, Engineering & Science, and more.',
 };
 
-const getIcon = (iconName?: string, defaultIcon: LucideIcon = DefaultCalculatorIcon): LucideIcon => {
+const getIcon = (iconName?: string, defaultIcon: LucideIcon = LucideIcons.Calculator): LucideIcon => {
   if (iconName && LucideIcons[iconName as keyof typeof LucideIcons]) {
     return LucideIcons[iconName as keyof typeof LucideIcons];
   }
@@ -65,7 +62,7 @@ export default function CalculatorsPage() {
                       </div>
                     </CardHeader>
                     <CardContent>
-                       <Button asChild variant="secondary" className="w-full bg-accent hover:bg-accent/80 transition-colors">
+                       <Button asChild variant="secondary" className="w-full bg-accent/20 hover:bg-accent/40 transition-colors">
                         <Link href={`/calculators/${calc.slug}`}>
                           Open Tool
                           <ArrowRight className="ml-2 h-4 w-4 transform transition-transform group-hover:translate-x-1" />

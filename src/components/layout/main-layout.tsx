@@ -1,15 +1,15 @@
+
 import type { ReactNode } from 'react';
 import React from 'react';
 import Link from 'next/link';
 import { Header } from './header';
-import { Separator } from '@/components/ui/separator';
 
 interface MainLayoutProps {
   children: ReactNode;
 }
 
 const Footer = () => (
-  <footer className="border-t border-white/10">
+  <footer className="border-t border-border/40 bg-background">
     <div className="container mx-auto py-6 text-center md:flex md:items-center md:justify-between">
       <p className="text-sm text-muted-foreground">
         © {new Date().getFullYear()} CalcPro. All rights reserved.

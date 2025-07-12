@@ -24,10 +24,10 @@ export default function AboutPage() {
             </h1>
             <div className="max-w-3xl mx-auto">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                MyAIWork helps users discover, compare, and use trending AI tools all in one place. We bridge the gap between complex AI technology and everyday users.
+                CalcPro helps users discover, compare, and use a wide variety of calculators all in one place. We bridge the gap between complex calculations and everyday users.
                 </p>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                Whether you're a developer seeking the latest APIs, a student exploring new learning aids, or a content creator looking to automate your workflow, MyAIWork is your central hub for AI innovation.
+                Whether you're a student tackling homework, a professional managing finances, or a developer needing a quick utility, CalcPro is your central hub for calculation tools.
                 </p>
             </div>
           </div>
@@ -37,7 +37,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-3xl font-bold tracking-tight mb-4">Our Mission</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Our mission is to democratize access to artificial intelligence. We believe that everyone should be able to leverage the power of AI without getting lost in the complexity of the rapidly growing landscape. MyAIWork is designed to be an intuitive and comprehensive resource that empowers you to make informed decisions and find the perfect tool for your needs.
+              Our mission is to democratize access to powerful calculation tools. We believe that everyone should be able to perform complex calculations without getting lost in clunky interfaces or searching across multiple websites. CalcPro is designed to be an intuitive and comprehensive resource that empowers you to find the perfect tool for your needs.
             </p>
           </section>
 
@@ -46,11 +46,11 @@ export default function AboutPage() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                <span className="text-muted-foreground"><strong>Always updated</strong> with the most relevant and trending AI tools.</span>
+                <span className="text-muted-foreground"><strong>Always updated</strong> with the most relevant and useful calculators.</span>
               </li>
               <li className="flex items-start">
                 <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                <span className="text-muted-foreground"><strong>No login or sign-up required</strong> to browse and discover tools.</span>
+                <span className="text-muted-foreground"><strong>No login or sign-up required</strong> to browse and use our tools.</span>
               </li>
               <li className="flex items-start">
                 <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
@@ -76,7 +76,7 @@ export default function AboutPage() {
                 <h3 className="text-2xl font-semibold">Akshay Panawlkar</h3>
                 <p className="text-primary font-medium">Solo Developer</p>
                 <p className="mt-4 text-sm text-muted-foreground flex items-center justify-center gap-1.5">
-                  Built with <Heart className="h-4 w-4 text-destructive fill-destructive" /> using Next.js, Tailwind, and automation.
+                  Built with <Heart className="h-4 w-4 text-destructive fill-destructive" /> using Next.js, Tailwind, and a love for code.
                 </p>
               </div>
             </Card>

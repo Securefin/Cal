@@ -50,9 +50,10 @@ const SearchableToolsGrid = () => {
             <Input
               type="search"
               placeholder="Search for a calculator..."
-              className="w-full pl-10 py-3 rounded-full text-base"
+              className="w-full pl-10 py-3 rounded-full text-base h-12"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              aria-label="Search for a calculator"
             />
           </div>
         </div>
@@ -81,13 +82,18 @@ const SearchableToolsGrid = () => {
             </Card>
           )
         })}
+         {filteredCalculators.length === 0 && (
+          <div className="md:col-span-2 lg:col-span-3 text-center py-16">
+            <p className="text-muted-foreground text-lg">No tools found for "{searchTerm}".</p>
+          </div>
+        )}
       </div>
     </section>
   );
 };
 
 const Testimonials = () => (
-  <section className="py-20 md:py-24 bg-secondary/50">
+  <section className="py-20 md:py-24 bg-muted/50">
     <div className="text-center mb-12">
       <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Loved by Professionals</h2>
       <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
