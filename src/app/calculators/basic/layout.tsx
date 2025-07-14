@@ -3,13 +3,13 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Basic Calculator - CalcPro',
+  title: 'Basic Calculator - MyAIWork',
   description: 'Perform simple arithmetic operations like addition, subtraction, multiplication, and division with our easy-to-use Basic Calculator.',
   openGraph: {
-    title: 'Basic Calculator - CalcPro',
+    title: 'Basic Calculator - MyAIWork',
     description: 'Perform simple arithmetic operations with our easy-to-use Basic Calculator.',
     url: '/calculators/basic',
-    siteName: 'CalcPro',
+    siteName: 'MyAIWork',
     type: 'website',
   },
 };
@@ -34,7 +34,7 @@ export default function CalculatorLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Basic Calculator - CalcPro",
+    "name": "Basic Calculator - MyAIWork",
     "description": "Perform simple arithmetic operations like addition, subtraction, multiplication, and division.",
     "applicationCategory": "CalculatorApplication",
     "operatingSystem": "All (Web-based)",
@@ -52,7 +52,7 @@ export default function CalculatorLayout({
     "potentialAction": {
       "@type": "HowTo",
       "name": "How to use the Basic Calculator",
-      "description": "Steps to perform calculations using the CalcPro Basic Calculator.",
+      "description": "Steps to perform calculations using the MyAIWork Basic Calculator.",
       "step": [
         {
           "@type": "HowToStep",

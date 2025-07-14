@@ -19,13 +19,13 @@ import { calculatorCategories } from "@/lib/calculator-data";
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Explore Calculators - CalcPro',
+  title: 'Explore AI Calculators - MyAIWork',
   description: 'Browse our comprehensive suite of calculators, organized by category: Basic Math, Financial, Health & Fitness, Engineering & Science, and more.',
   openGraph: {
-    title: 'Explore All Calculators on CalcPro',
+    title: 'Explore All Calculators on MyAIWork',
     description: 'Browse our comprehensive suite of calculators, organized by category.',
     url: '/calculators',
-    siteName: 'CalcPro',
+    siteName: 'MyAIWork',
     type: 'website',
   },
 };

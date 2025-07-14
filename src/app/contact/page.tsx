@@ -8,13 +8,13 @@ import { Mail, Send, Globe, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us - CalcPro",
-  description: "Get in touch with the CalcPro team. We welcome your feedback, questions, and suggestions.",
+  title: "Contact Us - MyAIWork",
+  description: "Get in touch with the MyAIWork team. We welcome your feedback, questions, and suggestions.",
   openGraph: {
-    title: "Contact Us - CalcPro",
-    description: "Get in touch with the CalcPro team.",
+    title: "Contact Us - MyAIWork",
+    description: "Get in touch with the MyAIWork team.",
     url: "/contact",
-    siteName: "CalcPro",
+    siteName: "MyAIWork",
     type: "website",
   },
 };
@@ -26,7 +26,7 @@ export default function ContactPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Contact Us</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          We'd love to hear from you! Whether it's feedback, partnership inquiries, or just a hello — get in touch with the CalcPro team.
+          We'd love to hear from you! Whether it's feedback, partnership inquiries, or just a hello — get in touch with the MyAIWork team.
         </p>
       </div>
 
@@ -77,8 +77,8 @@ export default function ContactPage() {
                 <Mail className="h-5 w-5 mt-1 text-primary" />
                 <div>
                   <h3 className="font-semibold text-foreground">Email</h3>
-                  <a href="mailto:support@calcpro.com" className="hover:text-primary transition-colors">
-                    support@calcpro.com
+                  <a href="mailto:support@myaiwork.space" className="hover:text-primary transition-colors">
+                    support@myaiwork.space
                   </a>
                 </div>
               </div>
@@ -86,8 +86,8 @@ export default function ContactPage() {
                 <Globe className="h-5 w-5 mt-1 text-primary" />
                 <div>
                   <h3 className="font-semibold text-foreground">Website</h3>
-                   <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                    www.calcpro.com
+                   <a href="https://myaiwork.space" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+                    www.myaiwork.space
                   </a>
                 </div>
               </div>
@@ -95,7 +95,7 @@ export default function ContactPage() {
                 <MapPin className="h-5 w-5 mt-1 text-primary" />
                 <div>
                   <h3 className="font-semibold text-foreground">Location</h3>
-                  <p>San Francisco, CA</p>
+                  <p>Mumbai, India</p>
                 </div>
               </div>
             </div>
