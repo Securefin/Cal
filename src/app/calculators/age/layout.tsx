@@ -5,6 +5,13 @@ import type { ReactNode } from 'react';
 export const metadata: Metadata = {
   title: 'Age Calculator - CalcPro',
   description: 'Calculate your age accurately in years, months, and days based on your date of birth. Also calculate age as of a specific date.',
+  openGraph: {
+    title: 'Age Calculator - CalcPro',
+    description: 'Calculate your age accurately in years, months, and days.',
+    url: '/calculators/age',
+    siteName: 'CalcPro',
+    type: 'website',
+  },
 };
 
 export default function CalculatorLayout({

@@ -1,6 +1,19 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy - CalcPro',
+  description: 'Learn how CalcPro collects, uses, and protects your data. We are committed to protecting your privacy.',
+  openGraph: {
+    title: 'Privacy Policy - CalcPro',
+    description: 'Learn how CalcPro collects, uses, and protects your data.',
+    url: '/privacy',
+    siteName: 'CalcPro',
+    type: 'website',
+  },
+};
 
 export default function PrivacyPage() {
   return (
@@ -12,7 +25,7 @@ export default function PrivacyPage() {
             <CardTitle as="h1" className="text-3xl">Privacy Policy</CardTitle>
           </div>
           <CardDescription>
-            At MyAIWork, we respect your privacy. This policy explains how we collect, use, and protect your data.
+            At CalcPro, we respect your privacy. This policy explains how we collect, use, and protect your data.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6 text-foreground/80 leading-relaxed">
@@ -54,7 +67,7 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="text-xl font-semibold text-primary mb-2">6. Your Rights</h2>
-            <p>You can request access to your data or ask us to delete it by emailing support@myaiwork.space</p>
+            <p>You can request access to your data or ask us to delete it by emailing support@calcpro.com</p>
           </section>
 
           <section>
@@ -64,7 +77,7 @@ export default function PrivacyPage() {
           
           <div className="border-t pt-4 mt-6 text-sm text-muted-foreground space-y-1">
              <p>📅 <strong>Last Updated:</strong> July 2024</p>
-             <p>📧 <strong>Contact:</strong> support@myaiwork.space</p>
+             <p>📧 <strong>Contact:</strong> support@calcpro.com</p>
           </div>
 
         </CardContent>

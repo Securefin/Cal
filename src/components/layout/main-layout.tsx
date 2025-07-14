@@ -12,7 +12,7 @@ const Footer = () => (
   <footer className="border-t border-border/40 bg-background">
     <div className="container mx-auto py-6 text-center md:flex md:items-center md:justify-between">
       <p className="text-sm text-muted-foreground">
-        © {new Date().getFullYear()} MyAIWork. All rights reserved.
+        © {new Date().getFullYear()} CalcPro. All rights reserved.
       </p>
       <div className="mt-4 flex justify-center space-x-6 md:mt-0">
         <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">

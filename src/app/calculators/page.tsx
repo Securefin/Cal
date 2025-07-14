@@ -21,6 +21,13 @@ import { Button } from '@/components/ui/button';
 export const metadata: Metadata = {
   title: 'Explore Calculators - CalcPro',
   description: 'Browse our comprehensive suite of calculators, organized by category: Basic Math, Financial, Health & Fitness, Engineering & Science, and more.',
+  openGraph: {
+    title: 'Explore All Calculators on CalcPro',
+    description: 'Browse our comprehensive suite of calculators, organized by category.',
+    url: '/calculators',
+    siteName: 'CalcPro',
+    type: 'website',
+  },
 };
 
 const getIcon = (iconName?: string): React.ComponentType<LucideProps> => {

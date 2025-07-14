@@ -95,12 +95,12 @@ const Testimonials = () => (
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Loved by Professionals</h2>
         <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-          See what our users are saying about MyAIWork.
+          See what our users are saying about CalcPro.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {[
-          { name: "Sarah J.", role: "Finance Analyst", quote: "MyAIWork's financial calculators are a lifesaver. The Loan EMI and SIP calculators are incredibly accurate and easy to use.", avatar: "https://i.pravatar.cc/150?img=1" },
+          { name: "Sarah J.", role: "Finance Analyst", quote: "CalcPro's financial calculators are a lifesaver. The Loan EMI and SIP calculators are incredibly accurate and easy to use.", avatar: "https://i.pravatar.cc/150?img=1" },
           { name: "Mike R.", role: "Web Developer", quote: "As a developer, I frequently use the unit and color converters. The clean interface and speed are fantastic. Highly recommended!", avatar: "https://i.pravatar.cc/150?img=2" },
           { name: "Chloe T.", role: "Fitness Coach", quote: "I recommend the BMI and BMR calculators to all my clients. They are simple, intuitive, and provide the essential data we need.", avatar: "https://i.pravatar.cc/150?img=3" },
         ].map((testimonial) => (
@@ -172,7 +172,7 @@ export default function HomePage() {
           The Ultimate Suite of Advanced Calculators
         </h1>
         <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground">
-          From simple math to complex financial analysis, MyAIWork provides the tools you need to get the job done, quickly and accurately.
+          From simple math to complex financial analysis, CalcPro provides the tools you need to get the job done, quickly and accurately.
         </p>
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button asChild size="lg" className="group w-full sm:w-auto">

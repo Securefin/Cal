@@ -8,8 +8,15 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About MyAIWork - Our Mission and Creator',
-  description: 'Learn about MyAIWork, our mission to simplify AI tool discovery, and the creator behind the platform.',
+  title: 'About CalcPro - Our Mission and Creator',
+  description: 'Learn about CalcPro, our mission to simplify calculation tools, and the creator behind the platform.',
+  openGraph: {
+    title: 'About CalcPro - Our Mission and Creator',
+    description: 'Learn about CalcPro, our mission to simplify calculation tools, and the creator behind the platform.',
+    url: '/about',
+    siteName: 'CalcPro',
+    type: 'website',
+  },
 };
 
 export default function AboutPage() {
@@ -20,14 +27,14 @@ export default function AboutPage() {
         <section className="text-center">
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary">
-              About MyAIWork
+              About CalcPro
             </h1>
             <div className="max-w-3xl mx-auto">
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                MyAIWork helps users discover, compare, and use trending AI tools all in one place. We bridge the gap between complex AI technology and everyday users.
+                CalcPro helps users discover, compare, and use a wide variety of calculators all in one place. We bridge the gap between complex calculations and everyday users.
                 </p>
                 <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-                Whether you're a developer seeking APIs, a student exploring new learning aids, or a content creator automating workflows — MyAIWork is your central hub for AI innovation.
+                Whether you're a developer seeking APIs, a student exploring new learning aids, or a content creator automating workflows — CalcPro is your central hub for calculation innovation.
                 </p>
             </div>
           </div>
@@ -37,7 +44,7 @@ export default function AboutPage() {
           <section>
             <h2 className="text-3xl font-bold tracking-tight mb-4">Our Mission</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Our mission is to democratize access to artificial intelligence. We believe that everyone should be able to leverage AI to solve daily problems and unlock creative potential, without getting lost in a sea of complex tools. MyAIWork is designed to be an intuitive and comprehensive resource that empowers you to find the perfect tool for your needs.
+              Our mission is to democratize access to powerful calculation tools. We believe that everyone should be able to leverage specialized calculators to solve daily problems and unlock creative potential, without getting lost in a sea of complex tools. CalcPro is designed to be an intuitive and comprehensive resource that empowers you to find the perfect tool for your needs.
             </p>
           </section>
 
@@ -46,7 +53,7 @@ export default function AboutPage() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                <span className="text-muted-foreground"><strong>Always updated</strong> with the most relevant and useful AI tools.</span>
+                <span className="text-muted-foreground"><strong>Always updated</strong> with the most relevant and useful calculation tools.</span>
               </li>
               <li className="flex items-start">
                 <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />

@@ -7,6 +7,13 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'AI Function Suggester - CalcPro',
   description: "Describe your calculation problem or what you're trying to achieve, and our AI will suggest a relevant function or formula.",
+  openGraph: {
+    title: 'AI Function Suggester - CalcPro',
+    description: "Describe your calculation problem and get an AI-powered formula suggestion.",
+    url: '/ai-suggestions',
+    siteName: 'CalcPro',
+    type: 'website',
+  },
 };
 
 export default function AISuggestionsPage() {

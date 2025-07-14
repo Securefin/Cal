@@ -5,6 +5,13 @@ import type { ReactNode } from 'react';
 export const metadata: Metadata = {
   title: 'Basic Calculator - CalcPro',
   description: 'Perform simple arithmetic operations like addition, subtraction, multiplication, and division with our easy-to-use Basic Calculator.',
+  openGraph: {
+    title: 'Basic Calculator - CalcPro',
+    description: 'Perform simple arithmetic operations with our easy-to-use Basic Calculator.',
+    url: '/calculators/basic',
+    siteName: 'CalcPro',
+    type: 'website',
+  },
 };
 
 // Helper function to construct the full URL

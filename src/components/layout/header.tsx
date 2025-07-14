@@ -40,7 +40,7 @@ const HeaderComponent = () => {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Icons.Logo className="h-6 w-6 text-primary" />
             <span className="font-bold">
-              MyAIWork
+              CalcPro
             </span>
           </Link>
           <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
@@ -69,7 +69,7 @@ const HeaderComponent = () => {
                 <div className="flex flex-col gap-4 py-6">
                    <Link href="/" className="mr-6 flex items-center space-x-2 mb-4">
                       <Icons.Logo className="h-6 w-6 text-primary" />
-                      <span className="font-bold">MyAIWork</span>
+                      <span className="font-bold">CalcPro</span>
                     </Link>
                   {navLinks.map(link => (
                     <Link 
