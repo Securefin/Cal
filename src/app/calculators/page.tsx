@@ -19,21 +19,21 @@ import { calculatorCategories } from "@/lib/calculator-data";
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Explore AI Calculators - MyAIWork',
+  title: 'Explore All Calculators',
   description: 'Browse our comprehensive suite of calculators, organized by category: Basic Math, Financial, Health & Fitness, Engineering & Science, and more.',
   openGraph: {
-    title: 'Explore All Calculators on MyAIWork',
+    title: 'Explore All Calculators',
     description: 'Browse our comprehensive suite of calculators, organized by category.',
     url: '/calculators',
-    siteName: 'MyAIWork',
-    type: 'website',
   },
 };
 
 const getIcon = (iconName?: string): React.ComponentType<LucideProps> => {
-  const Icon = iconName ? LucideIcons[iconName as keyof typeof LucideIcons] : LucideIcons.Calculator;
-  return Icon || LucideIcons.Calculator; // Fallback to a default icon
+  if (!iconName) return LucideIcons.Calculator;
+  const Icon = LucideIcons[iconName as keyof typeof LucideIcons] as React.ComponentType<LucideProps> | undefined;
+  return Icon || LucideIcons.Calculator;
 };
+
 
 export default function CalculatorsPage() {
   return (

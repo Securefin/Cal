@@ -3,24 +3,13 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Basic Calculator - MyAIWork',
+  title: 'Basic Calculator',
   description: 'Perform simple arithmetic operations like addition, subtraction, multiplication, and division with our easy-to-use Basic Calculator.',
   openGraph: {
-    title: 'Basic Calculator - MyAIWork',
+    title: 'Basic Calculator',
     description: 'Perform simple arithmetic operations with our easy-to-use Basic Calculator.',
     url: '/calculators/basic',
-    siteName: 'MyAIWork',
-    type: 'website',
   },
-};
-
-// Helper function to construct the full URL
-const getBaseUrl = () => {
-  if (process.env.NEXT_PUBLIC_BASE_URL) {
-    return process.env.NEXT_PUBLIC_BASE_URL;
-  }
-  // Fallback for local development if NEXT_PUBLIC_BASE_URL is not set
-  return 'http://localhost:3000';
 };
 
 export default function CalculatorLayout({
@@ -28,6 +17,10 @@ export default function CalculatorLayout({
 }: {
   children: ReactNode;
 }) {
+  // Helper function to get base URL
+  const getBaseUrl = () => {
+    return process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:9002';
+  };
   const baseUrl = getBaseUrl();
   const pageUrl = `${baseUrl}/calculators/basic`;
 

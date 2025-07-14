@@ -10,20 +10,29 @@ const inter = Inter({
   display: 'swap',
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: 'MyAIWork - Free AI Tools to Boost Your Productivity',
-    template: '%s - MyAIWork',
-  },
+const siteConfig = {
+  name: 'MyAIWork',
+  url: 'https://myaiwork.space',
+  ogImage: 'https://myaiwork.space/og-image.png', // Replace with your actual OG image URL
   description: 'Discover and use a curated collection of free AI tools designed to simplify your daily tasks. Boost your productivity with our fast, simple, and open AI solutions.',
+};
+
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: `${siteConfig.name} - Free AI Tools to Boost Your Productivity`,
+    template: `%s - ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
   openGraph: {
-    title: 'MyAIWork - Free AI Tools to Boost Your Productivity',
-    description: 'Discover and use a curated collection of free AI tools designed to simplify your daily tasks.',
-    url: 'https://myaiwork.space',
-    siteName: 'MyAIWork',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     images: [
       {
-        url: 'https://myaiwork.space/og-image.png', // Update with your actual OG image URL
+        url: siteConfig.ogImage,
         width: 1200,
         height: 630,
       },
@@ -33,9 +42,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MyAIWork - Free AI Tools to Boost Your Productivity',
-    description: 'Discover and use a curated collection of free AI tools designed to simplify your daily tasks.',
-    // images: ['https://myaiwork.space/og-image.png'], // Update with your actual OG image URL
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
   },
   robots: {
     index: true,
@@ -47,6 +56,9 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  icons: {
+    icon: '/favicon.ico',
   },
 };
 
@@ -60,7 +72,6 @@ export default function RootLayout({
        <head>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#ffffff" />
-          <link rel="icon" href="/favicon.ico" sizes="any" />
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -69,7 +80,7 @@ export default function RootLayout({
                 "@type": "Organization",
                 "name": "MyAIWork",
                 "url": "https://myaiwork.space",
-                "logo": "https://myaiwork.space/logo.png" // Update with your actual logo URL
+                "logo": `${siteConfig.url}/logo.png`
               })
             }}
           />

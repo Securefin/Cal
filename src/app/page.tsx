@@ -13,9 +13,11 @@ import * as LucideIcons from 'lucide-react';
 import type { LucideProps } from 'lucide-react';
 
 const getIcon = (iconName?: string): React.ComponentType<LucideProps> => {
-  const Icon = iconName ? LucideIcons[iconName as keyof typeof LucideIcons] : LucideIcons.Calculator;
-  return Icon || LucideIcons.Calculator; // Fallback to a default icon
+  if (!iconName) return LucideIcons.Calculator;
+  const Icon = LucideIcons[iconName as keyof typeof LucideIcons] as React.ComponentType<LucideProps> | undefined;
+  return Icon || LucideIcons.Calculator;
 };
+
 
 const allCalculators = calculatorCategories.flatMap(category => 
   category.calculators.filter(calc => calc.isImplemented)
@@ -65,7 +67,7 @@ const SearchableToolsGrid = () => {
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
                    <ToolIcon className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-xl">{tool.name}</CardTitle>
+                <CardTitle>{tool.name}</CardTitle>
                 <CardDescription className="min-h-[40px]">{tool.description || 'A useful calculation tool.'}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow flex flex-col justify-end">
