@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Link from "next/link";
 import type { Metadata } from 'next';
@@ -10,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import {
   type LucideIcon,
+  type LucideProps,
   ArrowRight
 } from "lucide-react";
 import * as LucideIcons from 'lucide-react';
@@ -21,11 +23,9 @@ export const metadata: Metadata = {
   description: 'Browse our comprehensive suite of calculators, organized by category: Basic Math, Financial, Health & Fitness, Engineering & Science, and more.',
 };
 
-const getIcon = (iconName?: string, defaultIcon: LucideIcon = LucideIcons.Calculator): LucideIcon => {
-  if (iconName && LucideIcons[iconName as keyof typeof LucideIcons]) {
-    return LucideIcons[iconName as keyof typeof LucideIcons];
-  }
-  return defaultIcon;
+const getIcon = (iconName?: string): React.ComponentType<LucideProps> => {
+  const Icon = iconName ? LucideIcons[iconName as keyof typeof LucideIcons] : LucideIcons.Calculator;
+  return Icon || LucideIcons.Calculator; // Fallback to a default icon
 };
 
 export default function CalculatorsPage() {
@@ -39,7 +39,7 @@ export default function CalculatorsPage() {
       </section>
 
       {calculatorCategories.map((category) => {
-        const CategoryIcon = getIcon(category.iconName, LucideIcons.LayoutGrid);
+        const CategoryIcon = getIcon(category.iconName);
         return (
           <section key={category.name}>
             <div className="flex items-center gap-4 mb-8">

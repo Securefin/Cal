@@ -10,13 +10,11 @@ import { ArrowRight, Search, Calculator as DefaultCalculatorIcon } from "lucide-
 import Link from "next/link";
 import { calculatorCategories } from '@/lib/calculator-data';
 import * as LucideIcons from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
+import type { LucideProps } from 'lucide-react';
 
-const getIcon = (iconName?: string, defaultIcon: LucideIcon = DefaultCalculatorIcon): LucideIcon => {
-  if (iconName && LucideIcons[iconName as keyof typeof LucideIcons]) {
-    return LucideIcons[iconName as keyof typeof LucideIcons];
-  }
-  return defaultIcon;
+const getIcon = (iconName?: string): React.ComponentType<LucideProps> => {
+  const Icon = iconName ? LucideIcons[iconName as keyof typeof LucideIcons] : DefaultCalculatorIcon;
+  return Icon || DefaultCalculatorIcon; // Fallback to a default icon
 };
 
 const allCalculators = calculatorCategories.flatMap(category => 
