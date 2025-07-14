@@ -4,13 +4,13 @@ import { FileText } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Terms of Service - MyAIWork',
-  description: 'Please read our Terms of Service carefully before using the MyAIWork website and its services.',
+  title: 'Terms of Service - CalcPro',
+  description: 'Please read our Terms of Service carefully before using the CalcPro website and its services.',
   openGraph: {
-    title: 'Terms of Service - MyAIWork',
-    description: 'Please read our Terms of Service carefully before using the MyAIWork website.',
+    title: 'Terms of Service - CalcPro',
+    description: 'Please read our Terms of Service carefully before using the CalcPro website.',
     url: '/terms',
-    siteName: 'MyAIWork',
+    siteName: 'CalcPro',
     type: 'website',
   },
 };
@@ -25,7 +25,7 @@ export default function TermsPage() {
             <CardTitle as="h1" className="text-3xl">Terms of Service</CardTitle>
           </div>
           <CardDescription>
-            By accessing or using MyAIWork, you agree to the following terms. Please read them carefully.
+            By accessing or using CalcPro, you agree to the following terms. Please read them carefully.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6 text-foreground/80 leading-relaxed">
@@ -33,41 +33,36 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-semibold text-primary mb-2">1. Use of Our Service</h2>
             <ul className="list-disc pl-6 space-y-1">
-              <li>You agree to use MyAIWork only for lawful purposes and in a way that does not infringe the rights of, restrict, or inhibit anyone else's use and enjoyment of the website.</li>
-              <li>You may not use our platform to scrape, spam, or harm our services or other users.</li>
+              <li>You agree to use CalcPro only for lawful purposes and in a way that does not infringe upon the rights of others.</li>
+              <li>The calculators and tools provided on this site are for informational and educational purposes only.</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-primary mb-2">2. AI Tool Listings</h2>
-            <p>MyAIWork is an aggregator of third-party AI tools. We do not own, control, or endorse these tools. Your use of any third-party tool is at your own risk, and you are responsible for reviewing and complying with their respective terms of service and privacy policies.</p>
-          </section>
-
-          <section>
-            <h2 className="text-xl font-semibold text-primary mb-2">3. Accuracy of Information</h2>
-            <p>While we strive for accuracy, MyAIWork does not guarantee that all information, descriptions, or pricing related to the listed AI tools will be correct, complete, or up-to-date. Use the information at your own discretion.</p>
+            <h2 className="text-xl font-semibold text-primary mb-2">2. Disclaimer of Accuracy</h2>
+            <p>While we strive for accuracy in all our calculators, CalcPro does not guarantee that the results will be correct, complete, or up-to-date. The calculations should not be used as a substitute for professional advice (e.g., financial, medical, or engineering advice).</p>
           </section>
 
            <section>
-            <h2 className="text-xl font-semibold text-primary mb-2">4. Intellectual Property</h2>
+            <h2 className="text-xl font-semibold text-primary mb-2">3. Intellectual Property</h2>
              <ul className="list-disc pl-6 space-y-1">
-              <li>All logos, names, and content on MyAIWork are owned by us unless otherwise stated.</li>
-              <li>Do not copy or reproduce our content without prior written permission.</li>
+              <li>All content, branding, and calculators on CalcPro are the property of its owner unless otherwise stated.</li>
+              <li>You may not copy, reproduce, or distribute our content or tools without prior written permission.</li>
             </ul>
           </section>
 
            <section>
-            <h2 className="text-xl font-semibold text-primary mb-2">5. Limitation of Liability</h2>
-            <p>MyAIWork is provided “as is”. We are not liable for any direct, indirect, incidental, or consequential damages resulting from your use of our site or any third-party tools listed. You agree to indemnify and hold harmless MyAIWork and its owner from any claims arising out of your use of the service.</p>
+            <h2 className="text-xl font-semibold text-primary mb-2">4. Limitation of Liability</h2>
+            <p>CalcPro is provided “as is”. We are not liable for any direct, indirect, incidental, or consequential damages resulting from your use of our site or reliance on the information provided by our tools. You agree to use the service at your own risk.</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-primary mb-2">6. Modifications</h2>
+            <h2 className="text-xl font-semibold text-primary mb-2">5. Modifications</h2>
             <p>We reserve the right to modify these terms at any time. We will notify users of any changes by posting the new terms on this page. Your continued use of the site after such changes constitutes your acceptance of the new terms.</p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-primary mb-2">7. Contact</h2>
+            <h2 className="text-xl font-semibold text-primary mb-2">6. Contact</h2>
             <p>For any questions or concerns regarding these terms, please contact us at: support@myaiwork.space</p>
           </section>
           

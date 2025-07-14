@@ -11,17 +11,17 @@ const inter = Inter({
 });
 
 const siteConfig = {
-  name: 'MyAIWork',
+  name: 'CalcPro',
   url: 'https://myaiwork.space',
-  ogImage: 'https://myaiwork.space/og-image.png', // Replace with your actual OG image URL
-  description: 'Discover and use a curated collection of free AI tools designed to simplify your daily tasks. Boost your productivity with our fast, simple, and open AI solutions.',
+  ogImage: 'https://myaiwork.space/og-image.png',
+  description: 'A comprehensive suite of advanced calculators to solve your daily math, finance, health, and science problems. Free, fast, and easy to use.',
 };
 
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} - Free AI Tools to Boost Your Productivity`,
+    default: `${siteConfig.name} - Advanced Calculators for Everyday Needs`,
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -77,10 +77,17 @@ export default function RootLayout({
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
                 "@context": "https://schema.org",
-                "@type": "Organization",
-                "name": "MyAIWork",
+                "@type": "WebSite",
+                "name": "CalcPro",
                 "url": "https://myaiwork.space",
-                "logo": `${siteConfig.url}/logo.png`
+                 "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                      "@type": "EntryPoint",
+                      "urlTemplate": "https://myaiwork.space/calculators?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                  }
               })
             }}
           />

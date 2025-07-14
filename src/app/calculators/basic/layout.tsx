@@ -27,7 +27,7 @@ export default function CalculatorLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Basic Calculator - MyAIWork",
+    "name": "Basic Calculator - CalcPro",
     "description": "Perform simple arithmetic operations like addition, subtraction, multiplication, and division.",
     "applicationCategory": "CalculatorApplication",
     "operatingSystem": "All (Web-based)",
@@ -45,7 +45,7 @@ export default function CalculatorLayout({
     "potentialAction": {
       "@type": "HowTo",
       "name": "How to use the Basic Calculator",
-      "description": "Steps to perform calculations using the MyAIWork Basic Calculator.",
+      "description": "Steps to perform calculations using the CalcPro Basic Calculator.",
       "step": [
         {
           "@type": "HowToStep",

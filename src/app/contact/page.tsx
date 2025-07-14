@@ -8,13 +8,13 @@ import { Mail, Send, Globe, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us - MyAIWork",
-  description: "Get in touch with the MyAIWork team. We welcome your feedback, questions, and suggestions.",
+  title: "Contact Us - CalcPro",
+  description: "Get in touch with the CalcPro team. We welcome your feedback, questions, and suggestions.",
   openGraph: {
-    title: "Contact Us - MyAIWork",
-    description: "Get in touch with the MyAIWork team.",
+    title: "Contact Us - CalcPro",
+    description: "Get in touch with the CalcPro team.",
     url: "/contact",
-    siteName: "MyAIWork",
+    siteName: "CalcPro",
     type: "website",
   },
 };
@@ -26,7 +26,7 @@ export default function ContactPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">Contact Us</h1>
         <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-          We'd love to hear from you! Whether it's feedback, partnership inquiries, or just a hello — get in touch with the MyAIWork team.
+          We'd love to hear from you! Whether it's feedback, partnership inquiries, or just a hello — get in touch with the CalcPro team.
         </p>
       </div>
 
