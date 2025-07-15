@@ -76,7 +76,7 @@ export default function AboutPage() {
             <Card className="max-w-sm p-6 border-border/40 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="flex flex-col items-center text-center">
                 <Avatar className="w-28 h-28 mb-4">
-                  <AvatarImage src="https://drive.google.com/uc?export=view&id=1qQL0s0Y-NCH7EkYWrnFLXiQjuDKsuuA8" alt="Akshay Panawlkar" />
+                  <AvatarImage src="https://i.pravatar.cc/150?img=5" alt="Akshay Panawlkar" />
                   <AvatarFallback>AP</AvatarFallback>
                 </Avatar>
                 <h3 className="text-2xl font-semibold">Akshay Panawlkar</h3>
