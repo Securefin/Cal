@@ -6,11 +6,18 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ArrowRight, Search } from "lucide-react";
+import { ArrowRight, Search, CheckCircle, HelpCircle } from "lucide-react";
 import Link from "next/link";
 import { calculatorCategories } from '@/lib/calculator-data';
 import * as LucideIcons from 'lucide-react';
 import type { LucideProps } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+
 
 const getIcon = (iconName?: string): React.ComponentType<LucideProps> => {
   if (!iconName) return LucideIcons.Calculator;
@@ -91,70 +98,60 @@ const SearchableToolsGrid = () => {
   );
 };
 
-const Testimonials = () => (
+const WhyChooseUs = () => (
   <section className="py-20 md:py-24 bg-muted/50">
     <div className="container mx-auto px-4">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Loved by Professionals & Students</h2>
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Why Choose CalcPro?</h2>
         <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-          See what our users are saying about CalcPro.
+          Accurate, fast, and free online calculators for every need.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
         {[
-          { name: "Sarah J.", role: "Finance Analyst", quote: "CalcPro's financial calculators are a lifesaver. The Loan EMI and SIP calculators are incredibly accurate and easy to use.", avatar: "https://i.pravatar.cc/150?img=1" },
-          { name: "Mike R.", role: "Web Developer", quote: "As a developer, I frequently use the unit and color converters. The clean interface and speed are fantastic. Highly recommended!", avatar: "https://i.pravatar.cc/150?img=2" },
-          { name: "Chloe T.", role: "University Student", quote: "The scientific and fraction calculators are perfect for my math homework. They're much faster than searching for a physical calculator.", avatar: "https://i.pravatar.cc/150?img=3" },
-        ].map((testimonial) => (
-          <Card key={testimonial.name} className="p-6 bg-background">
-            <CardContent className="p-0">
-              <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
-              <div className="flex items-center mt-6">
-                <Avatar className="h-10 w-10 mr-4">
-                  <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
-                  <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="font-semibold">{testimonial.name}</p>
-                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+          { title: "Completely Free", description: "No hidden fees or premium versions. All our tools, from the basic calculator to the financial calculators, are free to use.", icon: "CheckCircle" },
+          { title: "No Sign-Up Required", description: "Get instant access to every calculator without the hassle of creating an account. Your privacy is paramount.", icon: "CheckCircle" },
+          { title: "Wide Range of Tools", description: "From health and fitness calculators like BMI and BMR to advanced scientific and financial tools, we have you covered.", icon: "CheckCircle" },
+        ].map((feature) => {
+           const FeatureIcon = getIcon(feature.icon);
+           return(
+            <div key={feature.title} className="p-6">
+                <FeatureIcon className="h-10 w-10 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-semibold">{feature.title}</h3>
+                <p className="mt-2 text-muted-foreground">{feature.description}</p>
+            </div>
+        )})}
       </div>
     </div>
   </section>
 );
 
-const BlogSection = () => (
+const FaqSection = () => (
   <section className="py-20 md:py-24">
-    <div className="container mx-auto px-4">
-      <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Insights & Articles</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-muted-foreground">
-            Learn more about the concepts behind our calculators.
-          </p>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            { title: "Understanding Compound Interest", summary: "Learn how the magic of compounding can significantly grow your investments over time with our SIP and FD calculators." },
-            { title: "A Guide to Body Mass Index (BMI)", summary: "What is BMI and what does it mean for your health? A deep dive into the simple formula behind our health calculator." },
-            { title: "Ohm's Law Explained Simply", summary: "Explore how Voltage, Current, and Resistance are related and how you can use our calculator for quick electronics calculations." },
-          ].map((post) => (
-              <Card key={post.title} className="group flex flex-col hover:-translate-y-1 transition-transform duration-300">
-                  <CardHeader>
-                      <CardTitle>{post.title}</CardTitle>
-                      <CardDescription className="pt-2">{post.summary}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow flex items-end">
-                      <Button variant="link" className="p-0 text-primary">
-                          Read More <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                  </CardContent>
-              </Card>
-          ))}
-      </div>
+    <div className="container mx-auto px-4 max-w-3xl">
+       <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Frequently Asked Questions</h2>
+       </div>
+       <Accordion type="single" collapsible className="w-full">
+        <AccordionItem value="item-1">
+          <AccordionTrigger>Are the calculators on CalcPro free to use?</AccordionTrigger>
+          <AccordionContent>
+            Yes, absolutely. All calculators and tools on our website are 100% free to use. There are no hidden charges, subscription fees, or premium-only features.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-2">
+          <AccordionTrigger>Do I need to create an account to use the calculators?</AccordionTrigger>
+          <AccordionContent>
+            No, you do not need to sign up or create an account. All our tools are accessible to everyone instantly. We value your privacy and convenience.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-3">
+          <AccordionTrigger>How accurate are the financial and health calculators?</AccordionTrigger>
+          <AccordionContent>
+            Our calculators are built using standard, widely accepted formulas. However, they are intended for informational and educational purposes only and should not be considered a substitute for professional financial or medical advice.
+          </AccordionContent>
+        </AccordionItem>
+       </Accordion>
     </div>
   </section>
 );
@@ -193,8 +190,8 @@ export default function HomePage() {
       <div className="container mx-auto px-4">
         <SearchableToolsGrid />
       </div>
-      <Testimonials />
-      <BlogSection />
+      <WhyChooseUs />
+      <FaqSection />
     </>
   );
 }
