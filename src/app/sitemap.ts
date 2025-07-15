@@ -2,7 +2,7 @@
 import type { MetadataRoute } from 'next';
 import { calculatorCategories } from '@/lib/calculator-data';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:9002'; // Fallback for local dev
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://myaiwork.space'; // Fallback for local dev
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString();
