@@ -4,7 +4,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Wand2 } from "lucide-react";
 // Metadata is now in layout.tsx
 
-const MathFormulaSolverComponent = dynamic(() => import('./components/math-formula-solver').then(mod => mod.MathFormulaSolver), {
+// Correctly import the functional SuggestionForm component
+const MathFormulaSolverComponent = dynamic(() => import('@/app/ai-suggestions/components/suggestion-form').then(mod => mod.SuggestionForm), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });

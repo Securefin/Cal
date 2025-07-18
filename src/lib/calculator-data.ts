@@ -102,7 +102,7 @@ export const calculatorCategories: CalculatorCategory[] = [
       { name: "QR Code Generator", slug: "qr-code-generator", description: "Create and download custom QR codes.", isImplemented: true, iconName: "QrCode" },
       { name: "Random Number Generator", slug: "random-number-generator", description: "Generate random numbers in a range.", isImplemented: true, iconName: "Dice5" },
       { name: "Password Strength Checker", slug: "password-strength-checker", description: "Analyze the strength of your password.", isImplemented: true, iconName: "LockKeyhole" },
-      { name: "Math Formula Solver", slug: "math-formula-solver", description: "Get AI suggestions for math formulas.", isImplemented: true, iconName: "Wand2" },
+      { name: "Math Formula Solver", slug: "ai-suggestions", description: "Get AI suggestions for math formulas.", isImplemented: true, iconName: "Wand2" },
     ],
   },
 ];
