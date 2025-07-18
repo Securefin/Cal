@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Cake } from "lucide-react";
 
-const AgeCalculatorComponent = dynamic(() => import('./components/age-calculator').then(mod => mod.AgeCalculator), {
+const AgeCalculatorComponent = dynamic(() => import('@/app/calculators/age/components/age-calculator').then(mod => mod.AgeCalculator), {
   ssr: false,
   loading: () => <div className="flex justify-center items-center h-32"><p>Loading calculator...</p></div>
 });
