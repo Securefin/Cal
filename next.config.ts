@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // basePath is the key to subfolder deployment.
-  // It prefixes all assets and links with '/app'.
-  basePath: '/app',
+  // It prefixes all assets and links with '/cal'.
+  basePath: '/cal',
 
   // output: 'standalone' is highly recommended for Docker.
   // It creates a minimal server with only necessary dependencies.
