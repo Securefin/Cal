@@ -4,7 +4,7 @@ import { calculatorCategories } from '@/lib/calculator-data';
 
 export const dynamic = 'force-static';
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://myaiwork.space'; // Fallback for local dev
+const BASE_URL = 'https://myaiwork.space/app'; // Hardcoded production URL with basePath
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString();
