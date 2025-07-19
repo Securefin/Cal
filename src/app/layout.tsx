@@ -1,3 +1,4 @@
+
 import type {Metadata} from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -29,7 +30,10 @@ export const metadata: Metadata = {
     canonical: "/app",
   },
   openGraph: {
-    title: siteConfig.name,
+    title: {
+      default: siteConfig.name,
+      template: `%s - ${siteConfig.name}`,
+    },
     description: siteConfig.description,
     url: `${siteConfig.url}/app`,
     siteName: siteConfig.name,
@@ -46,7 +50,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.name,
+    title: {
+      default: siteConfig.name,
+      template: `%s - ${siteConfig.name}`,
+    },
     description: siteConfig.description,
     images: [siteConfig.ogImage],
   },
