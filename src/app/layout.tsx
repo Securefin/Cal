@@ -12,8 +12,8 @@ const inter = Inter({
 
 const siteConfig = {
   name: 'CalcPro',
-  url: 'https://myaiwork.space',
-  ogImage: 'https://myaiwork.space/og-image.png',
+  url: 'https://mydomain.com',
+  ogImage: 'https://mydomain.com/app/og-default.jpg',
   description: 'A comprehensive suite of advanced calculators to solve your daily math, finance, health, and science problems. Free, fast, and easy to use.',
 };
 
@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  alternates: {
+    canonical: "/app",
+  },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
@@ -35,6 +38,7 @@ export const metadata: Metadata = {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
+        alt: `Default Open Graph image for ${siteConfig.name}`,
       },
     ],
     locale: 'en_US',
@@ -79,12 +83,12 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "WebSite",
                 "name": "CalcPro",
-                "url": "https://myaiwork.space/app",
+                "url": "https://mydomain.com/app",
                  "potentialAction": {
                     "@type": "SearchAction",
                     "target": {
                       "@type": "EntryPoint",
-                      "urlTemplate": "https://myaiwork.space/app/calculators?q={search_term_string}"
+                      "urlTemplate": "https://mydomain.com/app/calculators?q={search_term_string}"
                     },
                     "query-input": "required name=search_term_string"
                   }

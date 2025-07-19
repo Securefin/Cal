@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,10 +9,13 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'About CalcPro - Our Mission and Creator',
   description: 'Learn about CalcPro, our mission to simplify complex calculations through a suite of powerful, free tools, and the creator behind the platform.',
+  alternates: {
+    canonical: '/app/about',
+  },
   openGraph: {
     title: 'About CalcPro - Our Mission and Creator',
     description: 'Learn about CalcPro, our mission to simplify complex calculations, and the creator behind the platform.',
-    url: '/about',
+    url: '/app/about',
     siteName: 'CalcPro',
     type: 'website',
   },

@@ -20,10 +20,13 @@ import { Button } from '@/components/ui/button';
 export const metadata: Metadata = {
   title: 'Explore All Calculators',
   description: 'Browse our comprehensive suite of calculators, organized by category: Basic Math, Financial, Health & Fitness, Engineering & Science, and more.',
+  alternates: {
+    canonical: '/app/calculators',
+  },
   openGraph: {
     title: 'Explore All Calculators',
     description: 'Browse our comprehensive suite of calculators, organized by category.',
-    url: '/calculators',
+    url: '/app/calculators',
   },
 };
 

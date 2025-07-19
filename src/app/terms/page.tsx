@@ -5,10 +5,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: 'Terms of Service - CalcPro',
   description: 'Please read our Terms of Service carefully before using the CalcPro website and its services.',
+  alternates: {
+    canonical: '/app/terms',
+  },
   openGraph: {
     title: 'Terms of Service - CalcPro',
     description: 'Please read our Terms of Service carefully before using the CalcPro website.',
-    url: '/terms',
+    url: '/app/terms',
     siteName: 'CalcPro',
     type: 'website',
   },

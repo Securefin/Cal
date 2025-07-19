@@ -17,6 +17,26 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import type { Metadata } from 'next';
+
+// Note: In App Router, metadata should be in layout.tsx or page.tsx at the top level, not in the component itself.
+// Since this is the root page, its metadata is handled by the root layout.tsx.
+// We can, however, define page-specific metadata if this wasn't the root.
+// For demonstration, if this were a sub-page, it would look like this:
+/*
+export const metadata: Metadata = {
+  title: 'CalcPro - Advanced Calculators for Everyday Needs',
+  description: 'A comprehensive suite of advanced calculators to solve your daily math, finance, health, and science problems. Free, fast, and easy to use.',
+  alternates: {
+    canonical: '/app',
+  },
+  openGraph: {
+    title: 'CalcPro - Advanced Calculators for Everyday Needs',
+    description: 'A comprehensive suite of advanced calculators to solve your daily math, finance, health, and science problems. Free, fast, and easy to use.',
+    url: '/app',
+  },
+};
+*/
 
 
 const getIcon = (iconName?: string): React.ComponentType<LucideProps> => {

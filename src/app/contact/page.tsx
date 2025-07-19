@@ -9,10 +9,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Us - CalcPro",
   description: "Get in touch with the CalcPro team. We welcome your feedback, questions, and suggestions.",
+  alternates: {
+    canonical: '/app/contact',
+  },
   openGraph: {
     title: "Contact Us - CalcPro",
-    description: "Get in touch with the CalcPro team.",
-    url: "/contact",
+    description: "Get in touch with the CalcPro team for feedback and support.",
+    url: "/app/contact",
     siteName: "CalcPro",
     type: "website",
   },

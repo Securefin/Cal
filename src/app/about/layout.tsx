@@ -1,16 +1,6 @@
-import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
-export const metadata: Metadata = {
-  title: 'About CalcPro - Our Mission and Creator',
-  description: 'Learn about CalcPro, our mission to simplify complex calculations, and the creator behind the platform.',
-  openGraph: {
-    title: 'About CalcPro - Our Mission and Creator',
-    description: 'Learn about CalcPro, our mission to simplify complex calculations, and the creator behind the platform.',
-    url: '/about',
-  },
-};
-
+// Metadata is now in page.tsx for better specificity
 
 export default function AboutLayout({
   children,

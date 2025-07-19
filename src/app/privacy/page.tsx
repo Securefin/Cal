@@ -5,10 +5,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: 'Privacy Policy - CalcPro',
   description: 'Learn how CalcPro collects, uses, and protects your data. We are committed to protecting your privacy.',
+  alternates: {
+    canonical: '/app/privacy',
+  },
   openGraph: {
     title: 'Privacy Policy - CalcPro',
     description: 'Learn how CalcPro collects, uses, and protects your data.',
-    url: '/privacy',
+    url: '/app/privacy',
     siteName: 'CalcPro',
     type: 'website',
   },
