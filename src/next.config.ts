@@ -2,7 +2,7 @@
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  basePath: "/calcpro",
+  basePath: "/app",
   output: "standalone",
   trailingSlash: true,
   typescript: {
