@@ -1,0 +1,11 @@
+
+services:
+  app:
+    build: .
+    ports:
+      # Map container port 3000 to host port 3000
+      # Nginx will connect to localhost:3000
+      - "127.0.0.1:3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped

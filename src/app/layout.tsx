@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
-    url: siteConfig.url,
+    url: `${siteConfig.url}/app`,
     siteName: siteConfig.name,
     images: [
       {
@@ -79,12 +79,12 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "WebSite",
                 "name": "CalcPro",
-                "url": "https://myaiwork.space",
+                "url": "https://myaiwork.space/app",
                  "potentialAction": {
                     "@type": "SearchAction",
                     "target": {
                       "@type": "EntryPoint",
-                      "urlTemplate": "https://myaiwork.space/calculators?q={search_term_string}"
+                      "urlTemplate": "https://myaiwork.space/app/calculators?q={search_term_string}"
                     },
                     "query-input": "required name=search_term_string"
                   }
